@@ -1,28 +1,77 @@
 package com.faprayyy.tonton.view.ui.movie
 
+import android.app.ActivityOptions
+import android.content.Intent
 import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import android.widget.TextView
+import android.widget.ProgressBar
 import androidx.fragment.app.Fragment
 import androidx.lifecycle.ViewModelProvider
-import com.faprayyy.tonton.R
+import com.faprayyy.tonton.data.MovieModel
+import com.faprayyy.tonton.databinding.FragmentMovieBinding
+import com.faprayyy.tonton.view.adapter.MovieAdapter
+import com.faprayyy.tonton.view.ui.detail.DetailMovieActivity
 
 class MoviesFragment : Fragment() {
 
-    private lateinit var dashboardViewModel: MoviesViewModel
+    private var _binding: FragmentMovieBinding? = null
+    private val binding get() = _binding as FragmentMovieBinding
+    private lateinit var moviesViewModel: MoviesViewModel
+    private lateinit var mAdapter: MovieAdapter
 
     override fun onCreateView(
             inflater: LayoutInflater,
             container: ViewGroup?,
             savedInstanceState: Bundle?
-    ): View? {
-        dashboardViewModel =
+    ): View {
+        moviesViewModel =
                 ViewModelProvider(this).get(MoviesViewModel::class.java)
-        val root = inflater.inflate(R.layout.fragment_movie, container, false)
-        val textView: TextView = root.findViewById(R.id.text_dashboard)
-        textView.text = "Movies Fragment"
-        return root
+        _binding = FragmentMovieBinding.inflate(inflater, container, false)
+        val view = binding.root
+
+        return view
+    }
+
+    override fun onActivityCreated(savedInstanceState: Bundle?) {
+        super.onActivityCreated(savedInstanceState)
+        mAdapter = MovieAdapter()
+        mAdapter.notifyDataSetChanged()
+        binding.recyclerView.apply {
+            adapter = mAdapter
+            setHasFixedSize(true)
+        }
+
+        moviesViewModel.setData()
+
+        moviesViewModel.listMovie.observe(viewLifecycleOwner){
+            if (it != null){
+                mAdapter.setData(it)
+            }
+        }
+
+        moviesViewModel.isLoading.observe(viewLifecycleOwner){
+            showLoading(it)
+        }
+
+        mAdapter.setOnItemClickCallback(object : MovieAdapter.OnItemClickCallback{
+            override fun onItemClicked(data: MovieModel) {
+                val intent = Intent(context, DetailMovieActivity::class.java)
+                intent.putExtra(DetailMovieActivity.EXTRA_MOVIE, data)
+                startActivity(intent, ActivityOptions.makeSceneTransitionAnimation(requireActivity()).toBundle())
+
+            }
+        })
+    }
+
+    private fun showLoading(state: Boolean) {
+        val mProgressBar = binding.progressBar
+
+        if (state == true){
+            mProgressBar.visibility = View.VISIBLE
+        } else {
+            mProgressBar.visibility = View.INVISIBLE
+        }
     }
 }
