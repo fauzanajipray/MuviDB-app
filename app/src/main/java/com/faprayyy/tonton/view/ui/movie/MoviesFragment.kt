@@ -1,18 +1,16 @@
 package com.faprayyy.tonton.view.ui.movie
 
-import android.app.ActivityOptions
 import android.content.Intent
 import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import android.widget.ProgressBar
 import androidx.fragment.app.Fragment
 import androidx.lifecycle.ViewModelProvider
 import com.faprayyy.tonton.data.MovieModel
 import com.faprayyy.tonton.databinding.FragmentMovieBinding
 import com.faprayyy.tonton.view.adapter.MovieAdapter
-import com.faprayyy.tonton.view.ui.detail.DetailMovieActivity
+import com.faprayyy.tonton.view.ui.detailmovie.DetailMovieActivity
 
 class MoviesFragment : Fragment() {
 
@@ -59,7 +57,7 @@ class MoviesFragment : Fragment() {
             override fun onItemClicked(data: MovieModel) {
                 val intent = Intent(context, DetailMovieActivity::class.java)
                 intent.putExtra(DetailMovieActivity.EXTRA_MOVIE, data)
-                startActivity(intent, ActivityOptions.makeSceneTransitionAnimation(requireActivity()).toBundle())
+                startActivity(intent)
 
             }
         })
@@ -67,7 +65,6 @@ class MoviesFragment : Fragment() {
 
     private fun showLoading(state: Boolean) {
         val mProgressBar = binding.progressBar
-
         if (state == true){
             mProgressBar.visibility = View.VISIBLE
         } else {

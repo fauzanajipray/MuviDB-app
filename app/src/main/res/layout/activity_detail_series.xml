@@ -7,7 +7,7 @@
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:background="@color/blue900"
-        tools:context=".view.ui.detailmovie.DetailMovieActivity">
+        tools:context=".view.ui.detailseries.DetailSeriesActivity">
 
         <com.google.android.material.appbar.AppBarLayout
             android:id="@+id/appbar"
@@ -62,7 +62,7 @@
                 android:orientation="vertical">
 
                 <TextView
-                    android:id="@+id/movie_title"
+                    android:id="@+id/series_title"
                     style="@style/App.TextView"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
@@ -72,7 +72,7 @@
                     android:text="@string/title_movies" />
 
                 <TextView
-                    android:id="@+id/movie_release"
+                    android:id="@+id/series_release"
                     style="@style/App.TextView.Sub2"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
@@ -87,17 +87,17 @@
                     android:layout_height="wrap_content"
                     android:textSize="@dimen/text_header_3"
                     android:textStyle="bold"
-                    android:layout_marginTop="@dimen/layout_margin_top3"
+                    android:layout_marginTop="@dimen/layout_margin_top2"
                     android:text="@string/overview_title" />
 
                 <TextView
-                    android:id="@+id/movie_overview"
+                    android:id="@+id/series_overview"
                     style="@style/App.TextView.Sub2"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:textSize="@dimen/text_size"
                     android:layout_marginTop="@dimen/layout_margin_top"
-                    android:text="@string/lorem" />
+                    android:text="@string/lorem2" />
             </LinearLayout>
         </androidx.core.widget.NestedScrollView>
 

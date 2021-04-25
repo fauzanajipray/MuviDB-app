@@ -5,7 +5,7 @@ import android.util.Log
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
 import com.faprayyy.tonton.api.ApiConfig
-import com.faprayyy.tonton.api.Response.DiscoverSeriesResponse
+import com.faprayyy.tonton.data.Response.DiscoverSeriesResponse
 import com.faprayyy.tonton.data.SeriesModel
 import retrofit2.Call
 import retrofit2.Callback

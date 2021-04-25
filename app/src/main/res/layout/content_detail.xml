@@ -5,7 +5,7 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     app:layout_behavior="@string/appbar_scrolling_view_behavior"
-    tools:context="com.faprayyy.tonton.view.ui.detail.DetailMovieActivity"
+    tools:context="com.faprayyy.tonton.view.ui.detailmovie.DetailMovieActivity"
     tools:showIn="@layout/activity_detail_movie">
 
     <androidx.core.widget.NestedScrollView
@@ -30,7 +30,7 @@
                 android:text="@string/title_movies" />
 
             <TextView
-                android:id="@+id/release_date"
+                android:id="@+id/movie_release"
                 style="@style/App.TextView.Sub"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
@@ -49,14 +49,13 @@
                 android:text="@string/overview_title" />
 
             <TextView
-                android:id="@+id/overview"
+                android:id="@+id/movie_overview"
                 style="@style/App.TextView.Sub"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:textSize="@dimen/text_size"
                 android:layout_marginTop="@dimen/layout_margin_top"
                 android:text="@string/lorem2" />
-
         </LinearLayout>
     </androidx.core.widget.NestedScrollView>
 </RelativeLayout>

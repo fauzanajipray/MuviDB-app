@@ -1,4 +1,4 @@
-package com.faprayyy.tonton.api.Response
+package com.faprayyy.tonton.data.Response
 
 import com.faprayyy.tonton.data.MovieModel
 import com.google.gson.annotations.Expose
@@ -8,13 +8,13 @@ data class DiscoverMovieResponse(
     @SerializedName("page")
     @Expose
     var page: Int = 0,
-        @SerializedName("results")
+    @SerializedName("results")
     @Expose
     var results: ArrayList<MovieModel> = ArrayList(),
-        @SerializedName("total_pages")
+    @SerializedName("total_pages")
     @Expose
     var totalPages: Int = 0,
-        @SerializedName("total_results")
+    @SerializedName("total_results")
     @Expose
     var totalResults : Int = 0
 )

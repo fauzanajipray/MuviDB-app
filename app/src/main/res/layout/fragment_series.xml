@@ -24,7 +24,7 @@
         android:layout_marginHorizontal="8dp"
         android:layout_marginVertical="@dimen/layout_margin_top"
         android:clipToPadding="false"
-        app:layoutManager="androidx.recyclerview.widget.GridLayoutManager"
+        app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
         app:layout_behavior="@string/appbar_scrolling_view_behavior"
         app:spanCount="2"
         tools:listitem="@layout/item_movie" >

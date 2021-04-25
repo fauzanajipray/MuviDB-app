@@ -25,11 +25,13 @@ class MovieAdapter : RecyclerView.Adapter<MovieAdapter.MovieHolder>() {
     inner class MovieHolder(itemView: View) : RecyclerView.ViewHolder(itemView) {
         private val binding = ItemMovieBinding.bind(itemView)
         fun bind(movie: MovieModel) {
-
+            binding.title.text = movie.title
+            binding.overview.text = movie.overview
             val posterImg = movie.posterPath?.let { Config.getPosterPath(it) }
             Glide.with(itemView.context)
                 .load(posterImg)
                 .apply(RequestOptions().override(1200,2800))
+                .apply(RequestOptions.placeholderOf(R.drawable.ic_loading).error(R.drawable.ic_error))
                 .into(binding.imageView)
         }
     }

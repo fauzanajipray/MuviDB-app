@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layer-list xmlns:android="http://schemas.android.com/apk/res/android">
+    <item
+        android:drawable="@drawable/placeholder"/>
+
+    <item
+        android:bottom="40dp"
+        android:drawable="@drawable/ic_baseline_broken_image_24"
+        android:left="20dp"
+        android:right="20dp"
+        android:top="40dp" />
+
+</layer-list>

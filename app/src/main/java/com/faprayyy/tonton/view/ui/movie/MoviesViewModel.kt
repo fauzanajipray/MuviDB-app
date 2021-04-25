@@ -5,9 +5,8 @@ import android.util.Log
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
 import com.faprayyy.tonton.api.ApiConfig
-import com.faprayyy.tonton.api.Response.DiscoverMovieResponse
+import com.faprayyy.tonton.data.Response.DiscoverMovieResponse
 import com.faprayyy.tonton.data.MovieModel
-import com.faprayyy.tonton.view.adapter.MovieAdapter
 import retrofit2.Call
 import retrofit2.Callback
 import retrofit2.Response
@@ -18,7 +17,7 @@ class MoviesViewModel : ViewModel() {
     val listMovie = MutableLiveData<ArrayList<MovieModel>>()
 
     // TODO GANTI BUILD IMPORT
-    val apikey = com.faprayyy.tonton.utils.apikey.apiKey
+    private val apikey = com.faprayyy.tonton.utils.apikey.apiKey
 
     @SuppressLint("LogNotTimber")
     fun setData(){
@@ -30,6 +29,7 @@ class MoviesViewModel : ViewModel() {
                 if (response.isSuccessful) {
                     isLoading.postValue(false)
                     Log.d("MainViewModel", "HIT API")
+                    Log.d("MainViewModel", "${response.body()}")
                     listMovie.postValue(response.body()?.results)
                 } else {
                     Log.e("MainViewModel", "onFailure: ${response.message()}")

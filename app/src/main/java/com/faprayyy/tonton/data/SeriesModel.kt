@@ -12,22 +12,20 @@ data class SeriesModel (
         var voteCount: Int? = 0,
         @SerializedName("vote_average")
         var voteAverage: Double? = 0.0,
-        @SerializedName("adult")
-        var adult: Boolean? = false,
         @SerializedName("popularity")
         var popularity: Double? = 0.0,
-        @SerializedName("title")
-        var title: String? = "",
+        @SerializedName("name")
+        var name: String? = "",
         @SerializedName("poster_path")
         var posterPath: String? = "",
         @SerializedName("original_language")
         var originalLanguage: String? = "",
-        @SerializedName("original_title")
-        var originalTitle: String? = "",
+        @SerializedName("original_name")
+        var originalName: String? = "",
         @SerializedName("backdrop_path")
         var backdropPath: String? = "",
-        @SerializedName("release_date")
-        var releaseDate: String? = "",
+        @SerializedName("first_air_date")
+        var firstAirDate: String? = "",
         @SerializedName("overview")
         var overview: String? = ""
 ) : Parcelable

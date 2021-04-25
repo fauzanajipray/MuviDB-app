@@ -21,10 +21,10 @@
         android:id="@+id/recyclerView"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:layout_marginHorizontal="8dp"
+        android:layout_marginHorizontal="6dp"
         android:layout_marginVertical="@dimen/layout_margin_top"
         android:clipToPadding="false"
-        app:layoutManager="androidx.recyclerview.widget.GridLayoutManager"
+        app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
         app:layout_behavior="@string/appbar_scrolling_view_behavior"
         app:spanCount="2"
         tools:listitem="@layout/item_movie" >
@@ -36,6 +36,7 @@
         style="?android:attr/progressBarStyle"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:visibility="gone"
         android:layout_marginTop="?attr/actionBarSize"
         app:layout_anchor="@id/recyclerView"
         app:layout_anchorGravity="center_horizontal|center_vertical"/>

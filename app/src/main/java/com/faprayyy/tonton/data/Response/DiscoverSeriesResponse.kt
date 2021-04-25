@@ -1,4 +1,4 @@
-package com.faprayyy.tonton.api.Response
+package com.faprayyy.tonton.data.Response
 
 import com.faprayyy.tonton.data.SeriesModel
 import com.google.gson.annotations.Expose

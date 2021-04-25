@@ -8,6 +8,7 @@ import com.bumptech.glide.Glide
 import com.bumptech.glide.request.RequestOptions
 import com.faprayyy.tonton.R
 import com.faprayyy.tonton.api.Config
+import com.faprayyy.tonton.data.MovieModel
 import com.faprayyy.tonton.data.SeriesModel
 import com.faprayyy.tonton.databinding.ItemMovieBinding
 
@@ -24,12 +25,14 @@ class SeriesAdapter : RecyclerView.Adapter<SeriesAdapter.SeriesHolder>() {
 
     inner class SeriesHolder(itemView: View) : RecyclerView.ViewHolder(itemView) {
         private val binding = ItemMovieBinding.bind(itemView)
-        fun bind(movie: SeriesModel) {
-
-            val posterImg = movie.posterPath?.let { Config.getPosterPath(it) }
+        fun bind(serie: SeriesModel) {
+            binding.title.text = serie.name
+            binding.overview.text = serie.overview
+            val posterImg = serie.posterPath?.let { Config.getPosterPath(it) }
             Glide.with(itemView.context)
                 .load(posterImg)
                 .apply(RequestOptions().override(1200,2800))
+                .apply(RequestOptions.placeholderOf(R.drawable.ic_loading).error(R.drawable.ic_error))
                 .into(binding.imageView)
         }
     }
