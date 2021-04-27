@@ -1,44 +1,36 @@
 package com.faprayyy.tonton.view.ui.detailmovie
 
 import android.annotation.SuppressLint
+import android.content.Context
 import android.util.Log
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
-import com.faprayyy.tonton.api.ApiConfig
-import com.faprayyy.tonton.data.Genre
 import com.faprayyy.tonton.data.Response.MovieDetail
-import retrofit2.Call
-import retrofit2.Callback
-import retrofit2.Response
+import com.faprayyy.tonton.data.Response.MovieDetailResponse
+import com.google.gson.Gson
 
 class DetailMovieViewModel : ViewModel() {
 
-    val isLoading = MutableLiveData<Boolean>()
     val movieDetail = MutableLiveData<MovieDetail>()
 
-    // TODO GANTI BUILD IMPORT
-    private val apikey = com.faprayyy.tonton.utils.apikey.apiKey
-
     @SuppressLint("LogNotTimber")
-    fun setData(movieId: Int){
-        isLoading.postValue(true)
-        val client = ApiConfig.getApiService().getMovie(movieId,apikey)
-        client.enqueue(object : Callback<MovieDetail>{
-            override fun onResponse(call: Call<MovieDetail>, response: Response<MovieDetail>) {
-                if (response.isSuccessful) {
-                    isLoading.postValue(false)
-                    Log.d("DetailMovieViewModel", "HIT API : ${response.body()}")
-                    movieDetail.postValue(response.body())
-                } else {
-                    Log.e("DetailMovieViewModel", "onFailure: ${response.message()}")
+    fun setDataJson(idMovie: Int, context: Context) {
+        val fileName = "listdetailmovie.json"
+        val jsonString: String
+        try {
+            jsonString = context.assets.open(fileName).bufferedReader().use { it.readText() }
+
+            val obj = Gson().fromJson(jsonString, MovieDetailResponse::class.java)
+            val movieList = obj.results
+            for (i in 0 until movieList.size){
+                if (movieList[i].id == idMovie){
+                    movieDetail.postValue(movieList[i])
+                    break
                 }
             }
 
-            override fun onFailure(call: Call<MovieDetail>, t: Throwable) {
-                isLoading.postValue(false)
-                Log.e("DetailMovieViewModel", "onFailure: ${t.message.toString()}")
-            }
-
-        })
+        } catch (e: Exception){
+            Log.e("Failed","${e.printStackTrace()}")
+        }
     }
 }

@@ -33,7 +33,7 @@ class DetailSeriesActivity : AppCompatActivity() {
         viewModel = ViewModelProvider(this).get(DetailSeriesViewModel::class.java)
         binding.toolbar.setNavigationOnClickListener { onBackPressed() }
         serieData = intent.getParcelableExtra<SeriesModel>(EXTRA_SERIE) as SeriesModel
-        viewModel.setData(serieData.id)
+        viewModel.setDataJson(serieData.id, this)
         viewModel.serieDetail.observe(this){
             setData(it)
         }

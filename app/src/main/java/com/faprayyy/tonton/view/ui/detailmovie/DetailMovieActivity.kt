@@ -2,7 +2,6 @@ package com.faprayyy.tonton.view.ui.detailmovie
 
 import android.annotation.SuppressLint
 import android.os.Bundle
-import android.util.Log
 import androidx.appcompat.app.AppCompatActivity
 import androidx.lifecycle.ViewModelProvider
 import com.bumptech.glide.Glide
@@ -12,7 +11,6 @@ import com.faprayyy.tonton.api.Config
 import com.faprayyy.tonton.data.MovieModel
 import com.faprayyy.tonton.data.Response.MovieDetail
 import com.faprayyy.tonton.databinding.ActivityDetailMovieBinding
-import com.faprayyy.tonton.view.ui.movie.MoviesViewModel
 
 
 class DetailMovieActivity : AppCompatActivity() {
@@ -36,7 +34,7 @@ class DetailMovieActivity : AppCompatActivity() {
         binding.toolbar.setNavigationOnClickListener { onBackPressed() }
         movieData = intent.getParcelableExtra<MovieModel>(EXTRA_MOVIE) as MovieModel
 
-        viewModel.setData(movieData.id)
+        viewModel.setDataJson(movieData.id, this)
         viewModel.movieDetail.observe(this){
             setData(it)
         }
@@ -46,7 +44,6 @@ class DetailMovieActivity : AppCompatActivity() {
 
     @SuppressLint("LogNotTimber")
     private fun setData(movieDetail: MovieDetail) {
-        Log.d("TAG", "$movieData")
         binding.apply {
             collapsingToolbar.title = movieDetail.title
             movieTitle.text = movieDetail.title

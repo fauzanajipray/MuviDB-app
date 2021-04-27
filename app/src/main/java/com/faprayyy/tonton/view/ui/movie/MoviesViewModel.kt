@@ -12,7 +12,6 @@ class MoviesViewModel : ViewModel() {
 
     val isLoading = MutableLiveData<Boolean>()
     val listMovie = MutableLiveData<ArrayList<MovieModel>>()
-    val list = ArrayList<MovieModel>()
 
     @SuppressLint("LogNotTimber")
     fun getData(context: Context){
