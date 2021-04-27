@@ -55,7 +55,7 @@
                 android:layout_height="wrap_content"
                 android:textSize="@dimen/text_size"
                 android:layout_marginTop="@dimen/layout_margin_top"
-                android:text="@string/lorem2" />
+                android:text="@string/lorem" />
         </LinearLayout>
     </androidx.core.widget.NestedScrollView>
 </RelativeLayout>

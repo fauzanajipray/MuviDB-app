@@ -1,45 +1,32 @@
 package com.faprayyy.tonton.view.ui.movie
 
 import android.annotation.SuppressLint
-import android.util.Log
+import android.content.Context
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
-import com.faprayyy.tonton.api.ApiConfig
 import com.faprayyy.tonton.data.Response.DiscoverMovieResponse
 import com.faprayyy.tonton.data.MovieModel
-import retrofit2.Call
-import retrofit2.Callback
-import retrofit2.Response
+import com.google.gson.Gson
 
 class MoviesViewModel : ViewModel() {
 
     val isLoading = MutableLiveData<Boolean>()
     val listMovie = MutableLiveData<ArrayList<MovieModel>>()
-
-    // TODO GANTI BUILD IMPORT
-    private val apikey = com.faprayyy.tonton.utils.apikey.apiKey
+    val list = ArrayList<MovieModel>()
 
     @SuppressLint("LogNotTimber")
-    fun setData(){
+    fun getData(context: Context){
         isLoading.postValue(true)
-        val client = ApiConfig.getApiService().getDiscoverMovies(apikey)
-        client.enqueue(object : Callback<DiscoverMovieResponse> {
+        val fileName = "movieresponse.json"
+        val jsonString: String
+        try {
+            jsonString = context.assets.open(fileName).bufferedReader().use { it.readText() }
+            val obj = Gson().fromJson(jsonString, DiscoverMovieResponse::class.java)
 
-            override fun onResponse(call: Call<DiscoverMovieResponse>, response: Response<DiscoverMovieResponse>) {
-                if (response.isSuccessful) {
-                    isLoading.postValue(false)
-                    Log.d("MainViewModel", "HIT API")
-                    Log.d("MainViewModel", "${response.body()}")
-                    listMovie.postValue(response.body()?.results)
-                } else {
-                    Log.e("MainViewModel", "onFailure: ${response.message()}")
-                }
-            }
-
-            override fun onFailure(call: Call<DiscoverMovieResponse>, t: Throwable) {
-                isLoading.postValue(false)
-                Log.e("MainViewModel", "onFailure: ${t.message.toString()}")
-            }
-        })
+            listMovie.postValue(obj.results)
+        } catch (e : Exception){
+            e.printStackTrace()
+        }
+        isLoading.postValue(false)
     }
 }

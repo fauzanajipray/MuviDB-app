@@ -41,7 +41,7 @@ class MoviesFragment : Fragment() {
             setHasFixedSize(true)
         }
 
-        moviesViewModel.setData()
+        moviesViewModel.getData(requireContext())
 
         moviesViewModel.listMovie.observe(viewLifecycleOwner){
             if (it != null){

@@ -1,49 +1,31 @@
 package com.faprayyy.tonton.view.ui.series
 
-import android.annotation.SuppressLint
-import android.util.Log
+import android.content.Context
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
-import com.faprayyy.tonton.api.ApiConfig
 import com.faprayyy.tonton.data.Response.DiscoverSeriesResponse
 import com.faprayyy.tonton.data.SeriesModel
-import retrofit2.Call
-import retrofit2.Callback
-import retrofit2.Response
+import com.google.gson.Gson
+import java.lang.Exception
 
 class SeriesViewModel : ViewModel() {
 
     val isLoading = MutableLiveData<Boolean>()
     val listSeries = MutableLiveData<ArrayList<SeriesModel>>()
 
-    // TODO GANTI BUILD IMPORT
-    val apikey = com.faprayyy.tonton.utils.apikey.apiKey
-
-    @SuppressLint("LogNotTimber")
-    fun setData(){
+    fun getData(context: Context){
         isLoading.postValue(true)
-        val client = ApiConfig.getApiService().getDiscoverSeries(apikey)
-        client.enqueue(object : Callback<DiscoverSeriesResponse> {
-            override fun onResponse(
-                call: Call<DiscoverSeriesResponse>,
-                response: Response<DiscoverSeriesResponse>
-            ) {
-                if (response.isSuccessful) {
-                    isLoading.postValue(false)
-                    Log.d("MainViewModel", "HIT API")
-                    listSeries.postValue(response.body()?.results)
-                } else {
-                    Log.e("MainViewModel", "onFailure: ${response.message()}")
-                }
-            }
+        val fileName = "seriesresponse.json"
+        val jsonString: String
+        try {
+            jsonString = context.assets.open(fileName).bufferedReader().use { it.readText() }
+            val obj = Gson().fromJson(jsonString, DiscoverSeriesResponse::class.java)
+            listSeries.postValue(obj.results)
+        } catch (e : Exception){
+            e.printStackTrace()
+        }
 
-            override fun onFailure(call: Call<DiscoverSeriesResponse>, t: Throwable) {
-                isLoading.postValue(false)
-                Log.e("MainViewModel", "onFailure: ${t.message.toString()}")
-            }
-
-
-        })
+        isLoading.postValue(false)
     }
 
 }

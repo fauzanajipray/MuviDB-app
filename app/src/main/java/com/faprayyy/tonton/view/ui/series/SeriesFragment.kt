@@ -41,7 +41,7 @@ class SeriesFragment : Fragment() {
             setHasFixedSize(true)
         }
 
-        seriesViewModel.setData()
+        seriesViewModel.getData(requireContext())
 
         seriesViewModel.listSeries.observe(viewLifecycleOwner){
             if (it != null){
@@ -65,7 +65,7 @@ class SeriesFragment : Fragment() {
     private fun showLoading(state: Boolean) {
         val mProgressBar = binding.progressBar
 
-        if (state == true){
+        if (state){
             mProgressBar.visibility = View.VISIBLE
         } else {
             mProgressBar.visibility = View.INVISIBLE

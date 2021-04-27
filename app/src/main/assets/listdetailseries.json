@@ -1,0 +1,3155 @@
+{
+  "result" : [
+    {
+      "backdrop_path": "/b0WmHGc8LHTdGCVzxRb3IBMur57.jpg",
+      "created_by": [
+        {
+          "id": 1868712,
+          "credit_id": "605508e2960cde00721fc5e8",
+          "name": "Malcolm Spellman",
+          "gender": 2,
+          "profile_path": null
+        }
+      ],
+      "episode_run_time": [
+        50
+      ],
+      "first_air_date": "2021-03-19",
+      "genres": [
+        {
+          "id": 10765,
+          "name": "Sci-Fi & Fantasy"
+        },
+        {
+          "id": 10759,
+          "name": "Action & Adventure"
+        },
+        {
+          "id": 18,
+          "name": "Drama"
+        },
+        {
+          "id": 10768,
+          "name": "War & Politics"
+        }
+      ],
+      "homepage": "https://www.disneyplus.com/series/the-falcon-and-the-winter-soldier/4gglDBMx8icA",
+      "id": 88396,
+      "in_production": false,
+      "languages": [
+        "en",
+        "fr"
+      ],
+      "last_air_date": "2021-04-23",
+      "last_episode_to_air": {
+        "air_date": "2021-04-23",
+        "episode_number": 6,
+        "id": 2558743,
+        "name": "One World, One People",
+        "overview": "As The Flag Smashers escalate their efforts, Sam and Bucky take action.",
+        "production_code": "",
+        "season_number": 1,
+        "still_path": "/qXxCqMP7aj3rGndhVfGUyyU6hyq.jpg",
+        "vote_average": 6.6,
+        "vote_count": 5
+      },
+      "name": "The Falcon and the Winter Soldier",
+      "next_episode_to_air": null,
+      "networks": [
+        {
+          "name": "Disney+",
+          "id": 2739,
+          "logo_path": "/gJ8VX6JSu3ciXHuC2dDGAo2lvwM.png",
+          "origin_country": "US"
+        }
+      ],
+      "number_of_episodes": 6,
+      "number_of_seasons": 1,
+      "origin_country": [
+        "US"
+      ],
+      "original_language": "en",
+      "original_name": "The Falcon and the Winter Soldier",
+      "overview": "Following the events of “Avengers: Endgame”, the Falcon, Sam Wilson and the Winter Soldier, Bucky Barnes team up in a global adventure that tests their abilities, and their patience.",
+      "popularity": 3696.277,
+      "poster_path": "/6kbAMLteGO8yyewYau6bJ683sw7.jpg",
+      "production_companies": [
+        {
+          "id": 420,
+          "logo_path": "/hUzeosd33nzE5MCNsZxCGEKTXaQ.png",
+          "name": "Marvel Studios",
+          "origin_country": "US"
+        }
+      ],
+      "production_countries": [
+        {
+          "iso_3166_1": "US",
+          "name": "United States of America"
+        }
+      ],
+      "seasons": [
+        {
+          "air_date": "2021-03-19",
+          "episode_count": 6,
+          "id": 156676,
+          "name": "Season 1",
+          "overview": "",
+          "poster_path": "/fIT6Y6O3cUX1X8qY8pZgzEvxUDQ.jpg",
+          "season_number": 1
+        }
+      ],
+      "spoken_languages": [
+        {
+          "english_name": "English",
+          "iso_639_1": "en",
+          "name": "English"
+        },
+        {
+          "english_name": "French",
+          "iso_639_1": "fr",
+          "name": "Français"
+        }
+      ],
+      "status": "Ended",
+      "tagline": "Honor the shield.",
+      "type": "Miniseries",
+      "vote_average": 7.9,
+      "vote_count": 4897
+    },
+    {
+      "backdrop_path": "/mZjZgY6ObiKtVuKVDrnS9VnuNlE.jpg",
+      "created_by": [
+        {
+          "id": 169061,
+          "credit_id": "5918e7e4925141583c04b400",
+          "name": "David Shore",
+          "gender": 2,
+          "profile_path": "/yUwAL9wOJoS9caz9GusyHsrad8J.jpg"
+        }
+      ],
+      "episode_run_time": [
+        43
+      ],
+      "first_air_date": "2017-09-25",
+      "genres": [
+        {
+          "id": 18,
+          "name": "Drama"
+        }
+      ],
+      "homepage": "http://abc.go.com/shows/the-good-doctor",
+      "id": 71712,
+      "in_production": true,
+      "languages": [
+        "en"
+      ],
+      "last_air_date": "2021-04-26",
+      "last_episode_to_air": {
+        "air_date": "2021-04-26",
+        "episode_number": 15,
+        "id": 2868238,
+        "name": "Waiting",
+        "overview": "After a political protest turns violent, the team races to save two young gunshot victims.",
+        "production_code": "",
+        "season_number": 4,
+        "still_path": null,
+        "vote_average": 0.0,
+        "vote_count": 0
+      },
+      "name": "The Good Doctor",
+      "next_episode_to_air": null,
+      "networks": [
+        {
+          "name": "ABC",
+          "id": 2,
+          "logo_path": "/ndAvF4JLsliGreX87jAc9GdjmJY.png",
+          "origin_country": "US"
+        }
+      ],
+      "number_of_episodes": 71,
+      "number_of_seasons": 4,
+      "origin_country": [
+        "US"
+      ],
+      "original_language": "en",
+      "original_name": "The Good Doctor",
+      "overview": "A young surgeon with Savant syndrome is recruited into the surgical unit of a prestigious hospital. The question will arise: can a person who doesn't have the ability to relate to people actually save their lives",
+      "popularity": 1607.781,
+      "poster_path": "/6tfT03sGp9k4c0J3dypjrI8TSAI.jpg",
+      "production_companies": [
+        {
+          "id": 19366,
+          "logo_path": "/vOH8dyQhLK01pg5fYkgiS31jlFm.png",
+          "name": "ABC Studios",
+          "origin_country": "US"
+        },
+        {
+          "id": 90375,
+          "logo_path": null,
+          "name": "3AD",
+          "origin_country": "US"
+        },
+        {
+          "id": 11073,
+          "logo_path": "/wHs44fktdoj6c378ZbSWfzKsM2Z.png",
+          "name": "Sony Pictures Television Studios",
+          "origin_country": "US"
+        }
+      ],
+      "production_countries": [
+        {
+          "iso_3166_1": "US",
+          "name": "United States of America"
+        }
+      ],
+      "seasons": [
+        {
+          "air_date": "2017-09-25",
+          "episode_count": 18,
+          "id": 88380,
+          "name": "Season 1",
+          "overview": "",
+          "poster_path": "/hiNyjUSTFrbMv3Sc0CxNW2o39az.jpg",
+          "season_number": 1
+        },
+        {
+          "air_date": "2018-09-24",
+          "episode_count": 18,
+          "id": 107199,
+          "name": "Season 2",
+          "overview": "Dr. Shaun Murphy’s world has begun to expand as he continues to work harder than he ever has before, navigating his new environment and relationships to prove to his colleagues at the prestigious St. Bonaventure Hospital’s surgical unit that his extraordinary medical gifts will save lives.",
+          "poster_path": "/sIq4SFloM0JSeRNAQVqb5g5zAng.jpg",
+          "season_number": 2
+        },
+        {
+          "air_date": "2019-09-23",
+          "episode_count": 20,
+          "id": 127097,
+          "name": "Season 3",
+          "overview": "Dr. Shaun Murphy continues to use his extraordinary medical gifts at St. Bonaventure Hospital’s surgical unit. As his friendships deepen, Shaun tackles the world of dating for the first time and continues to work harder than he ever has before.",
+          "poster_path": "/8QFssOwaWZ3eB60cGwDpfrZBscv.jpg",
+          "season_number": 3
+        },
+        {
+          "air_date": "2020-11-02",
+          "episode_count": 15,
+          "id": 163383,
+          "name": "Season 4",
+          "overview": "Dr. Shaun Murphy continues to use his extraordinary medical gifts at St. Bonaventure Hospital’s surgical unit. As his romantic relationship with Lea deepens, he will also face new responsibilities as a fourth-year resident when he is put in charge of supervising a new set of residents that will test him in ways he cannot predict. Meanwhile, the team must deal with the uncertainty and pressure that the COVID-19 pandemic brings now that it has hit their hospital.",
+          "poster_path": "/6tfT03sGp9k4c0J3dypjrI8TSAI.jpg",
+          "season_number": 4
+        }
+      ],
+      "spoken_languages": [
+        {
+          "english_name": "English",
+          "iso_639_1": "en",
+          "name": "English"
+        }
+      ],
+      "status": "Returning Series",
+      "tagline": "His mind is a mystery, his methods are a miracle.",
+      "type": "Scripted",
+      "vote_average": 8.6,
+      "vote_count": 8111
+    },
+    {
+      "backdrop_path": "/z59kJfcElR9eHO9rJbWp4qWMuee.jpg",
+      "created_by": [
+        {
+          "id": 88967,
+          "credit_id": "5bd5a46d0e0a2622bd02be75",
+          "name": "Greg Berlanti",
+          "gender": 2,
+          "profile_path": "/1T24SiIIDMa9gAmq7QaYwZywq4y.jpg"
+        },
+        {
+          "id": 211962,
+          "credit_id": "537523f9c3a3681ef4000177",
+          "name": "Geoff Johns",
+          "gender": 2,
+          "profile_path": "/1hiQjkIkeFoiwvD4yIk2Dq6tnOa.jpg"
+        },
+        {
+          "id": 1216615,
+          "credit_id": "5bd5a45ec3a36820f002e57f",
+          "name": "Andrew Kreisberg",
+          "gender": 2,
+          "profile_path": null
+        }
+      ],
+      "episode_run_time": [
+        44
+      ],
+      "first_air_date": "2014-10-07",
+      "genres": [
+        {
+          "id": 18,
+          "name": "Drama"
+        },
+        {
+          "id": 10765,
+          "name": "Sci-Fi & Fantasy"
+        }
+      ],
+      "homepage": "http://www.cwtv.com/shows/the-flash/",
+      "id": 60735,
+      "in_production": true,
+      "languages": [
+        "en"
+      ],
+      "last_air_date": "2021-04-13",
+      "last_episode_to_air": {
+        "air_date": "2021-04-13",
+        "episode_number": 7,
+        "id": 2827409,
+        "name": "Growing Pains",
+        "overview": "When a mysterious ice powered enemy frames Frost for a brutal crime, she must find a way to clear her name; Barry and Iris have a surprise houseguest, and Joe continues to deal with Kristen Kramer.",
+        "production_code": "T27.14157",
+        "season_number": 7,
+        "still_path": "/5kD6fRLorx0dPdvgs7v2i45ZPvp.jpg",
+        "vote_average": 10.0,
+        "vote_count": 1
+      },
+      "name": "The Flash",
+      "next_episode_to_air": {
+        "air_date": "2021-05-04",
+        "episode_number": 8,
+        "id": 2874259,
+        "name": "The People V. Killer Frost",
+        "overview": "With Frost facing an unjust punishment for her past crimes, Caitlin goes to great lengths to save her sister. Meanwhile, Barry's efforts to protect Speed Force Nora lead to a shocking discovery.",
+        "production_code": "",
+        "season_number": 7,
+        "still_path": null,
+        "vote_average": 0.0,
+        "vote_count": 0
+      },
+      "networks": [
+        {
+          "name": "The CW",
+          "id": 71,
+          "logo_path": "/ge9hzeaU7nMtQ4PjkFlc68dGAJ9.png",
+          "origin_country": "US"
+        }
+      ],
+      "number_of_episodes": 151,
+      "number_of_seasons": 7,
+      "origin_country": [
+        "US"
+      ],
+      "original_language": "en",
+      "original_name": "The Flash",
+      "overview": "After a particle accelerator causes a freak storm, CSI Investigator Barry Allen is struck by lightning and falls into a coma. Months later he awakens with the power of super speed, granting him the ability to move through Central City like an unseen guardian angel. Though initially excited by his newfound powers, Barry is shocked to discover he is not the only \"meta-human\" who was created in the wake of the accelerator explosion -- and not everyone is using their new powers for good. Barry partners with S.T.A.R. Labs and dedicates his life to protect the innocent. For now, only a few close friends and associates know that Barry is literally the fastest man alive, but it won't be long before the world learns what Barry Allen has become...The Flash.",
+      "popularity": 1288.501,
+      "poster_path": "/lJA2RCMfsWoskqlQhXPSLFQGXEJ.jpg",
+      "production_companies": [
+        {
+          "id": 1957,
+          "logo_path": "/3T19XSr6yqaLNK8uJWFImPgRax0.png",
+          "name": "Warner Bros. Television",
+          "origin_country": "US"
+        },
+        {
+          "id": 27711,
+          "logo_path": "/3e294jszfE6cE8TOogmj0zNd6pL.png",
+          "name": "Berlanti Productions",
+          "origin_country": "US"
+        },
+        {
+          "id": 9993,
+          "logo_path": "/2Tc1P3Ac8M479naPp1kYT3izLS5.png",
+          "name": "DC Entertainment",
+          "origin_country": "US"
+        },
+        {
+          "id": 105514,
+          "logo_path": "/xuziaSHpTZ2YPT35N8r5PT7jiqL.png",
+          "name": "Mad Ghost Productions",
+          "origin_country": "US"
+        }
+      ],
+      "production_countries": [
+        {
+          "iso_3166_1": "US",
+          "name": "United States of America"
+        }
+      ],
+      "seasons": [
+        {
+          "air_date": "2016-04-19",
+          "episode_count": 8,
+          "id": 79954,
+          "name": "Specials",
+          "overview": "",
+          "poster_path": "/hce9A21ANLi4n9QtBZEdPFD2eZk.jpg",
+          "season_number": 0
+        },
+        {
+          "air_date": "2014-10-07",
+          "episode_count": 23,
+          "id": 60523,
+          "name": "Season 1",
+          "overview": "When an unexpected accident at the S.T.A.R. Labs Particle Accelerator facility strikes Barry, he finds himself suddenly charged with the incredible power to move at super speeds. While Barry has always been a hero in his soul, his newfound powers have finally given him the ability to act like one. With the help of the research team at S.T.A.R. Labs, Barry begins testing the limits of his evolving powers and using them to stop crime. With a winning personality and a smile on his face, Barry Allen — aka The Flash — is finally moving forward in life … very, very fast!",
+          "poster_path": "/A3H6pewHfoy2bXmNhvycOe0xzlC.jpg",
+          "season_number": 1
+        },
+        {
+          "air_date": "2015-10-06",
+          "episode_count": 23,
+          "id": 66922,
+          "name": "Season 2",
+          "overview": "Following the dramatic events of season 1, Team Flash quickly turns their attention to a threat high above Central City. Armed with the heart of a hero and the ability to move at super speeds, will Barry be able to save his city from impending doom?",
+          "poster_path": "/8xWZPVX1cv9V5YD1RPeLj9QZDE9.jpg",
+          "season_number": 2
+        },
+        {
+          "air_date": "2016-10-04",
+          "episode_count": 23,
+          "id": 77888,
+          "name": "Season 3",
+          "overview": "Forensic scientist Barry Allen, aka The Flash, is living his dream life. His parents are alive. He's dating beautiful, smart Iris West. And he's able to stand back and let the new speedster in town, Kid Flash, step in to protect Central City. But the better Barry's life gets, the more dangerous it becomes. His nemesis, Reverse Flash, warns Barry of serious repercussions if he remains in the alternate Flashpoint universe: In addition to memory loss, his powers will fade. When disaster strikes, Barry must decide whether to continue life as Barry Allen or return to his universe as The Flash. As Barry deals with his identity crisis, he and the S.T.A.R. Labs team fight off lethal threats from the God of Speed, Savitar.",
+          "poster_path": "/rN1hgV8Ag3bZmkv33Udm93hIxQp.jpg",
+          "season_number": 3
+        },
+        {
+          "air_date": "2017-10-10",
+          "episode_count": 23,
+          "id": 90247,
+          "name": "Season 4",
+          "overview": "The mission of Barry Allen, aka The Flash, is once more to protect Central City from metahuman threats. But with Barry trapped in the Speed Force, this mission falls to his family – Detective Joe West; fiancée Iris West; and Wally West/Kid Flash – and the team at S.T.A.R. Labs: Caitlin Snow/Killer Frost, Cisco Ramon/Vibe and brilliant scientist Harrison Wells. When a powerful villain threatens to level the city unless The Flash appears, Cisco risks everything to free Barry. But this is only the first move in a deadly game with Clifford DeVoe, aka The Thinker, a mastermind who’s always ten steps ahead of Barry, no matter how fast Barry runs.",
+          "poster_path": "/zBF3wcUp3SgnlYNOXQeaDg5XfTu.jpg",
+          "season_number": 4
+        },
+        {
+          "air_date": "2018-10-09",
+          "episode_count": 22,
+          "id": 104777,
+          "name": "Season 5",
+          "overview": "Barry Allen and his new wife, Iris West, finally settling into married life when they're visited by Nora West-Allen, their speedster daughter from the future. Nora's arrival brings to light the legacy every member of Team Flash will leave years from now, causing many to question who they are today. And while Nora idolizes Barry, she holds a mysterious grudge against Iris. As Team Flash adjusts to the next generation of speedster, they discover Nora's presence has triggered the arrival of the most ruthless, vicious and relentless villain they have ever faced: Cicada!",
+          "poster_path": "/z3CqL2vnjgLuefOiR5AYD9Tf91S.jpg",
+          "season_number": 5
+        },
+        {
+          "air_date": "2019-10-08",
+          "episode_count": 19,
+          "id": 126171,
+          "name": "Season 6",
+          "overview": "When Barry and Iris deal with loss of their daughter, the team faces their greatest threat yet - one that threatens to destroy all of Central City; Killer Frost has a brush with death that will change her relationship with Caitlin. Faced with the news of his impending death, Barry's resiliency suffers as he struggles to fight fate.",
+          "poster_path": "/qDntRDRs5XohN4ClcV2SH9WlzpI.jpg",
+          "season_number": 6
+        },
+        {
+          "air_date": "2021-03-02",
+          "episode_count": 18,
+          "id": 159996,
+          "name": "Season 7",
+          "overview": "After a thrilling cliffhanger last season which saw Mirror Monarch victorious and still-at-large in Central City, The Flash must regroup in order to stop her and find a way to make contact with his missing wife, Iris West-Allen. With help from the rest of Team Flash, Barry will ultimately defeat Mirror Master. But in doing so, he’ll also unleash an even more powerful and devastating threat on Central City: one that threatens to tear his team—and his marriage—apart.",
+          "poster_path": "/lJA2RCMfsWoskqlQhXPSLFQGXEJ.jpg",
+          "season_number": 7
+        }
+      ],
+      "spoken_languages": [
+        {
+          "english_name": "English",
+          "iso_639_1": "en",
+          "name": "English"
+        }
+      ],
+      "status": "Returning Series",
+      "tagline": "The fastest man alive.",
+      "type": "Scripted",
+      "vote_average": 7.7,
+      "vote_count": 7437
+    },
+    {
+      "backdrop_path": "/6UH52Fmau8RPsMAbQbjwN3wJSCj.jpg",
+      "created_by": [],
+      "episode_run_time": [
+        45
+      ],
+      "first_air_date": "2021-03-26",
+      "genres": [
+        {
+          "id": 16,
+          "name": "Animation"
+        },
+        {
+          "id": 10759,
+          "name": "Action & Adventure"
+        },
+        {
+          "id": 18,
+          "name": "Drama"
+        }
+      ],
+      "homepage": "https://www.amazon.com/dp/B08WJP55PR",
+      "id": 95557,
+      "in_production": true,
+      "languages": [
+        "en"
+      ],
+      "last_air_date": "2021-04-23",
+      "last_episode_to_air": {
+        "air_date": "2021-04-23",
+        "episode_number": 7,
+        "id": 2832750,
+        "name": "WE NEED TO TALK",
+        "overview": "Feeling lost and confused, Mark looks for advice from Eve. At the same time, everyone's looking for him.",
+        "production_code": "INVI 107",
+        "season_number": 1,
+        "still_path": "/4rIfyI2xQ15F0lT3QHx4P2gbcGj.jpg",
+        "vote_average": 0.0,
+        "vote_count": 0
+      },
+      "name": "Invincible",
+      "next_episode_to_air": {
+        "air_date": "2021-04-30",
+        "episode_number": 8,
+        "id": 2832752,
+        "name": "",
+        "overview": "",
+        "production_code": "",
+        "season_number": 1,
+        "still_path": null,
+        "vote_average": 0.0,
+        "vote_count": 0
+      },
+      "networks": [
+        {
+          "name": "Amazon",
+          "id": 1024,
+          "logo_path": "/ifhbNuuVnlwYy5oXA5VIb2YR8AZ.png",
+          "origin_country": ""
+        }
+      ],
+      "number_of_episodes": 8,
+      "number_of_seasons": 1,
+      "origin_country": [
+        "US"
+      ],
+      "original_language": "en",
+      "original_name": "Invincible",
+      "overview": "Mark Grayson is a normal teenager except for the fact that his father is the most powerful superhero on the planet. Shortly after his seventeenth birthday, Mark begins to develop powers of his own and enters into his father’s tutelage.",
+      "popularity": 961.129,
+      "poster_path": "/yDWJYRAwMNKbIYT8ZB33qy84uzO.jpg",
+      "production_companies": [
+        {
+          "id": 50032,
+          "logo_path": null,
+          "name": "Skybound Entertainment",
+          "origin_country": "US"
+        },
+        {
+          "id": 20580,
+          "logo_path": "/tkFE81jJIqiFYPP8Tho57MXRQEx.png",
+          "name": "Amazon Studios",
+          "origin_country": "US"
+        },
+        {
+          "id": 151645,
+          "logo_path": null,
+          "name": "Skybound North",
+          "origin_country": "CA"
+        }
+      ],
+      "production_countries": [
+        {
+          "iso_3166_1": "CA",
+          "name": "Canada"
+        },
+        {
+          "iso_3166_1": "US",
+          "name": "United States of America"
+        }
+      ],
+      "seasons": [
+        {
+          "air_date": "2021-03-26",
+          "episode_count": 8,
+          "id": 136020,
+          "name": "Season 1",
+          "overview": "",
+          "poster_path": "/yDWJYRAwMNKbIYT8ZB33qy84uzO.jpg",
+          "season_number": 1
+        }
+      ],
+      "spoken_languages": [
+        {
+          "english_name": "English",
+          "iso_639_1": "en",
+          "name": "English"
+        }
+      ],
+      "status": "Returning Series",
+      "tagline": "",
+      "type": "Scripted",
+      "vote_average": 8.9,
+      "vote_count": 848
+    },
+    {
+      "backdrop_path": "/wkyzeBBKLhSg1Oqhky5yoiFF2hG.jpg",
+      "created_by": [],
+      "episode_run_time": [],
+      "first_air_date": "2018-04-22",
+      "genres": [
+        {
+          "id": 18,
+          "name": "Drama"
+        }
+      ],
+      "homepage": "https://www.netflix.com/title/80191236",
+      "id": 79008,
+      "in_production": true,
+      "languages": [
+        "es",
+        "en"
+      ],
+      "last_air_date": "2021-04-25",
+      "last_episode_to_air": {
+        "air_date": "2021-04-25",
+        "episode_number": 3,
+        "id": 2888214,
+        "name": "Suave",
+        "overview": "Micky's competitive jealousy threatens to upend his relationship with his family. Many years later, he hopes to make amends with his estranged daughter.",
+        "production_code": "",
+        "season_number": 2,
+        "still_path": "/AovguBhj3WEFRDASe2jKo8u03Yo.jpg",
+        "vote_average": 0.0,
+        "vote_count": 0
+      },
+      "name": "Luis Miguel: The Series",
+      "next_episode_to_air": {
+        "air_date": "2021-05-02",
+        "episode_number": 4,
+        "id": 2888215,
+        "name": "",
+        "overview": "",
+        "production_code": "",
+        "season_number": 2,
+        "still_path": null,
+        "vote_average": 0.0,
+        "vote_count": 0
+      },
+      "networks": [
+        {
+          "name": "Telemundo",
+          "id": 193,
+          "logo_path": "/mieMBXx82qgY8nmnyaH0rY2D943.png",
+          "origin_country": "US"
+        },
+        {
+          "name": "Netflix",
+          "id": 213,
+          "logo_path": "/wwemzKWzjKYJFfCeiB57q3r4Bcm.png",
+          "origin_country": ""
+        }
+      ],
+      "number_of_episodes": 21,
+      "number_of_seasons": 2,
+      "origin_country": [
+        "MX"
+      ],
+      "original_language": "es",
+      "original_name": "Luis Miguel: La Serie",
+      "overview": "The series dramatizes the life story of Mexican superstar singer Luis Miguel, who has captivated audiences in Latin America and beyond for decades.",
+      "popularity": 1422.105,
+      "poster_path": "/34FaY8qpjBAVysSfrJ1l7nrAQaD.jpg",
+      "production_companies": [],
+      "production_countries": [
+        {
+          "iso_3166_1": "MX",
+          "name": "Mexico"
+        }
+      ],
+      "seasons": [
+        {
+          "air_date": "2018-04-22",
+          "episode_count": 13,
+          "id": 102848,
+          "name": "Season 1",
+          "overview": "",
+          "poster_path": "/mqojiNf1hU652EMwRo3aygTsiFU.jpg",
+          "season_number": 1
+        },
+        {
+          "air_date": "2021-04-18",
+          "episode_count": 8,
+          "id": 183127,
+          "name": "Season 2",
+          "overview": "",
+          "poster_path": "/t9KmxkBsNrZoRZb2sPRCGwImuIx.jpg",
+          "season_number": 2
+        }
+      ],
+      "spoken_languages": [
+        {
+          "english_name": "Spanish",
+          "iso_639_1": "es",
+          "name": "Español"
+        },
+        {
+          "english_name": "English",
+          "iso_639_1": "en",
+          "name": "English"
+        }
+      ],
+      "status": "Returning Series",
+      "tagline": "",
+      "type": "Scripted",
+      "vote_average": 8.1,
+      "vote_count": 311
+    },
+    {
+      "backdrop_path": "/edmk8xjGBsYVIf4QtLY9WMaMcXZ.jpg",
+      "created_by": [
+        {
+          "id": 25539,
+          "credit_id": "5256cf6c19c2956ff609bd8e",
+          "name": "Shonda Rhimes",
+          "gender": 1,
+          "profile_path": "/pIQbVxfjNwZ0DaAjo3q107nng1b.jpg"
+        }
+      ],
+      "episode_run_time": [
+        43
+      ],
+      "first_air_date": "2005-03-27",
+      "genres": [
+        {
+          "id": 18,
+          "name": "Drama"
+        }
+      ],
+      "homepage": "http://abc.go.com/shows/greys-anatomy",
+      "id": 1416,
+      "in_production": true,
+      "languages": [
+        "en"
+      ],
+      "last_air_date": "2021-04-22",
+      "last_episode_to_air": {
+        "air_date": "2021-04-22",
+        "episode_number": 13,
+        "id": 2852105,
+        "name": "Good as Hell",
+        "overview": "Amidst the need for more surgeons, Jo tries to convince Bailey to let her switch specialties. Elsewhere, Link accuses Amelia of overstepping while he is treating a patient remotely, and Winston comes up with an out-of-the-box idea.",
+        "production_code": "",
+        "season_number": 17,
+        "still_path": "/zPvqDOXMUHl4SZCmlQhs6SLllrF.jpg",
+        "vote_average": 0.0,
+        "vote_count": 0
+      },
+      "name": "Grey's Anatomy",
+      "next_episode_to_air": {
+        "air_date": "2021-05-06",
+        "episode_number": 14,
+        "id": 2876714,
+        "name": "Look Up Child",
+        "overview": "Jackson pays a visit to his father that helps set him on the right path.",
+        "production_code": "",
+        "season_number": 17,
+        "still_path": null,
+        "vote_average": 0.0,
+        "vote_count": 0
+      },
+      "networks": [
+        {
+          "name": "ABC",
+          "id": 2,
+          "logo_path": "/ndAvF4JLsliGreX87jAc9GdjmJY.png",
+          "origin_country": "US"
+        }
+      ],
+      "number_of_episodes": 378,
+      "number_of_seasons": 17,
+      "origin_country": [
+        "US"
+      ],
+      "original_language": "en",
+      "original_name": "Grey's Anatomy",
+      "overview": "Follows the personal and professional lives of a group of doctors at Seattle’s Grey Sloan Memorial Hospital.",
+      "popularity": 969.7,
+      "poster_path": "/clnyhPqj1SNgpAdeSS6a6fwE6Bo.jpg",
+      "production_companies": [
+        {
+          "id": 1557,
+          "logo_path": "/ccz9bqCu3jSFKbPFnfWmjAKZLBL.png",
+          "name": "The Mark Gordon Company",
+          "origin_country": "US"
+        },
+        {
+          "id": 34209,
+          "logo_path": "/chuOOQxixQL4fa9LBcIEbuh1S5G.png",
+          "name": "ShondaLand",
+          "origin_country": "US"
+        },
+        {
+          "id": 19366,
+          "logo_path": "/vOH8dyQhLK01pg5fYkgiS31jlFm.png",
+          "name": "ABC Studios",
+          "origin_country": "US"
+        },
+        {
+          "id": 1558,
+          "logo_path": "/wwaKUcOENHix2jxLfFBfNkCtOEQ.png",
+          "name": "Touchstone Television",
+          "origin_country": "US"
+        }
+      ],
+      "production_countries": [
+        {
+          "iso_3166_1": "US",
+          "name": "United States of America"
+        }
+      ],
+      "seasons": [
+        {
+          "air_date": "2006-01-08",
+          "episode_count": 5,
+          "id": 3722,
+          "name": "Specials",
+          "overview": "",
+          "poster_path": "/snQYndfsEr3Sto2jOmkmsQuUXAQ.jpg",
+          "season_number": 0
+        },
+        {
+          "air_date": "2005-03-27",
+          "episode_count": 9,
+          "id": 3718,
+          "name": "Season 1",
+          "overview": "The first season of the American television medical drama Grey's Anatomy, began airing in the United States on the American Broadcasting Company on March 27, 2005 and concluded on May 22, 2005. The first season introduces the main character, Meredith Grey, as she enrolls in Seattle Grace Hospital's internship program and faces unexpected challenges and surprises. Season one had nine series regulars, six of whom have been part of the main cast ever since. The season initially served as a mid-season replacement for the legal drama Boston Legal, airing in the Sunday night time slot at 10:00, after Desperate Housewives. Although no clip shows have been produced for this season, the events that occur are recapped in \"Straight to Heart\", a clip-show which aired one week before the winter holiday hiatus of the second season ended. The season was officially released on DVD as two-disc Region 1 box set under the title of Grey's Anatomy: Season One on February 14, 2006 by Buena Vista Home Entertainment.\n\nThe season's reviews and critiques were generally positive, and the series received several awards and nominations for the cast and crew. The first five episodes of the second season were conceived, written and shot to air as the final five episodes of the first season, but aired during the 2005-2006 season due to the high number of viewers that watched \"Who's Zoomin' Who?\", the season's highest-rated episode with 22.22 million viewers tuning in.",
+          "poster_path": "/ulGju8GyXE36wCgmvyFJL3sLiVm.jpg",
+          "season_number": 1
+        },
+        {
+          "air_date": "2005-09-25",
+          "episode_count": 27,
+          "id": 3719,
+          "name": "Season 2",
+          "overview": "The second season of the American television medical drama Grey's Anatomy commenced airing on the American Broadcasting Company on September 25, 2005, and concluded on May 15, 2006. The season was produced by Touchstone Television, in association with Shondaland production company and The Mark Gordon Company, the showrunner being Shonda Rhimes. Actors Ellen Pompeo, Sandra Oh, Katherine Heigl, Justin Chambers, and T.R. Knight reprised their roles as surgical interns Meredith Grey, Cristina Yang, Izzie Stevens, Alex Karev, and George O'Malley, respectively. Previous main cast members Chandra Wilson, James Pickens, Jr., Isaiah Washington, and Patrick Dempsey also returned, while Kate Walsh, who began the season in a recurring capacity, was promoted to series regular status, after appearing in seven episodes as a guest star.\n\nThe season continued to focus on the surgical residency of five young interns as they try to balance to the challenges of their competitive careers, with the difficulties that determine their personal lives. It was set in the fictional Seattle Grace Hospital, located in the city of Seattle, Washington. Whereas the first season put the emphasis mainly on the unexpected impact the surgical field has on the main characters, the second one provides a detailed perspective on the personal background of each character, focusing on the consequences that their decisions have on their careers. Throughout the season, new story lines were introduced, including the love triangle between Meredith Grey, Derek Shepherd, and Addison Montgomery, the main arc of the season. Also heavily developed was the story line involving Izzie Stevens' relationship with patient Denny Duquette, which resulted in critical acclaim and positive fan response.",
+          "poster_path": "/bO0S3fU8Tcqn0g5DCmDcX1oqA2t.jpg",
+          "season_number": 2
+        },
+        {
+          "air_date": "2006-09-21",
+          "episode_count": 25,
+          "id": 3715,
+          "name": "Season 3",
+          "overview": "The third season of the American television medical drama Grey's Anatomy, commenced airing on the American Broadcasting Company on September 21, 2006, and concluded on May 17, 2007. The season was produced by Touchstone Television, in association with Shondaland Production Company and The Mark Gordon Company, the showrunner being Shonda Rhimes. Actors Ellen Pompeo, Sandra Oh, Katherine Heigl, Justin Chambers, and T.R. Knight reprised their roles as surgical interns Meredith Grey, Cristina Yang, Izzie Stevens, Alex Karev, and George O'Malley, respectively, continuing their expansive storylines as focal points throughout the season. Previous main cast members Chandra Wilson, James Pickens, Jr., Kate Walsh, Isaiah Washington, and Patrick Dempsey also returned, while previous guest stars Sara Ramirez and Eric Dane were promoted to series regulars, following the extension of their contracts.\n\nThe season followed the continuation of the surgical residency of five young interns, as they experience the demands of the competitive field of medicine, which becomes defining in their personal evolution. Although set in fictional Seattle Grace Hospital, located in Seattle, Washington, filming primarily occurred in Los Angeles, California. Whereas the first season mainly focused on the impact the surgical field has on the main characters, and the second one provided a detailed perspective on the physicians' private lives, the third season deals with the tough challenges brought by the last phase of the surgeons' internship, combining the professional motif emphasized in the first season, with the complex personal background used in the second. Through the season, several new storylines are introduced, including the arrival of Dane's character, Dr. Mark Sloan, conceived and introduced as an antagonizing presence.",
+          "poster_path": "/aY7NuvFj5Uzliy0nrFxVWmlZFiK.jpg",
+          "season_number": 3
+        },
+        {
+          "air_date": "2007-09-27",
+          "episode_count": 17,
+          "id": 3716,
+          "name": "Season 4",
+          "overview": "The fourth season of the American television medical drama Grey's Anatomy, commenced airing in the United States on September 27, 2007 and concluded on May 22, 2008. The season continues the story of a group of surgeons and their mentors in the fictional Seattle Grace Hospital, describing their professional lives and the way they affect the personal background of each character. Season four had twelve series regulars with ten of them returning from the previous season, out of which eight are part of the original cast from the first season. The season aired in the Thursday night timeslot at 9:00 EST. In addition to the regular seventeen episodes, a clip-show narrated by the editors of People recapped previous events of the show and made the transition from Grey's Anatomy to Private Practice, a spin-off focusing of Dr. Addison Montgomery and aired on September 19, 2007, before the season premiere. The season was officially released on DVD as a five-disc boxset under the title of Grey's Anatomy: Season Four – Expanded on September 9, 2008 by Buena Vista Home Entertainment.\n\nFor the first time in the show's history, many cast changes occur, seeing the first departure of two main cast members. The season received mixed response from critics and fans, resulting in several awards and nominations for the cast members and the production team. Show creator Shonda Rhimes heavily contributed to the production of the season, writing five out of the seventeen episodes. The highest-rated episode was the season premiere, which was watched by 20.93 million viewers. The season was interrupted by the 2007–2008 Writers Guild of America strike, which resulted in the production of only seventeen episodes, instead of twenty-three originally planned.",
+          "poster_path": "/xoBWd6WNcQKoxfYzcwWRZUiFGtx.jpg",
+          "season_number": 4
+        },
+        {
+          "air_date": "2008-09-25",
+          "episode_count": 24,
+          "id": 3717,
+          "name": "Season 5",
+          "overview": "The fifth season of the American television medical drama Grey's Anatomy, created by Shonda Rhimes, commenced airing on American Broadcasting Company in the United States on September 25, 2008 and concluded on May 14, 2009 with twenty-four aired episodes. The season follows the story of a group of surgeons as they go through their residency, while they also deal with the personal challenges and relationships with their mentors. Season five had thirteen series regulars with twelve of them returning from the previous season. The season aired in the Thursday night timeslot at 9:00 pm. The season was officially released on DVD as seven-disc boxset under the title of Grey's Anatomy: The Complete Fifth Season – More Moments on September 9, 2009 by Buena Vista Home Entertainment.",
+          "poster_path": "/bnOS0AKjbfPY1xVqF80qk0iBQBX.jpg",
+          "season_number": 5
+        },
+        {
+          "air_date": "2009-09-24",
+          "episode_count": 24,
+          "id": 3720,
+          "name": "Season 6",
+          "overview": "The sixth season of the American television medical drama Grey's Anatomy, commenced airing on the American Broadcasting Company in the United States on September 24, 2009, and concluded on May 20, 2010. The season was produced by ABC Studios, in association with Shondaland Production Company and The Mark Gordon Company; the showrunner being Shonda Rhimes. Actors Ellen Pompeo, Sandra Oh, Katherine Heigl, and Justin Chambers reprised their roles as surgical residents Meredith Grey, Cristina Yang, Izzie Stevens, and Alex Karev, respectively. Heigl was released from her contract in the middle of the season, while T.R. Knight did not appear as George O'Malley, because Knight was released from his contract at the conclusion of season five. Main cast members Patrick Dempsey, Chandra Wilson, James Pickens, Jr., Sara Ramirez, Eric Dane, Chyler Leigh, and Kevin McKidd also returned, while previous recurring star Jessica Capshaw was promoted to a series regular, and Kim Raver was given star billing after the commencement of the season.\n\nThe season follows the story of surgical interns, residents and their competent mentors, as they experience the difficulties of the competitive careers they have chosen. It is set in the surgical wing of the fictional Seattle Grace Hospital, located in Seattle, Washington. A major storyline of the season is the characters adapting to change, as their beloved co-worker Stevens departed following the breakdown of her marriage, O'Malley died in the season premiere—following his being dragged by a bus, and new cardiothoracic surgeon Teddy Altman is given employment at the hospital. Further storylines include Shepherd being promoted to chief of surgery, Seattle Grace Hospital merging with the neighboring Mercy West —introducing several new doctors, and several physicians lives being placed into danger—when a grieving deceased patient's husband embarks on a shooting spree at the hospital, seeking revenge for his wife's death.",
+          "poster_path": "/vCiJa2YfzOWhhfKCXNZWFVhYulE.jpg",
+          "season_number": 6
+        },
+        {
+          "air_date": "2010-09-23",
+          "episode_count": 22,
+          "id": 3721,
+          "name": "Season 7",
+          "overview": "The seventh season of the American television medical drama Grey's Anatomy, commenced airing on September 23, 2010 on the American Broadcasting Company, and concluded on May 19, 2011 ending the season with a total of 22 episodes. The season was produced by ABC Studios, in association with Shondaland Production Company and The Mark Gordon Company; the showrunner being Shonda Rhimes.",
+          "poster_path": "/wmGUedMQJkmSZFYJA35AKPrHsGJ.jpg",
+          "season_number": 7
+        },
+        {
+          "air_date": "2011-09-22",
+          "episode_count": 24,
+          "id": 3723,
+          "name": "Season 8",
+          "overview": "The eighth season of the American television medical drama Grey's Anatomy, commenced airing on the American Broadcasting Company on September 22, 2011, with a special two-hour episode and ended on May 17, 2012 with the eighth season having a total of 24 episodes. The season was produced by ABC Studios, in association with Shondaland Production Company and The Mark Gordon Company; the showrunner being Shonda Rhimes.",
+          "poster_path": "/pvuMQwMPWDqunRiajmeGQmUF0zS.jpg",
+          "season_number": 8
+        },
+        {
+          "air_date": "2012-09-27",
+          "episode_count": 24,
+          "id": 3724,
+          "name": "Season 9",
+          "overview": "",
+          "poster_path": "/gLP8aeWDfoOIqp1EFEMLSoHlIHW.jpg",
+          "season_number": 9
+        },
+        {
+          "air_date": "2013-09-26",
+          "episode_count": 24,
+          "id": 3725,
+          "name": "Season 10",
+          "overview": "",
+          "poster_path": "/h0z0USK1KerDJu02c218zFMIa52.jpg",
+          "season_number": 10
+        },
+        {
+          "air_date": "2014-09-25",
+          "episode_count": 24,
+          "id": 62051,
+          "name": "Season 11",
+          "overview": "During an interview, Shonda Rhimes stated that \"Season 11 is really a Meredith-centric season. She lost her ‘person’, her half-sister has shown up, her husband is chafing to go someplace else…” She went on to reveal that she's been wanting to do the \"familial grenade\" storyline for a long time, and at the end of Season 10, she knew it was the time to do it. Rhimes also claimed that Season 11 will pick up right where Season 10 left us, so there won't be much that the audience won't see. In another interview discussing this storyline, Rhimes revealed that she and the writers are thinking about doing flashback periods to the younger days of Drs. Ellis Grey and Richard Webber.",
+          "poster_path": "/AvMxKxyj6zIG5fR0fg7D6bWH4AY.jpg",
+          "season_number": 11
+        },
+        {
+          "air_date": "2015-09-24",
+          "episode_count": 24,
+          "id": 70494,
+          "name": "Season 12",
+          "overview": "",
+          "poster_path": "/b8pkzoNM5X0XSwppEA7jTID5Dcm.jpg",
+          "season_number": 12
+        },
+        {
+          "air_date": "2016-09-22",
+          "episode_count": 24,
+          "id": 79174,
+          "name": "Season 13",
+          "overview": "",
+          "poster_path": "/i4gNHaY1MzP50zcjgw3ew2hKCCW.jpg",
+          "season_number": 13
+        },
+        {
+          "air_date": "2017-09-28",
+          "episode_count": 24,
+          "id": 92088,
+          "name": "Season 14",
+          "overview": "",
+          "poster_path": "/2eSQFbeZZ7lCru40Q0UYGJ20itx.jpg",
+          "season_number": 14
+        },
+        {
+          "air_date": "2018-09-27",
+          "episode_count": 25,
+          "id": 108798,
+          "name": "Season 15",
+          "overview": "",
+          "poster_path": "/eqgIOObafPJitt8JNh1LuO2fvqu.jpg",
+          "season_number": 15
+        },
+        {
+          "air_date": "2019-09-26",
+          "episode_count": 21,
+          "id": 129348,
+          "name": "Season 16",
+          "overview": "",
+          "poster_path": "/eDIfEk8dHysaea0ICkKtLUc3xro.jpg",
+          "season_number": 16
+        },
+        {
+          "air_date": "2020-11-12",
+          "episode_count": 16,
+          "id": 163320,
+          "name": "Season 17",
+          "overview": "",
+          "poster_path": "/1Dk9X7QNMf2yp6UhFEYiuvvKVmP.jpg",
+          "season_number": 17
+        }
+      ],
+      "spoken_languages": [
+        {
+          "english_name": "English",
+          "iso_639_1": "en",
+          "name": "English"
+        }
+      ],
+      "status": "Returning Series",
+      "tagline": "The life you save may be your own.",
+      "type": "Scripted",
+      "vote_average": 8.2,
+      "vote_count": 5924
+    },
+    {
+      "backdrop_path": "/qZtAf4Z1lazGQoYVXiHOrvLr5lI.jpg",
+      "created_by": [
+        {
+          "id": 1098032,
+          "credit_id": "5857f8a49251416fad05b143",
+          "name": "Roberto Aguirre-Sacasa",
+          "gender": 2,
+          "profile_path": "/PtJSrAk7LDqaV5jExCYl10lcsN.jpg"
+        }
+      ],
+      "episode_run_time": [
+        45
+      ],
+      "first_air_date": "2017-01-26",
+      "genres": [
+        {
+          "id": 9648,
+          "name": "Mystery"
+        },
+        {
+          "id": 18,
+          "name": "Drama"
+        },
+        {
+          "id": 80,
+          "name": "Crime"
+        }
+      ],
+      "homepage": "http://www.cwtv.com/shows/riverdale/",
+      "id": 69050,
+      "in_production": true,
+      "languages": [
+        "en"
+      ],
+      "last_air_date": "2021-03-31",
+      "last_episode_to_air": {
+        "air_date": "2021-03-31",
+        "episode_number": 10,
+        "id": 2787084,
+        "name": "Chapter Eighty-Six: The Pincushion Man",
+        "overview": "While preparing for the school's Parent-Teacher night, Archie is caught off guard when his former Army General shows up in Riverdale with some unexpected news. Cheryl pushes back after hearing that Hiram and Reggie have expressed interest in taking over the Blossom maple groves. Jughead's unconventional way to get through a case of writer's block causes Tabitha to be concerned for his safety. Finally, Betty and Alice receive some unexpected visitors.",
+        "production_code": "T13.22710",
+        "season_number": 5,
+        "still_path": "/wTWbC9znQFUuK1IUouhEShHou32.jpg",
+        "vote_average": 0.0,
+        "vote_count": 0
+      },
+      "name": "Riverdale",
+      "next_episode_to_air": {
+        "air_date": "2021-07-07",
+        "episode_number": 11,
+        "id": 2787880,
+        "name": "",
+        "overview": "",
+        "production_code": "",
+        "season_number": 5,
+        "still_path": null,
+        "vote_average": 0.0,
+        "vote_count": 0
+      },
+      "networks": [
+        {
+          "name": "The CW",
+          "id": 71,
+          "logo_path": "/ge9hzeaU7nMtQ4PjkFlc68dGAJ9.png",
+          "origin_country": "US"
+        }
+      ],
+      "number_of_episodes": 87,
+      "number_of_seasons": 5,
+      "origin_country": [
+        "US"
+      ],
+      "original_language": "en",
+      "original_name": "Riverdale",
+      "overview": "Set in the present, the series offers a bold, subversive take on Archie, Betty, Veronica and their friends, exploring the surreality of small-town life, the darkness and weirdness bubbling beneath Riverdale’s wholesome facade.",
+      "popularity": 835.327,
+      "poster_path": "/wRbjVBdDo5qHAEOVYoMWpM58FSA.jpg",
+      "production_companies": [
+        {
+          "id": 1957,
+          "logo_path": "/3T19XSr6yqaLNK8uJWFImPgRax0.png",
+          "name": "Warner Bros. Television",
+          "origin_country": "US"
+        },
+        {
+          "id": 27711,
+          "logo_path": "/3e294jszfE6cE8TOogmj0zNd6pL.png",
+          "name": "Berlanti Productions",
+          "origin_country": "US"
+        }
+      ],
+      "production_countries": [
+        {
+          "iso_3166_1": "US",
+          "name": "United States of America"
+        }
+      ],
+      "seasons": [
+        {
+          "air_date": "2017-01-26",
+          "episode_count": 13,
+          "id": 82752,
+          "name": "Season 1",
+          "overview": "",
+          "poster_path": "/iyLxqUGwOUurAKMOR8hSXmxMISU.jpg",
+          "season_number": 1
+        },
+        {
+          "air_date": "2017-10-11",
+          "episode_count": 22,
+          "id": 91793,
+          "name": "Season 2",
+          "overview": "",
+          "poster_path": "/yrsTz3PAUyKmLaNxvNOGX9alubu.jpg",
+          "season_number": 2
+        },
+        {
+          "air_date": "2018-10-10",
+          "episode_count": 22,
+          "id": 105507,
+          "name": "Season 3",
+          "overview": "",
+          "poster_path": "/xejc1g2rDPwMZgoSGaYMYTohKXM.jpg",
+          "season_number": 3
+        },
+        {
+          "air_date": "2019-10-09",
+          "episode_count": 19,
+          "id": 129417,
+          "name": "Season 4",
+          "overview": "",
+          "poster_path": "/4X7o1ssOEvp4BFLim1AZmPNcYbU.jpg",
+          "season_number": 4
+        },
+        {
+          "air_date": "2021-01-20",
+          "episode_count": 11,
+          "id": 167134,
+          "name": "Season 5",
+          "overview": "",
+          "poster_path": "/wRbjVBdDo5qHAEOVYoMWpM58FSA.jpg",
+          "season_number": 5
+        }
+      ],
+      "spoken_languages": [
+        {
+          "english_name": "English",
+          "iso_639_1": "en",
+          "name": "English"
+        }
+      ],
+      "status": "Returning Series",
+      "tagline": "Small town. Big secrets.",
+      "type": "Scripted",
+      "vote_average": 8.6,
+      "vote_count": 11092
+    },
+    {
+      "backdrop_path": "/57vVjteucIF3bGnZj6PmaoJRScw.jpg",
+      "created_by": [
+        {
+          "id": 123132,
+          "credit_id": "600b066223d278003d3720ef",
+          "name": "Jac Schaeffer",
+          "gender": 1,
+          "profile_path": null
+        }
+      ],
+      "episode_run_time": [
+        36,
+        30
+      ],
+      "first_air_date": "2021-01-15",
+      "genres": [
+        {
+          "id": 10765,
+          "name": "Sci-Fi & Fantasy"
+        },
+        {
+          "id": 9648,
+          "name": "Mystery"
+        },
+        {
+          "id": 18,
+          "name": "Drama"
+        }
+      ],
+      "homepage": "https://www.disneyplus.com/series/wandavision/4SrN28ZjDLwH",
+      "id": 85271,
+      "in_production": false,
+      "languages": [
+        "en"
+      ],
+      "last_air_date": "2021-03-05",
+      "last_episode_to_air": {
+        "air_date": "2021-03-05",
+        "episode_number": 9,
+        "id": 2724621,
+        "name": "The Series Finale",
+        "overview": "The events of WandaVision come to a head, and the destinies of all who took part are determined.",
+        "production_code": "",
+        "season_number": 1,
+        "still_path": "/8OIqCs8UUiG1ifmrAcn29A7tL4T.jpg",
+        "vote_average": 7.6,
+        "vote_count": 14
+      },
+      "name": "WandaVision",
+      "next_episode_to_air": null,
+      "networks": [
+        {
+          "name": "Disney+",
+          "id": 2739,
+          "logo_path": "/gJ8VX6JSu3ciXHuC2dDGAo2lvwM.png",
+          "origin_country": "US"
+        }
+      ],
+      "number_of_episodes": 9,
+      "number_of_seasons": 1,
+      "origin_country": [
+        "US"
+      ],
+      "original_language": "en",
+      "original_name": "WandaVision",
+      "overview": "Wanda Maximoff and Vision—two super-powered beings living idealized suburban lives—begin to suspect that everything is not as it seems.",
+      "popularity": 702.583,
+      "poster_path": "/glKDfE6btIRcVB5zrjspRIs4r52.jpg",
+      "production_companies": [
+        {
+          "id": 420,
+          "logo_path": "/hUzeosd33nzE5MCNsZxCGEKTXaQ.png",
+          "name": "Marvel Studios",
+          "origin_country": "US"
+        }
+      ],
+      "production_countries": [
+        {
+          "iso_3166_1": "US",
+          "name": "United States of America"
+        }
+      ],
+      "seasons": [
+        {
+          "air_date": "2021-01-15",
+          "episode_count": 9,
+          "id": 114993,
+          "name": "Season 1",
+          "overview": "",
+          "poster_path": "/2RBNHQxWwTDBTmShhdanYvbuS6x.jpg",
+          "season_number": 1
+        }
+      ],
+      "spoken_languages": [
+        {
+          "english_name": "English",
+          "iso_639_1": "en",
+          "name": "English"
+        }
+      ],
+      "status": "Ended",
+      "tagline": "Experience a new vision of reality.",
+      "type": "Miniseries",
+      "vote_average": 8.4,
+      "vote_count": 8266
+    },
+    {
+      "backdrop_path": "/ta5oblpMlEcIPIS2YGcq9XEkWK2.jpg",
+      "created_by": [
+        {
+          "id": 1222585,
+          "credit_id": "55fdc50ec3a368132a001852",
+          "name": "Tom Kapinos",
+          "gender": 2,
+          "profile_path": "/ol7GfeO0OIDCWGYzlg1LDLmwluO.jpg"
+        }
+      ],
+      "episode_run_time": [
+        45
+      ],
+      "first_air_date": "2016-01-25",
+      "genres": [
+        {
+          "id": 80,
+          "name": "Crime"
+        },
+        {
+          "id": 10765,
+          "name": "Sci-Fi & Fantasy"
+        }
+      ],
+      "homepage": "https://www.netflix.com/title/80057918",
+      "id": 63174,
+      "in_production": true,
+      "languages": [
+        "en"
+      ],
+      "last_air_date": "2020-08-21",
+      "last_episode_to_air": {
+        "air_date": "2020-08-21",
+        "episode_number": 8,
+        "id": 2397418,
+        "name": "Spoiler Alert",
+        "overview": "Chloe learns a serial killer may have embellished his crimes. Amenadiel worries about his son's health. Pete opens up to Ella.",
+        "production_code": "T13.22158",
+        "season_number": 5,
+        "still_path": "/w1fVmFBTVhLkHXPD75I7FGtBzvk.jpg",
+        "vote_average": 8.3,
+        "vote_count": 10
+      },
+      "name": "Lucifer",
+      "next_episode_to_air": {
+        "air_date": "2021-05-28",
+        "episode_number": 9,
+        "id": 2840081,
+        "name": "Family Dinner",
+        "overview": "",
+        "production_code": "",
+        "season_number": 5,
+        "still_path": null,
+        "vote_average": 0.0,
+        "vote_count": 0
+      },
+      "networks": [
+        {
+          "name": "FOX",
+          "id": 19,
+          "logo_path": "/1DSpHrWyOORkL9N2QHX7Adt31mQ.png",
+          "origin_country": "US"
+        },
+        {
+          "name": "Netflix",
+          "id": 213,
+          "logo_path": "/wwemzKWzjKYJFfCeiB57q3r4Bcm.png",
+          "origin_country": ""
+        }
+      ],
+      "number_of_episodes": 83,
+      "number_of_seasons": 5,
+      "origin_country": [
+        "US"
+      ],
+      "original_language": "en",
+      "original_name": "Lucifer",
+      "overview": "Bored and unhappy as the Lord of Hell, Lucifer Morningstar abandoned his throne and retired to Los Angeles, where he has teamed up with LAPD detective Chloe Decker to take down criminals. But the longer he's away from the underworld, the greater the threat that the worst of humanity could escape.",
+      "popularity": 754.877,
+      "poster_path": "/4EYPN5mVIhKLfxGruy7Dy41dTVn.jpg",
+      "production_companies": [
+        {
+          "id": 43346,
+          "logo_path": null,
+          "name": "Fox Productions",
+          "origin_country": "US"
+        },
+        {
+          "id": 1957,
+          "logo_path": "/3T19XSr6yqaLNK8uJWFImPgRax0.png",
+          "name": "Warner Bros. Television",
+          "origin_country": "US"
+        },
+        {
+          "id": 57542,
+          "logo_path": null,
+          "name": "Aggressive Mediocrity",
+          "origin_country": "US"
+        },
+        {
+          "id": 9993,
+          "logo_path": "/2Tc1P3Ac8M479naPp1kYT3izLS5.png",
+          "name": "DC Entertainment",
+          "origin_country": "US"
+        },
+        {
+          "id": 40041,
+          "logo_path": "/oP8TmVSh9DCP1yhR2yvjnKfMgbg.png",
+          "name": "Jerry Bruckheimer Television",
+          "origin_country": "US"
+        }
+      ],
+      "production_countries": [
+        {
+          "iso_3166_1": "US",
+          "name": "United States of America"
+        }
+      ],
+      "seasons": [
+        {
+          "air_date": "2015-08-10",
+          "episode_count": 2,
+          "id": 70781,
+          "name": "Specials",
+          "overview": "",
+          "poster_path": "/bQ5FupU7DFTbx9pSgPsEZQwyZKj.jpg",
+          "season_number": 0
+        },
+        {
+          "air_date": "2016-01-25",
+          "episode_count": 13,
+          "id": 68415,
+          "name": "Season 1",
+          "overview": "Bored with being the Lord of Hell, the devil relocates to Los Angeles, where he opens a nightclub and forms a connection with a homicide detective.",
+          "poster_path": "/9qvNXKYqZEsYn3g3yn5tXQe0ceB.jpg",
+          "season_number": 1
+        },
+        {
+          "air_date": "2016-09-19",
+          "episode_count": 18,
+          "id": 78529,
+          "name": "Season 2",
+          "overview": "Lucifer returns for another season, but his devil-may-care attitude may soon need an adjustment: His mother is coming to town.",
+          "poster_path": "/fTQzbse8HKh0z6UJbMUumdbZ8PX.jpg",
+          "season_number": 2
+        },
+        {
+          "air_date": "2017-10-02",
+          "episode_count": 26,
+          "id": 91441,
+          "name": "Season 3",
+          "overview": "As Lucifer struggles with an identity crisis, a gruff new police lieutenant shakes up the status quo with Chloe and the rest of the LAPD.",
+          "poster_path": "/4mKbrTqGg1daz3pDUgqd9ZSdZRt.jpg",
+          "season_number": 3
+        },
+        {
+          "air_date": "2019-05-08",
+          "episode_count": 10,
+          "id": 117593,
+          "name": "Season 4",
+          "overview": "As Chloe struggles to come to terms with Lucifer's disturbing revelation, a rogue priest sets out to stop a long-rumored prophecy.",
+          "poster_path": "/k9sLJE5geAmOCXOCbKnhSNND60J.jpg",
+          "season_number": 4
+        },
+        {
+          "air_date": "2020-08-20",
+          "episode_count": 16,
+          "id": 152759,
+          "name": "Season 5",
+          "overview": "Lucifer makes a tumultuous return to the land of the living in hopes of making things right with Chloe. A devil’s work is never done.",
+          "poster_path": "/4EYPN5mVIhKLfxGruy7Dy41dTVn.jpg",
+          "season_number": 5
+        }
+      ],
+      "spoken_languages": [
+        {
+          "english_name": "English",
+          "iso_639_1": "en",
+          "name": "English"
+        }
+      ],
+      "status": "Returning Series",
+      "tagline": "It's good to be bad.",
+      "type": "Scripted",
+      "vote_average": 8.5,
+      "vote_count": 8358
+    },
+    {
+      "backdrop_path": "/5VltHQJXdmbSD6gEJw3R8R1Kbmc.jpg",
+      "created_by": [
+        {
+          "id": 58689,
+          "credit_id": "5818ca92c3a368249900005c",
+          "name": "Neil LaBute",
+          "gender": 2,
+          "profile_path": "/vc1Cm2RcSdk8F2L427Fp2aQ0P3K.jpg"
+        }
+      ],
+      "episode_run_time": [
+        42
+      ],
+      "first_air_date": "2016-09-23",
+      "genres": [
+        {
+          "id": 9648,
+          "name": "Mystery"
+        },
+        {
+          "id": 10765,
+          "name": "Sci-Fi & Fantasy"
+        },
+        {
+          "id": 10759,
+          "name": "Action & Adventure"
+        }
+      ],
+      "homepage": "http://www.syfy.com/vanhelsing",
+      "id": 65820,
+      "in_production": true,
+      "languages": [
+        "en"
+      ],
+      "last_air_date": "2021-04-23",
+      "last_episode_to_air": {
+        "air_date": "2021-04-23",
+        "episode_number": 2,
+        "id": 2879391,
+        "name": "Old Friends",
+        "overview": "Jack joins forces with her once-sworn enemy, who reveals a dangerous weapon that will help the Van Helsing's kill the Dark One, but the consequences of using this weapon are dire.",
+        "production_code": "",
+        "season_number": 5,
+        "still_path": "/31Osenrul4vrean8cprpvcqLxeo.jpg",
+        "vote_average": 0.0,
+        "vote_count": 0
+      },
+      "name": "Van Helsing",
+      "next_episode_to_air": {
+        "air_date": "2021-04-30",
+        "episode_number": 3,
+        "id": 2879392,
+        "name": "Lumina Intunecata",
+        "overview": "Jack faces off against the Dark One with a new ally whose allegiances may not be trusted.",
+        "production_code": "",
+        "season_number": 5,
+        "still_path": null,
+        "vote_average": 0.0,
+        "vote_count": 0
+      },
+      "networks": [
+        {
+          "name": "Syfy",
+          "id": 77,
+          "logo_path": "/iYfrkobwDhTOFJ4AXYPSLIEeaAT.png",
+          "origin_country": "US"
+        }
+      ],
+      "number_of_episodes": 56,
+      "number_of_seasons": 5,
+      "origin_country": [
+        "US"
+      ],
+      "original_language": "en",
+      "original_name": "Van Helsing",
+      "overview": "Vanessa Helsing, the daughter of famous vampire hunter and Dracula nemesis Abraham Van Helsing is resurrected five years in the future to find out that vampires have taken over the world and that she possesses unique power over them. She is humanity’s last hope to lead an offensive to take back what has been lost.",
+      "popularity": 964.699,
+      "poster_path": "/r8ODGmfNbZQlNhiJl2xQENE2jsk.jpg",
+      "production_companies": [
+        {
+          "id": 12467,
+          "logo_path": null,
+          "name": "Nomadic Pictures",
+          "origin_country": "CA"
+        },
+        {
+          "id": 2147,
+          "logo_path": "/yV2P6SlxuicJTwUvUUqoOBAEreC.png",
+          "name": "Echo Lake Entertainment",
+          "origin_country": "US"
+        }
+      ],
+      "production_countries": [
+        {
+          "iso_3166_1": "US",
+          "name": "United States of America"
+        }
+      ],
+      "seasons": [
+        {
+          "air_date": "2016-09-22",
+          "episode_count": 13,
+          "id": 75158,
+          "name": "Season 1",
+          "overview": "After a catastrophic volcano eruption, the last remaining underground vampires rise up through a dark, ash-filled sky to overtake America. Vanessa Van Helsing, a descendant of the legendary line of vampire hunters, awakens from a three-year coma to discover that she’s not only immune to the bloodthirsty predators – but also has the ability to make them human again.",
+          "poster_path": "/vBB7lDQprftxZd8uORY4oJRYPI9.jpg",
+          "season_number": 1
+        },
+        {
+          "air_date": "2017-10-04",
+          "episode_count": 13,
+          "id": 91715,
+          "name": "Season 2",
+          "overview": "Season two of Van Helsing pushes Vanessa and the other Survivors further into the world of the vampire apocalypse, where they discover old alliances have crumbled and new connections expose long-buried secrets about the Rising, the Van Helsing heritage, and the survival of humankind itself.",
+          "poster_path": "/gQNziaehUft3ZVZGGpr2pw3RRKV.jpg",
+          "season_number": 2
+        },
+        {
+          "air_date": "2018-10-04",
+          "episode_count": 13,
+          "id": 109623,
+          "name": "Season 3",
+          "overview": "The first of four vampire Elders has been freed (although it proves itself to be loyal to the Van Helsing clan) and legend has it that when their four Totems are combined the Dark One will be resurrected. Now it's a race against time as Vanessa and her ragtag group of heroes faces off against the forces of darkness.",
+          "poster_path": "/1LsKNtxQ4dR3zEozjVzqISD0Szd.jpg",
+          "season_number": 3
+        },
+        {
+          "air_date": "2019-09-26",
+          "episode_count": 13,
+          "id": 131232,
+          "name": "Season 4",
+          "overview": "Sam has fulfilled his destiny to become the 4th Elder & now our post-apocalyptic world is even closer to seeing the Dark One resurrected. Vanessa vows to follow the light & fight the darkness that has taken everything she loves. Just when she thought she was alone in her mission she meets two young women, Violet and Jack-who have unique and mysterious vampire fighting abilities all their own.",
+          "poster_path": "/gurxTgNpUXDE8rlYND2Ul6zA6y0.jpg",
+          "season_number": 4
+        },
+        {
+          "air_date": "2021-04-16",
+          "episode_count": 4,
+          "id": 186443,
+          "name": "Season 5",
+          "overview": "Vanessa, Violet, and Jack will risk it all to finally bring an end to the Dark One once and for all. The Van Helsings must figure out ways to escape and evade the various obstacles in their path to prevent them from their mission, leading to an epic final showdown between the Van Helsings and the Dark One. Who will win the battle between light and dark?",
+          "poster_path": "/ilIVovhm4JJPvfLogR5c6AayfV0.jpg",
+          "season_number": 5
+        }
+      ],
+      "spoken_languages": [
+        {
+          "english_name": "English",
+          "iso_639_1": "en",
+          "name": "English"
+        }
+      ],
+      "status": "Returning Series",
+      "tagline": "",
+      "type": "Scripted",
+      "vote_average": 6.9,
+      "vote_count": 519
+    },
+    {
+      "backdrop_path": "/uro2Khv7JxlzXtLb8tCIbRhkb9E.jpg",
+      "created_by": [
+        {
+          "id": 4027,
+          "credit_id": "5256cb3f19c2956ff605e5de",
+          "name": "Frank Darabont",
+          "gender": 2,
+          "profile_path": "/6U1eHg30snkOhSM9WJT2asAesR9.jpg"
+        }
+      ],
+      "episode_run_time": [
+        42,
+        60,
+        45
+      ],
+      "first_air_date": "2010-10-31",
+      "genres": [
+        {
+          "id": 10759,
+          "name": "Action & Adventure"
+        },
+        {
+          "id": 18,
+          "name": "Drama"
+        },
+        {
+          "id": 10765,
+          "name": "Sci-Fi & Fantasy"
+        }
+      ],
+      "homepage": "https://www.amc.com/shows/the-walking-dead",
+      "id": 1402,
+      "in_production": true,
+      "languages": [
+        "en"
+      ],
+      "last_air_date": "2021-04-04",
+      "last_episode_to_air": {
+        "air_date": "2021-04-04",
+        "episode_number": 22,
+        "id": 2455771,
+        "name": "Here's Negan",
+        "overview": "Carol takes Negan on a journey, hoping to minimize the increasing tension. Negan reflects on the events that led him to this point and comes to a conclusion about his future.",
+        "production_code": "",
+        "season_number": 10,
+        "still_path": "/eQstPs4l4PMPtz2mgsfuJSAUpB4.jpg",
+        "vote_average": 7.5,
+        "vote_count": 4
+      },
+      "name": "The Walking Dead",
+      "next_episode_to_air": {
+        "air_date": "2021-08-22",
+        "episode_number": 1,
+        "id": 2853949,
+        "name": "",
+        "overview": "",
+        "production_code": "",
+        "season_number": 11,
+        "still_path": null,
+        "vote_average": 0.0,
+        "vote_count": 0
+      },
+      "networks": [
+        {
+          "name": "AMC",
+          "id": 174,
+          "logo_path": "/pmvRmATOCaDykE6JrVoeYxlFHw3.png",
+          "origin_country": "US"
+        }
+      ],
+      "number_of_episodes": 154,
+      "number_of_seasons": 11,
+      "origin_country": [
+        "US"
+      ],
+      "original_language": "en",
+      "original_name": "The Walking Dead",
+      "overview": "Sheriff's deputy Rick Grimes awakens from a coma to find a post-apocalyptic world dominated by flesh-eating zombies. He sets out to find his family and encounters many other survivors along the way.",
+      "popularity": 664.152,
+      "poster_path": "/rqeYMLryjcawh2JeRpCVUDXYM5b.jpg",
+      "production_companies": [
+        {
+          "id": 23242,
+          "logo_path": "/fOALFvgnO1ZdIaA9PNIAAuaDKWd.png",
+          "name": "AMC Networks",
+          "origin_country": "US"
+        },
+        {
+          "id": 23921,
+          "logo_path": "/simDvqT8y6jhP530ggUMbikvVKc.png",
+          "name": "Circle of Confusion",
+          "origin_country": "US"
+        },
+        {
+          "id": 11533,
+          "logo_path": "/tWM9pmzVYxok4GbQIttxdcml1yT.png",
+          "name": "Valhalla Motion Pictures",
+          "origin_country": "US"
+        },
+        {
+          "id": 3982,
+          "logo_path": "/bli7HkPOXOEWsDwDK0W7XXfeUU2.png",
+          "name": "Darkwoods Productions",
+          "origin_country": "US"
+        }
+      ],
+      "production_countries": [
+        {
+          "iso_3166_1": "US",
+          "name": "United States of America"
+        }
+      ],
+      "seasons": [
+        {
+          "air_date": "2010-10-11",
+          "episode_count": 47,
+          "id": 3646,
+          "name": "Specials",
+          "overview": "",
+          "poster_path": "/mjUvUEzOwnMz6fx75RHGOqwmPnM.jpg",
+          "season_number": 0
+        },
+        {
+          "air_date": "2010-10-31",
+          "episode_count": 6,
+          "id": 3643,
+          "name": "Season 1",
+          "overview": "Rick Grimes embarks on a survivalist adventure in a post-zombie apocalypse Atlanta.",
+          "poster_path": "/yaOB2Y8GcoXwjNQ3apq67bMbNHF.jpg",
+          "season_number": 1
+        },
+        {
+          "air_date": "2011-10-16",
+          "episode_count": 13,
+          "id": 3644,
+          "name": "Season 2",
+          "overview": "Under Rick's leadership, the group leave Atlanta in search of sanctuary.",
+          "poster_path": "/wpG9SDyz23t3vU8dTbtSvEkxv8r.jpg",
+          "season_number": 2
+        },
+        {
+          "air_date": "2012-10-14",
+          "episode_count": 16,
+          "id": 3645,
+          "name": "Season 3",
+          "overview": "Having seemingly found a place of security, the group are faced with an unprecedented new threat.",
+          "poster_path": "/mDVPeQ5ZaaeO2Qh7VlXZchHHuLN.jpg",
+          "season_number": 3
+        },
+        {
+          "air_date": "2013-10-13",
+          "episode_count": 16,
+          "id": 3647,
+          "name": "Season 4",
+          "overview": "As the group settle into life in a stable shelter, a new danger threatens disaster.",
+          "poster_path": "/pLXlKKQOoUZAjWsXwacZCj6SWIb.jpg",
+          "season_number": 4
+        },
+        {
+          "air_date": "2014-10-12",
+          "episode_count": 16,
+          "id": 60391,
+          "name": "Season 5",
+          "overview": "After the season 4 finale left most of the main characters at the mercy of the sadistic inhabitants of Terminus. Season 5 will offer new directions for the group of survivors as scientist Eugene Porter promises a cure to the zombie virus if he can be safely escorted to Washington DC, but getting there is easier said than done.",
+          "poster_path": "/oiQbg5WqdHqBWMrtbzJeS6vb2Lt.jpg",
+          "season_number": 5
+        },
+        {
+          "air_date": "2015-10-11",
+          "episode_count": 16,
+          "id": 68814,
+          "name": "Season 6",
+          "overview": "Rick attempts to use his authority in Alexandria to keep the inhabitants safe, even as a new threat looms.",
+          "poster_path": "/kwVAeAA6TlZWr6lRP2yVTyR2aif.jpg",
+          "season_number": 6
+        },
+        {
+          "air_date": "2016-10-23",
+          "episode_count": 16,
+          "id": 76834,
+          "name": "Season 7",
+          "overview": "Rick and his group's world becomes even more brutal due to Negan's deadly example of what happens if they don't live under his rules. Everyone must begin again.",
+          "poster_path": "/fz6LidJF4Ue3gspFCKtxCERMCM4.jpg",
+          "season_number": 7
+        },
+        {
+          "air_date": "2017-10-22",
+          "episode_count": 16,
+          "id": 91735,
+          "name": "Season 8",
+          "overview": "Rick and his survivors bring \"All-Out War\" to Negan and his forces. The Saviors are larger, better-equipped, and ruthless - but Rick and the unified communities are fighting for the promise of a brighter future. The battle lines are drawn as they launch into a kinetic, action-packed offensive.",
+          "poster_path": "/wmv0oIun52Xeq65sBKfHiUkiBKc.jpg",
+          "season_number": 8
+        },
+        {
+          "air_date": "2018-10-07",
+          "episode_count": 16,
+          "id": 109531,
+          "name": "Season 9",
+          "overview": "With the defeat of Negan and the Saviors, the survivors are now rebuilding civilisation under Rick’s leadership. However, the group are forced to face their biggest threat yet as the walkers around them have started whispering.",
+          "poster_path": "/5KKovNGmh20sDBnyFyuaYTOSmh8.jpg",
+          "season_number": 9
+        },
+        {
+          "air_date": "2019-10-06",
+          "episode_count": 22,
+          "id": 123967,
+          "name": "Season 10",
+          "overview": "It is now Spring, a few months after the end of Season 9, when our group of survivors dared to cross into Whisperer territory during the harsh winter. The collected communities are still dealing with the after effects of Alpha’s horrific display of power, reluctantly respecting the new borderlines being imposed on them, all while organising themselves into a militia-style fighting force, preparing for a battle that may be unavoidable. But the Whisperers are a threat unlike any they have ever faced. Backed by a massive horde of the dead it is seemingly a fight they cannot win.",
+          "poster_path": "/rqeYMLryjcawh2JeRpCVUDXYM5b.jpg",
+          "season_number": 10
+        },
+        {
+          "air_date": "2021-08-22",
+          "episode_count": 1,
+          "id": 189337,
+          "name": "Season 11",
+          "overview": "",
+          "poster_path": null,
+          "season_number": 11
+        }
+      ],
+      "spoken_languages": [
+        {
+          "english_name": "English",
+          "iso_639_1": "en",
+          "name": "English"
+        }
+      ],
+      "status": "Returning Series",
+      "tagline": "Fight the dead. Fear the living.",
+      "type": "Scripted",
+      "vote_average": 8.1,
+      "vote_count": 10629
+    },
+    {
+      "backdrop_path": "/pLG4ihU1d2XkQbASQDjsFu9U7d9.jpg",
+      "created_by": [
+        {
+          "id": 1501230,
+          "credit_id": "6043e2c750733c006fc22710",
+          "name": "José Ignacio Valenzuela",
+          "gender": 0,
+          "profile_path": null
+        }
+      ],
+      "episode_run_time": [
+        40
+      ],
+      "first_air_date": "2021-03-24",
+      "genres": [
+        {
+          "id": 18,
+          "name": "Drama"
+        },
+        {
+          "id": 80,
+          "name": "Crime"
+        },
+        {
+          "id": 9648,
+          "name": "Mystery"
+        }
+      ],
+      "homepage": "https://www.netflix.com/title/81166747",
+      "id": 120168,
+      "in_production": true,
+      "languages": [
+        "es"
+      ],
+      "last_air_date": "2021-03-24",
+      "last_episode_to_air": {
+        "air_date": "2021-03-24",
+        "episode_number": 10,
+        "id": 2819508,
+        "name": "Two Graves",
+        "overview": "Flashbacks unravel that fateful day in 2001. Although Sara's diary seems to hold the key to her murder, a secret hidden in a wall tells another story.",
+        "production_code": "",
+        "season_number": 1,
+        "still_path": "/vtAq0imdWkOhjxfjIjRFyXj71JE.jpg",
+        "vote_average": 0.0,
+        "vote_count": 0
+      },
+      "name": "Who Killed Sara?",
+      "next_episode_to_air": {
+        "air_date": "2021-05-19",
+        "episode_number": 1,
+        "id": 2837154,
+        "name": "",
+        "overview": "",
+        "production_code": "",
+        "season_number": 2,
+        "still_path": null,
+        "vote_average": 0.0,
+        "vote_count": 0
+      },
+      "networks": [
+        {
+          "name": "Netflix",
+          "id": 213,
+          "logo_path": "/wwemzKWzjKYJFfCeiB57q3r4Bcm.png",
+          "origin_country": ""
+        }
+      ],
+      "number_of_episodes": 11,
+      "number_of_seasons": 2,
+      "origin_country": [
+        "MX"
+      ],
+      "original_language": "es",
+      "original_name": "¿Quién mató a Sara?",
+      "overview": "Hell-bent on exacting revenge and proving he was framed for his sister's murder, Álex sets out to unearth much more than the crime's real culprit.",
+      "popularity": 604.746,
+      "poster_path": "/o7uk5ChRt3quPIv8PcvPfzyXdMw.jpg",
+      "production_companies": [],
+      "production_countries": [
+        {
+          "iso_3166_1": "MX",
+          "name": "Mexico"
+        }
+      ],
+      "seasons": [
+        {
+          "air_date": "2021-03-24",
+          "episode_count": 10,
+          "id": 184557,
+          "name": "Season 1",
+          "overview": "",
+          "poster_path": "/o7uk5ChRt3quPIv8PcvPfzyXdMw.jpg",
+          "season_number": 1
+        },
+        {
+          "air_date": "2021-05-19",
+          "episode_count": 1,
+          "id": 188387,
+          "name": "Season 2",
+          "overview": "",
+          "poster_path": null,
+          "season_number": 2
+        }
+      ],
+      "spoken_languages": [
+        {
+          "english_name": "Spanish",
+          "iso_639_1": "es",
+          "name": "Español"
+        }
+      ],
+      "status": "Returning Series",
+      "tagline": "",
+      "type": "Scripted",
+      "vote_average": 7.8,
+      "vote_count": 407
+    },
+    {
+      "backdrop_path": "/pPKiIJEEcV0E1hpVcWRXyp73ZpX.jpg",
+      "created_by": [
+        {
+          "id": 88967,
+          "credit_id": "5e903070d35dea001374f32f",
+          "name": "Greg Berlanti",
+          "gender": 2,
+          "profile_path": "/1T24SiIIDMa9gAmq7QaYwZywq4y.jpg"
+        },
+        {
+          "id": 209763,
+          "credit_id": "5f903fdf761421003789610a",
+          "name": "Todd Helbing",
+          "gender": 2,
+          "profile_path": "/wNwx7IQs1HHcMuR7gsBcKPEfFYd.jpg"
+        }
+      ],
+      "episode_run_time": [
+        64,
+        44
+      ],
+      "first_air_date": "2021-02-23",
+      "genres": [
+        {
+          "id": 10759,
+          "name": "Action & Adventure"
+        },
+        {
+          "id": 10765,
+          "name": "Sci-Fi & Fantasy"
+        },
+        {
+          "id": 18,
+          "name": "Drama"
+        }
+      ],
+      "homepage": "https://www.cwtv.com/shows/superman-and-lois",
+      "id": 95057,
+      "in_production": true,
+      "languages": [
+        "en"
+      ],
+      "last_air_date": "2021-03-23",
+      "last_episode_to_air": {
+        "air_date": "2021-03-23",
+        "episode_number": 5,
+        "id": 2741853,
+        "name": "The Best of Smallville",
+        "overview": "As Smallville celebrates its first Harvest Festival since Martha’s passing, Clark is reminded what his mother meant to him and learns a lesson that will help him move past her death. Meanwhile, Lois makes a breakthrough in the investigation of Morgan Edge. Lastly, Kyle tries to reconnect with Lana, but it seems like he might be falling back into his old ways.",
+        "production_code": "T13.22405",
+        "season_number": 1,
+        "still_path": "/oTTwZF9aLZOaJVQpXMZL65Oc5yK.jpg",
+        "vote_average": 10.0,
+        "vote_count": 1
+      },
+      "name": "Superman & Lois",
+      "next_episode_to_air": {
+        "air_date": "2021-05-18",
+        "episode_number": 6,
+        "id": 2787117,
+        "name": "Smells Like Teen Spirit",
+        "overview": "",
+        "production_code": "",
+        "season_number": 1,
+        "still_path": null,
+        "vote_average": 0.0,
+        "vote_count": 0
+      },
+      "networks": [
+        {
+          "name": "The CW",
+          "id": 71,
+          "logo_path": "/ge9hzeaU7nMtQ4PjkFlc68dGAJ9.png",
+          "origin_country": "US"
+        }
+      ],
+      "number_of_episodes": 11,
+      "number_of_seasons": 1,
+      "origin_country": [
+        "US"
+      ],
+      "original_language": "en",
+      "original_name": "Superman & Lois",
+      "overview": "After years of facing megalomaniacal supervillains, monsters wreaking havoc on Metropolis, and alien invaders intent on wiping out the human race, The Man of Steel aka Clark Kent and Lois Lane come face to face with one of their greatest challenges ever: dealing with all the stress, pressures and complexities that come with being working parents in today's society.",
+      "popularity": 538.487,
+      "poster_path": "/vlv1gn98GqMnKHLSh0dNciqGfBl.jpg",
+      "production_companies": [
+        {
+          "id": 27711,
+          "logo_path": "/3e294jszfE6cE8TOogmj0zNd6pL.png",
+          "name": "Berlanti Productions",
+          "origin_country": "US"
+        },
+        {
+          "id": 1957,
+          "logo_path": "/3T19XSr6yqaLNK8uJWFImPgRax0.png",
+          "name": "Warner Bros. Television",
+          "origin_country": "US"
+        },
+        {
+          "id": 9993,
+          "logo_path": "/2Tc1P3Ac8M479naPp1kYT3izLS5.png",
+          "name": "DC Entertainment",
+          "origin_country": "US"
+        }
+      ],
+      "production_countries": [
+        {
+          "iso_3166_1": "US",
+          "name": "United States of America"
+        }
+      ],
+      "seasons": [
+        {
+          "air_date": "2021-02-23",
+          "episode_count": 1,
+          "id": 183125,
+          "name": "Specials",
+          "overview": "",
+          "poster_path": "/cGtpUE4lwYOZ6uvV7DJEjLcnF4t.jpg",
+          "season_number": 0
+        },
+        {
+          "air_date": "2021-02-23",
+          "episode_count": 11,
+          "id": 140930,
+          "name": "Season 1",
+          "overview": "",
+          "poster_path": "/vlv1gn98GqMnKHLSh0dNciqGfBl.jpg",
+          "season_number": 1
+        }
+      ],
+      "spoken_languages": [
+        {
+          "english_name": "English",
+          "iso_639_1": "en",
+          "name": "English"
+        }
+      ],
+      "status": "Returning Series",
+      "tagline": "Saving the world starts at home.",
+      "type": "Scripted",
+      "vote_average": 8.3,
+      "vote_count": 757
+    },
+    {
+      "backdrop_path": "/suopoADq0k8YZr4dQXcU6pToj6s.jpg",
+      "created_by": [
+        {
+          "id": 9813,
+          "credit_id": "5256c8c219c2956ff604858a",
+          "name": "David Benioff",
+          "gender": 2,
+          "profile_path": "/xvNN5huL0X8yJ7h3IZfGG4O2zBD.jpg"
+        },
+        {
+          "id": 228068,
+          "credit_id": "552e611e9251413fea000901",
+          "name": "D. B. Weiss",
+          "gender": 2,
+          "profile_path": "/2RMejaT793U9KRk2IEbFfteQntE.jpg"
+        }
+      ],
+      "episode_run_time": [
+        60
+      ],
+      "first_air_date": "2011-04-17",
+      "genres": [
+        {
+          "id": 10765,
+          "name": "Sci-Fi & Fantasy"
+        },
+        {
+          "id": 18,
+          "name": "Drama"
+        },
+        {
+          "id": 10759,
+          "name": "Action & Adventure"
+        }
+      ],
+      "homepage": "http://www.hbo.com/game-of-thrones",
+      "id": 1399,
+      "in_production": false,
+      "languages": [
+        "en"
+      ],
+      "last_air_date": "2019-05-19",
+      "last_episode_to_air": {
+        "air_date": "2019-05-19",
+        "episode_number": 6,
+        "id": 1551830,
+        "name": "The Iron Throne",
+        "overview": "In the aftermath of the devastating attack on King's Landing, Daenerys must face the survivors.",
+        "production_code": "806",
+        "season_number": 8,
+        "still_path": "/3x8tJon5jXFa1ziAM93hPKNyW7i.jpg",
+        "vote_average": 4.8,
+        "vote_count": 128
+      },
+      "name": "Game of Thrones",
+      "next_episode_to_air": null,
+      "networks": [
+        {
+          "name": "HBO",
+          "id": 49,
+          "logo_path": "/tuomPhY2UtuPTqqFnKMVHvSb724.png",
+          "origin_country": "US"
+        }
+      ],
+      "number_of_episodes": 73,
+      "number_of_seasons": 8,
+      "origin_country": [
+        "US"
+      ],
+      "original_language": "en",
+      "original_name": "Game of Thrones",
+      "overview": "Seven noble families fight for control of the mythical land of Westeros. Friction between the houses leads to full-scale war. All while a very ancient evil awakens in the farthest north. Amidst the war, a neglected military order of misfits, the Night's Watch, is all that stands between the realms of men and icy horrors beyond.",
+      "popularity": 554.611,
+      "poster_path": "/u3bZgnGQ9T01sWNhyveQz0wH0Hl.jpg",
+      "production_companies": [
+        {
+          "id": 76043,
+          "logo_path": "/9RO2vbQ67otPrBLXCaC8UMp3Qat.png",
+          "name": "Revolution Sun Studios",
+          "origin_country": "US"
+        },
+        {
+          "id": 12525,
+          "logo_path": null,
+          "name": "Television 360",
+          "origin_country": ""
+        },
+        {
+          "id": 5820,
+          "logo_path": null,
+          "name": "Generator Entertainment",
+          "origin_country": ""
+        },
+        {
+          "id": 12526,
+          "logo_path": null,
+          "name": "Bighead Littlehead",
+          "origin_country": ""
+        }
+      ],
+      "production_countries": [
+        {
+          "iso_3166_1": "GB",
+          "name": "United Kingdom"
+        },
+        {
+          "iso_3166_1": "US",
+          "name": "United States of America"
+        }
+      ],
+      "seasons": [
+        {
+          "air_date": "2010-12-05",
+          "episode_count": 176,
+          "id": 3627,
+          "name": "Specials",
+          "overview": "",
+          "poster_path": "/kMTcwNRfFKCZ0O2OaBZS0nZ2AIe.jpg",
+          "season_number": 0
+        },
+        {
+          "air_date": "2011-04-17",
+          "episode_count": 10,
+          "id": 3624,
+          "name": "Season 1",
+          "overview": "Trouble is brewing in the Seven Kingdoms of Westeros. For the driven inhabitants of this visionary world, control of Westeros' Iron Throne holds the lure of great power. But in a land where the seasons can last a lifetime, winter is coming...and beyond the Great Wall that protects them, an ancient evil has returned. In Season One, the story centers on three primary areas: the Stark and the Lannister families, whose designs on controlling the throne threaten a tenuous peace; the dragon princess Daenerys, heir to the former dynasty, who waits just over the Narrow Sea with her malevolent brother Viserys; and the Great Wall--a massive barrier of ice where a forgotten danger is stirring.",
+          "poster_path": "/zwaj4egrhnXOBIit1tyb4Sbt3KP.jpg",
+          "season_number": 1
+        },
+        {
+          "air_date": "2012-04-01",
+          "episode_count": 10,
+          "id": 3625,
+          "name": "Season 2",
+          "overview": "The cold winds of winter are rising in Westeros...war is coming...and five kings continue their savage quest for control of the all-powerful Iron Throne. With winter fast approaching, the coveted Iron Throne is occupied by the cruel Joffrey, counseled by his conniving mother Cersei and uncle Tyrion. But the Lannister hold on the Throne is under assault on many fronts. Meanwhile, a new leader is rising among the wildings outside the Great Wall, adding new perils for Jon Snow and the order of the Night's Watch.",
+          "poster_path": "/5tuhCkqPOT20XPwwi9NhFnC1g9R.jpg",
+          "season_number": 2
+        },
+        {
+          "air_date": "2013-03-31",
+          "episode_count": 10,
+          "id": 3626,
+          "name": "Season 3",
+          "overview": "Duplicity and treachery...nobility and honor...conquest and triumph...and, of course, dragons. In Season 3, family and loyalty are the overarching themes as many critical storylines from the first two seasons come to a brutal head. Meanwhile, the Lannisters maintain their hold on King's Landing, though stirrings in the North threaten to alter the balance of power; Robb Stark, King of the North, faces a major calamity as he tries to build on his victories; a massive army of wildlings led by Mance Rayder march for the Wall; and Daenerys Targaryen--reunited with her dragons--attempts to raise an army in her quest for the Iron Throne.",
+          "poster_path": "/7d3vRgbmnrRQ39Qmzd66bQyY7Is.jpg",
+          "season_number": 3
+        },
+        {
+          "air_date": "2014-04-06",
+          "episode_count": 10,
+          "id": 3628,
+          "name": "Season 4",
+          "overview": "The War of the Five Kings is drawing to a close, but new intrigues and plots are in motion, and the surviving factions must contend with enemies not only outside their ranks, but within.",
+          "poster_path": "/dniQ7zw3mbLJkd1U0gdFEh4b24O.jpg",
+          "season_number": 4
+        },
+        {
+          "air_date": "2015-04-12",
+          "episode_count": 10,
+          "id": 62090,
+          "name": "Season 5",
+          "overview": "The War of the Five Kings, once thought to be drawing to a close, is instead entering a new and more chaotic phase. Westeros is on the brink of collapse, and many are seizing what they can while the realm implodes, like a corpse making a feast for crows.",
+          "poster_path": "/527sR9hNDcgVDKNUE3QYra95vP5.jpg",
+          "season_number": 5
+        },
+        {
+          "air_date": "2016-04-24",
+          "episode_count": 10,
+          "id": 71881,
+          "name": "Season 6",
+          "overview": "Following the shocking developments at the conclusion of season five, survivors from all parts of Westeros and Essos regroup to press forward, inexorably, towards their uncertain individual fates. Familiar faces will forge new alliances to bolster their strategic chances at survival, while new characters will emerge to challenge the balance of power in the east, west, north and south.",
+          "poster_path": "/zvYrzLMfPIenxoq2jFY4eExbRv8.jpg",
+          "season_number": 6
+        },
+        {
+          "air_date": "2017-07-16",
+          "episode_count": 7,
+          "id": 81266,
+          "name": "Season 7",
+          "overview": "The long winter is here. And with it comes a convergence of armies and attitudes that have been brewing for years.",
+          "poster_path": "/3dqzU3F3dZpAripEx9kRnijXbOj.jpg",
+          "season_number": 7
+        },
+        {
+          "air_date": "2019-04-14",
+          "episode_count": 6,
+          "id": 107971,
+          "name": "Season 8",
+          "overview": "The Great War has come, the Wall has fallen and the Night King's army of the dead marches towards Westeros. The end is here, but who will take the Iron Throne?",
+          "poster_path": "/39FHkTLnNMjMVXdIDwZN8SxYqD6.jpg",
+          "season_number": 8
+        }
+      ],
+      "spoken_languages": [
+        {
+          "english_name": "English",
+          "iso_639_1": "en",
+          "name": "English"
+        }
+      ],
+      "status": "Ended",
+      "tagline": "Winter Is Coming",
+      "type": "Scripted",
+      "vote_average": 8.4,
+      "vote_count": 14087
+    },
+    {
+      "backdrop_path": "/58PON1OrnBiX6CqEHgeWKVwrCn6.jpg",
+      "created_by": [
+        {
+          "id": 63554,
+          "credit_id": "5d77e07539549a000f96cc12",
+          "name": "Dave Erickson",
+          "gender": 2,
+          "profile_path": null
+        },
+        {
+          "id": 1223867,
+          "credit_id": "5521364b9251417be2002abc",
+          "name": "Robert Kirkman",
+          "gender": 2,
+          "profile_path": "/ulYOkxtk8lUvg4Ltkg2q22ibg4R.jpg"
+        }
+      ],
+      "episode_run_time": [
+        43,
+        60
+      ],
+      "first_air_date": "2015-08-23",
+      "genres": [
+        {
+          "id": 10759,
+          "name": "Action & Adventure"
+        },
+        {
+          "id": 18,
+          "name": "Drama"
+        }
+      ],
+      "homepage": "http://www.amc.com/shows/fear-the-walking-dead",
+      "id": 62286,
+      "in_production": true,
+      "languages": [
+        "en",
+        "es"
+      ],
+      "last_air_date": "2021-04-11",
+      "last_episode_to_air": {
+        "air_date": "2021-04-11",
+        "episode_number": 8,
+        "id": 2685922,
+        "name": "The Door",
+        "overview": "With a decimated militia and scarce resources, the survivors are running out of options.",
+        "production_code": "",
+        "season_number": 6,
+        "still_path": "/j9nFzGbuVMNxRTllbWfxpz9WAOa.jpg",
+        "vote_average": 6.2,
+        "vote_count": 4
+      },
+      "name": "Fear the Walking Dead",
+      "next_episode_to_air": {
+        "air_date": "2021-05-23",
+        "episode_number": 14,
+        "id": 2870874,
+        "name": "",
+        "overview": "",
+        "production_code": "",
+        "season_number": 6,
+        "still_path": null,
+        "vote_average": 0.0,
+        "vote_count": 0
+      },
+      "networks": [
+        {
+          "name": "AMC",
+          "id": 174,
+          "logo_path": "/pmvRmATOCaDykE6JrVoeYxlFHw3.png",
+          "origin_country": "US"
+        }
+      ],
+      "number_of_episodes": 85,
+      "number_of_seasons": 6,
+      "origin_country": [
+        "US"
+      ],
+      "original_language": "en",
+      "original_name": "Fear the Walking Dead",
+      "overview": "What did the world look like as it was transforming into the horrifying apocalypse depicted in \"The Walking Dead\"? This spin-off set in Los Angeles, following new characters as they face the beginning of the end of the world, will answer that question.",
+      "popularity": 527.928,
+      "poster_path": "/4UjiPdFKJGJYdxwRs2Rzg7EmWqr.jpg",
+      "production_companies": [
+        {
+          "id": 11533,
+          "logo_path": "/tWM9pmzVYxok4GbQIttxdcml1yT.png",
+          "name": "Valhalla Motion Pictures",
+          "origin_country": "US"
+        },
+        {
+          "id": 23242,
+          "logo_path": "/fOALFvgnO1ZdIaA9PNIAAuaDKWd.png",
+          "name": "AMC Networks",
+          "origin_country": "US"
+        },
+        {
+          "id": 43346,
+          "logo_path": null,
+          "name": "Fox Productions",
+          "origin_country": "US"
+        },
+        {
+          "id": 23921,
+          "logo_path": "/simDvqT8y6jhP530ggUMbikvVKc.png",
+          "name": "Circle of Confusion",
+          "origin_country": "US"
+        }
+      ],
+      "production_countries": [
+        {
+          "iso_3166_1": "US",
+          "name": "United States of America"
+        }
+      ],
+      "seasons": [
+        {
+          "air_date": "2015-10-04",
+          "episode_count": 38,
+          "id": 70218,
+          "name": "Specials",
+          "overview": "Fear the Walking Dead: Flight 462 follows the story of a group of airline passengers who discover that one of their fellow travelers is infected with the virus, putting their lives at risk.\n\nA new installment of the 16-part series is available every sunday online, and on-air as promos during two commercial breaks of The Walking Dead.",
+          "poster_path": "/9fXoAcfHTktdWIUr7BopLqelb8Y.jpg",
+          "season_number": 0
+        },
+        {
+          "air_date": "2015-08-23",
+          "episode_count": 6,
+          "id": 65692,
+          "name": "Season 1",
+          "overview": "After a string of ominous warnings, guidance counselor Madison Clark and the rest of her family are horrified to see their world descend into a zombie nightmare -- which will soon become their new reality.",
+          "poster_path": "/i2bXSzpKWw0RVmLdldhBFT3a0Ty.jpg",
+          "season_number": 1
+        },
+        {
+          "air_date": "2016-04-10",
+          "episode_count": 15,
+          "id": 73780,
+          "name": "Season 2",
+          "overview": "Season two returns aboard the Abigail. Abandoning land, the group sets out for ports unknown, some place where Infection has not hit. They will discover that the water may be no safer than land.",
+          "poster_path": "/oxAm6varqgV3WOGYX2OrgCGKnZo.jpg",
+          "season_number": 2
+        },
+        {
+          "air_date": "2017-06-04",
+          "episode_count": 16,
+          "id": 87822,
+          "name": "Season 3",
+          "overview": "As Fear the Walking Dead returns for season three, our families will be brought together in the vibrant and violent ecotone of the U.S.-Mexico border.",
+          "poster_path": "/yd8cDZG4XjNRk7jfEWy18KH07d2.jpg",
+          "season_number": 3
+        },
+        {
+          "air_date": "2018-04-15",
+          "episode_count": 16,
+          "id": 99582,
+          "name": "Season 4",
+          "overview": "In season four, we see the world of Madison Clark and her family through new eyes -- the eyes of Morgan Jones. The characters' immediate past mixes with an uncertain present of struggle and discovery as they meet new friends, foes and threats. They fight for each other, against each other and against a legion of the dead to somehow build an existence against the crushing pressure of lives coming apart. There will be darkness and light; terror and grace; the heroic, mercenary, and craven, all crashing together towards a new reality.",
+          "poster_path": "/k8T1iiKU9zQ8NAvwsB95KZXJ3O6.jpg",
+          "season_number": 4
+        },
+        {
+          "air_date": "2019-06-02",
+          "episode_count": 16,
+          "id": 121629,
+          "name": "Season 5",
+          "overview": "In season 5, the mission to help others will be put to the ultimate test when our group lands in uncharted territory. They will be forced to face not just their pasts but also their fears, leaving them forever changed.",
+          "poster_path": "/aUBFD7zPl4fyE8e4FjASq4OgOUc.jpg",
+          "season_number": 5
+        },
+        {
+          "air_date": "2020-10-11",
+          "episode_count": 16,
+          "id": 157589,
+          "name": "Season 6",
+          "overview": "Heading into Season 5 of \"Fear the Walking Dead,\" the group's mission is clear: locate survivors and help make what's left of the world a slightly better place. With dogged determination, Morgan Jones leads the group with a philosophy rooted in benevolence, community and hope. Each character believes that helping others will allow them to make up for the wrongs of their pasts. But trust won't be easily earned. Their mission of helping others will be put to the ultimate test when the members of the group find themselves in uncharted territory, forced to face not just their pasts but also their fears. It is only by facing those fears that the group will discover an entirely new way to live, one that will leave them changed forever changed.",
+          "poster_path": "/tTjLJ7NN5V9x9d55jq0XdvlUt1u.jpg",
+          "season_number": 6
+        }
+      ],
+      "spoken_languages": [
+        {
+          "english_name": "English",
+          "iso_639_1": "en",
+          "name": "English"
+        },
+        {
+          "english_name": "Spanish",
+          "iso_639_1": "es",
+          "name": "Español"
+        }
+      ],
+      "status": "Returning Series",
+      "tagline": "Every decision is life or death.",
+      "type": "Scripted",
+      "vote_average": 7.6,
+      "vote_count": 3427
+    },
+    {
+      "backdrop_path": "/wgEWTYAAY7F04o4F20j0L1DGB8i.jpg",
+      "created_by": [
+        {
+          "id": 1017624,
+          "credit_id": "5e77f0048e2e0040a7a74f2f",
+          "name": "Dominic Savage",
+          "gender": 2,
+          "profile_path": "/dA9qELqZNnLvuy40qvb5qu7yutP.jpg"
+        }
+      ],
+      "episode_run_time": [
+        50
+      ],
+      "first_air_date": "2019-07-23",
+      "genres": [
+        {
+          "id": 18,
+          "name": "Drama"
+        }
+      ],
+      "homepage": "https://www.channel4.com/programmes/i-am",
+      "id": 91605,
+      "in_production": true,
+      "languages": [
+        "en"
+      ],
+      "last_air_date": "2019-08-06",
+      "last_episode_to_air": {
+        "air_date": "2019-08-06",
+        "episode_number": 3,
+        "id": 1864814,
+        "name": "I Am Hannah",
+        "overview": "Hannah, a woman in her mid-thirties, reaches a crossroads in her life. Facing impediments both within and beyond her control, Hannah is confronted by a crisis of aspiration and identity.",
+        "production_code": "",
+        "season_number": 1,
+        "still_path": null,
+        "vote_average": 0.0,
+        "vote_count": 0
+      },
+      "name": "I Am...",
+      "next_episode_to_air": null,
+      "networks": [
+        {
+          "name": "Channel 4",
+          "id": 26,
+          "logo_path": "/hbifXPpM55B1fL5wPo7t72vzN78.png",
+          "origin_country": "GB"
+        }
+      ],
+      "number_of_episodes": 3,
+      "number_of_seasons": 1,
+      "origin_country": [],
+      "original_language": "en",
+      "original_name": "I Am...",
+      "overview": "Each hour-long film follows a different women as they experience “moments that are emotionally raw, thought-provoking and utterly personal”.",
+      "popularity": 370.924,
+      "poster_path": "/oogunE22HDTcTxFakKQbwqfw1qo.jpg",
+      "production_companies": [],
+      "production_countries": [],
+      "seasons": [
+        {
+          "air_date": "2019-07-23",
+          "episode_count": 3,
+          "id": 128501,
+          "name": "Season 1",
+          "overview": "",
+          "poster_path": null,
+          "season_number": 1
+        }
+      ],
+      "spoken_languages": [
+        {
+          "english_name": "English",
+          "iso_639_1": "en",
+          "name": "English"
+        }
+      ],
+      "status": "Returning Series",
+      "tagline": "",
+      "type": "Miniseries",
+      "vote_average": 5.4,
+      "vote_count": 18
+    },
+    {
+      "backdrop_path": "/fRYwdeNjMqC30EhofPx5PlDpdun.jpg",
+      "created_by": [
+        {
+          "id": 1214616,
+          "credit_id": "5af791830e0a2655b8004118",
+          "name": "Julie Plec",
+          "gender": 1,
+          "profile_path": null
+        }
+      ],
+      "episode_run_time": [
+        43
+      ],
+      "first_air_date": "2018-10-25",
+      "genres": [
+        {
+          "id": 10765,
+          "name": "Sci-Fi & Fantasy"
+        },
+        {
+          "id": 18,
+          "name": "Drama"
+        }
+      ],
+      "homepage": "http://www.cwtv.com/shows/legacies",
+      "id": 79460,
+      "in_production": true,
+      "languages": [
+        "en"
+      ],
+      "last_air_date": "2021-04-15",
+      "last_episode_to_air": {
+        "air_date": "2021-04-15",
+        "episode_number": 10,
+        "id": 2859169,
+        "name": "All's Well That Ends Well",
+        "overview": "After capturing a new monster at the school, Hope and the Super Squad learn some terrifying news about one of their own. A surprise visit from Lizzie gives Josie some much-needed courage. MG and Ethan team up to help others.",
+        "production_code": "",
+        "season_number": 3,
+        "still_path": "/gEjZxWY15Is5aD5zRp34rjGGEeI.jpg",
+        "vote_average": 0.0,
+        "vote_count": 0
+      },
+      "name": "Legacies",
+      "next_episode_to_air": {
+        "air_date": "2021-05-06",
+        "episode_number": 11,
+        "id": 2867123,
+        "name": "",
+        "overview": "",
+        "production_code": "",
+        "season_number": 3,
+        "still_path": "/7lr26XK4vcQwZtA3hauclMJc0ja.jpg",
+        "vote_average": 0.0,
+        "vote_count": 0
+      },
+      "networks": [
+        {
+          "name": "The CW",
+          "id": 71,
+          "logo_path": "/ge9hzeaU7nMtQ4PjkFlc68dGAJ9.png",
+          "origin_country": "US"
+        }
+      ],
+      "number_of_episodes": 45,
+      "number_of_seasons": 3,
+      "origin_country": [
+        "US"
+      ],
+      "original_language": "en",
+      "original_name": "Legacies",
+      "overview": "In a place where young witches, vampires, and werewolves are nurtured to be their best selves in spite of their worst impulses, Klaus Mikaelson’s daughter, 17-year-old Hope Mikaelson, Alaric Saltzman’s twins, Lizzie and Josie Saltzman, among others, come of age into heroes and villains at The Salvatore School for the Young and Gifted.",
+      "popularity": 434.939,
+      "poster_path": "/qTZIgXrBKURBK1KrsT7fe3qwtl9.jpg",
+      "production_companies": [
+        {
+          "id": 1957,
+          "logo_path": "/3T19XSr6yqaLNK8uJWFImPgRax0.png",
+          "name": "Warner Bros. Television",
+          "origin_country": "US"
+        },
+        {
+          "id": 10067,
+          "logo_path": "/p1kZoVNfkVvk7xyJZEposRxcfh8.png",
+          "name": "Alloy Entertainment",
+          "origin_country": "US"
+        },
+        {
+          "id": 1081,
+          "logo_path": "/vfcpaPf6WktaCIHqF4FJAcek8q2.png",
+          "name": "CBS Television Studios",
+          "origin_country": "US"
+        },
+        {
+          "id": 34536,
+          "logo_path": null,
+          "name": "My So-Called Company",
+          "origin_country": "US"
+        }
+      ],
+      "production_countries": [],
+      "seasons": [
+        {
+          "air_date": "2018-10-25",
+          "episode_count": 16,
+          "id": 103695,
+          "name": "Season 1",
+          "overview": "Continuing the tradition of The Vampire Diaries and The Originals, the story of the next generation of supernatural beings at the Salvatore Boarding School for the Young & Gifted. Klaus Mikaelson's daughter, 17-year-old Hope Mikaelson; Alaric Saltzman's twins, Lizzie and Josie Saltzman; and other young adults come of age in the most unconventional way possible, nurtured to be their best selves... in spite of their worst impulses. Will these young witches, vampires and werewolves become the heroes they want to be — or the villains they were born to be?",
+          "poster_path": "/bULKxDY88WNWsKedNTSfLtmmiER.jpg",
+          "season_number": 1
+        },
+        {
+          "air_date": "2019-10-10",
+          "episode_count": 16,
+          "id": 129337,
+          "name": "Season 2",
+          "overview": "",
+          "poster_path": "/1Uhoi348GEg4DObGrVLNUqtKtdu.jpg",
+          "season_number": 2
+        },
+        {
+          "air_date": "2021-01-21",
+          "episode_count": 13,
+          "id": 168939,
+          "name": "Season 3",
+          "overview": "As season three begins, Hope has risked everything to pull her friends back from the brink of a monstrous prophecy that threatened them. But when a heartbreaking loss shatters her whole world, Hope Mikaelson will be forced to fight fate itself.",
+          "poster_path": "/qTZIgXrBKURBK1KrsT7fe3qwtl9.jpg",
+          "season_number": 3
+        }
+      ],
+      "spoken_languages": [
+        {
+          "english_name": "English",
+          "iso_639_1": "en",
+          "name": "English"
+        }
+      ],
+      "status": "Returning Series",
+      "tagline": "Heroes. Villains. Whatever.",
+      "type": "Scripted",
+      "vote_average": 8.6,
+      "vote_count": 1806
+    },
+    {
+      "backdrop_path": "/wAEWZm2pSopAbqE5dQWE0ET8aR5.jpg",
+      "created_by": [],
+      "episode_run_time": [
+        8
+      ],
+      "first_air_date": "2021-01-08",
+      "genres": [
+        {
+          "id": 99,
+          "name": "Documentary"
+        }
+      ],
+      "homepage": "https://www.disneyplus.com/series/wp/7YmtoS60RMH6",
+      "id": 114695,
+      "in_production": true,
+      "languages": [
+        "en"
+      ],
+      "last_air_date": "2021-03-12",
+      "last_episode_to_air": {
+        "air_date": "2021-03-12",
+        "episode_number": 6,
+        "id": 2738695,
+        "name": "Sharon Carter",
+        "overview": "Learn how Agent Sharon Carter risked all for Steve Rogers, doing what she knew was right.",
+        "production_code": "",
+        "season_number": 1,
+        "still_path": "/I6imIioeY8xpl4kBXQxkxWKQzp.jpg",
+        "vote_average": 4.0,
+        "vote_count": 1
+      },
+      "name": "Marvel Studios: Legends",
+      "next_episode_to_air": null,
+      "networks": [
+        {
+          "name": "Disney+",
+          "id": 2739,
+          "logo_path": "/gJ8VX6JSu3ciXHuC2dDGAo2lvwM.png",
+          "origin_country": "US"
+        }
+      ],
+      "number_of_episodes": 7,
+      "number_of_seasons": 1,
+      "origin_country": [
+        "US"
+      ],
+      "original_language": "en",
+      "original_name": "Marvel Studios: Legends",
+      "overview": "Revisit the epic heroes, villains and moments from across the MCU in preparation for the stories still to come. Each dynamic segment feeds directly into the upcoming series — setting the stage for future events. This series weaves together the many threads that constitute the unparalleled Marvel Cinematic Universe.",
+      "popularity": 368.811,
+      "poster_path": "/EpDuYIK81YtCUT3gH2JDpyj8Qk.jpg",
+      "production_companies": [
+        {
+          "id": 420,
+          "logo_path": "/hUzeosd33nzE5MCNsZxCGEKTXaQ.png",
+          "name": "Marvel Studios",
+          "origin_country": "US"
+        }
+      ],
+      "production_countries": [
+        {
+          "iso_3166_1": "US",
+          "name": "United States of America"
+        }
+      ],
+      "seasons": [
+        {
+          "air_date": "2021-01-08",
+          "episode_count": 7,
+          "id": 172254,
+          "name": "Season 1",
+          "overview": "",
+          "poster_path": "/EpDuYIK81YtCUT3gH2JDpyj8Qk.jpg",
+          "season_number": 1
+        }
+      ],
+      "spoken_languages": [
+        {
+          "english_name": "English",
+          "iso_639_1": "en",
+          "name": "English"
+        }
+      ],
+      "status": "Returning Series",
+      "tagline": "As the universe expands, explore the stories of those destined to become legends.",
+      "type": "Documentary",
+      "vote_average": 7.7,
+      "vote_count": 385
+    },
+    {
+      "backdrop_path": "/aq2yEMgRQBPfRkrO0Repo2qhUAT.jpg",
+      "created_by": [
+        {
+          "id": 37631,
+          "credit_id": "5259670b760ee346619c36f2",
+          "name": "Michael Hirst",
+          "gender": 2,
+          "profile_path": null
+        }
+      ],
+      "episode_run_time": [
+        44
+      ],
+      "first_air_date": "2013-03-03",
+      "genres": [
+        {
+          "id": 10759,
+          "name": "Action & Adventure"
+        },
+        {
+          "id": 18,
+          "name": "Drama"
+        }
+      ],
+      "homepage": "http://www.history.com/shows/vikings",
+      "id": 44217,
+      "in_production": false,
+      "languages": [
+        "en"
+      ],
+      "last_air_date": "2020-12-30",
+      "last_episode_to_air": {
+        "air_date": "2020-12-30",
+        "episode_number": 20,
+        "id": 2582994,
+        "name": "The Last Act",
+        "overview": "Ubbe reunites with an old friend but must pass judgment on a killer. The armies of Alfred and Ivar clash as each leader looks to his god for strength.",
+        "production_code": "",
+        "season_number": 6,
+        "still_path": "/5NmZRvgBV0IRtx1tYVuMyCalx41.jpg",
+        "vote_average": 5.3,
+        "vote_count": 3
+      },
+      "name": "Vikings",
+      "next_episode_to_air": null,
+      "networks": [
+        {
+          "name": "Amazon",
+          "id": 1024,
+          "logo_path": "/ifhbNuuVnlwYy5oXA5VIb2YR8AZ.png",
+          "origin_country": ""
+        },
+        {
+          "name": "History",
+          "id": 2360,
+          "logo_path": "/aeariwRHHb23lyOr3AczHz5aIhb.png",
+          "origin_country": "CA"
+        }
+      ],
+      "number_of_episodes": 89,
+      "number_of_seasons": 6,
+      "origin_country": [
+        "CA"
+      ],
+      "original_language": "en",
+      "original_name": "Vikings",
+      "overview": "The adventures of Ragnar Lothbrok, the greatest hero of his age. The series tells the sagas of Ragnar's band of Viking brothers and his family, as he rises to become King of the Viking tribes. As well as being a fearless warrior, Ragnar embodies the Norse traditions of devotion to the gods. Legend has it that he was a direct descendant of Odin, the god of war and warriors.",
+      "popularity": 408.789,
+      "poster_path": "/bQLrHIRNEkE3PdIWQrZHynQZazu.jpg",
+      "production_companies": [
+        {
+          "id": 7224,
+          "logo_path": "/aEB2TV6TTolC7NSwonWIb25MKga.png",
+          "name": "Shaw Media",
+          "origin_country": "CA"
+        },
+        {
+          "id": 7692,
+          "logo_path": null,
+          "name": "World 2000 Entertainment",
+          "origin_country": "IE"
+        },
+        {
+          "id": 39520,
+          "logo_path": "/h5qMfjH9jaJ5835UGdq2PZQ1a33.png",
+          "name": "Take 5 Productions",
+          "origin_country": "CA"
+        }
+      ],
+      "production_countries": [
+        {
+          "iso_3166_1": "CA",
+          "name": "Canada"
+        },
+        {
+          "iso_3166_1": "IE",
+          "name": "Ireland"
+        }
+      ],
+      "seasons": [
+        {
+          "air_date": "2013-02-25",
+          "episode_count": 7,
+          "id": 53335,
+          "name": "Specials",
+          "overview": "",
+          "poster_path": "/woP1jNltcWMLqK6pcFqPJq6pyJ6.jpg",
+          "season_number": 0
+        },
+        {
+          "air_date": "2013-03-03",
+          "episode_count": 9,
+          "id": 53334,
+          "name": "Season 1",
+          "overview": "",
+          "poster_path": "/uYaskJzmBhBdvkitDTjlH6gj9Pt.jpg",
+          "season_number": 1
+        },
+        {
+          "air_date": "2014-02-27",
+          "episode_count": 10,
+          "id": 53336,
+          "name": "Season 2",
+          "overview": "Season two brings crises of faith, of power, of relationships. Brothers rise up against one another. Loyalties shift from friend to foe, and unlikely alliances are formed in the name of supremacy. Ragnar’s indiscretions threaten his marriage to Lagertha, tearing him and his beloved son apart. Plots are hatched, scores are settled, blood is spilled…all under the watchful eyes of the gods.",
+          "poster_path": "/g2Pgu5Dae9P99yJs0xZQtEagA76.jpg",
+          "season_number": 2
+        },
+        {
+          "air_date": "2015-02-19",
+          "episode_count": 10,
+          "id": 64422,
+          "name": "Season 3",
+          "overview": "With the promise of new land from the English, Ragnar leads his people to an uncertain fate on the shores of Wessex. King Ecbert has made many promises and it remains to be seen if he will keep them. But ever the restless wanderer, Ragnar is searching for something more … and he finds it in the mythical city of Paris.",
+          "poster_path": "/jICv5UxLDvUqCp1D2jAb0PSJWAw.jpg",
+          "season_number": 3
+        },
+        {
+          "air_date": "2016-02-18",
+          "episode_count": 20,
+          "id": 72979,
+          "name": "Season 4",
+          "overview": "A ferocious battle between the Vikings and the French eventually comes down to Ragnar against Rollo. The outcome will seal the fate of the two brothers.",
+          "poster_path": "/nHJHNRApy8vmTUvZx59l1f1GXzB.jpg",
+          "season_number": 4
+        },
+        {
+          "air_date": "2017-11-29",
+          "episode_count": 20,
+          "id": 88459,
+          "name": "Season 5",
+          "overview": "Season five begins with Ivar the Boneless asserting his leadership over the Great Heathen Army, while Lagertha reigns as Queen of Kattegat. Ivar’s murder of his brother Sigurd sets the stage for vicious battles to come as Ragnar’s sons plot their next moves after avenging their father’s death. Bjorn follows his destiny into the Mediterranean Sea and Floki who is suffering from the loss of his wife Helga, takes to the seas submitting himself to the will of the Gods. This season is full of startling alliances and unbelievable betrayals as the Vikings fight to rule the world.",
+          "poster_path": "/aFfwMjFhb05O2mC5hCfoEPPJ8xL.jpg",
+          "season_number": 5
+        },
+        {
+          "air_date": "2019-12-04",
+          "episode_count": 20,
+          "id": 133827,
+          "name": "Season 6",
+          "overview": "The final season finds Bjorn now the king of Kattegat, while Ivar is a fugitive in Russia and Lagertha plans a peaceful retirement to a country farm.",
+          "poster_path": "/3h0EDCz4eIefTUxHZaNaYwcRw47.jpg",
+          "season_number": 6
+        }
+      ],
+      "spoken_languages": [
+        {
+          "english_name": "English",
+          "iso_639_1": "en",
+          "name": "English"
+        }
+      ],
+      "status": "Ended",
+      "tagline": "",
+      "type": "Scripted",
+      "vote_average": 8.0,
+      "vote_count": 4388
+    },
+    {
+      "backdrop_path": "/9RqliZcoDEjSEISeA0LY9meAiNv.jpg",
+      "created_by": [
+        {
+          "id": 1565301,
+          "credit_id": "5b8049cb9251416c8c010c24",
+          "name": "Thomas Astruc",
+          "gender": 2,
+          "profile_path": null
+        }
+      ],
+      "episode_run_time": [
+        26
+      ],
+      "first_air_date": "2015-10-19",
+      "genres": [
+        {
+          "id": 10759,
+          "name": "Action & Adventure"
+        },
+        {
+          "id": 16,
+          "name": "Animation"
+        },
+        {
+          "id": 10762,
+          "name": "Kids"
+        }
+      ],
+      "homepage": "http://www.miraculousladybug.com",
+      "id": 65334,
+      "in_production": true,
+      "languages": [
+        "fr"
+      ],
+      "last_air_date": "2021-03-25",
+      "last_episode_to_air": {
+        "air_date": "2021-03-25",
+        "episode_number": 6,
+        "id": 2834006,
+        "name": "Furious Fu",
+        "overview": "The appearance of Su-Han, a celestial guardian of the Miraculous, leads Ladybug to prove that Master Fu has given her the mission to guard the Miracle Box. What will she do if Master Fu has lost his memory?",
+        "production_code": "",
+        "season_number": 4,
+        "still_path": null,
+        "vote_average": 0.0,
+        "vote_count": 0
+      },
+      "name": "Miraculous: Tales of Ladybug & Cat Noir",
+      "next_episode_to_air": null,
+      "networks": [
+        {
+          "name": "TF1",
+          "id": 290,
+          "logo_path": "/fqsd09CrijoGu6qfoNIdgUQmVGO.png",
+          "origin_country": "FR"
+        }
+      ],
+      "number_of_episodes": 81,
+      "number_of_seasons": 4,
+      "origin_country": [
+        "FR"
+      ],
+      "original_language": "fr",
+      "original_name": "Miraculous, les aventures de Ladybug et Chat Noir",
+      "overview": "Normal high school kids by day, protectors of Paris by night! Miraculous follows the heroic adventures of Marinette and Adrien as they transform into Ladybug and Cat Noir and set out to capture akumas, creatures responsible for turning the people of Paris into villains. But neither hero knows the other’s true identity – or that they’re classmates!",
+      "popularity": 381.56,
+      "poster_path": "/qxbW47zmgFyBVmZSIqD9NA1DEjT.jpg",
+      "production_companies": [
+        {
+          "id": 35136,
+          "logo_path": null,
+          "name": "Method Animation",
+          "origin_country": ""
+        },
+        {
+          "id": 5542,
+          "logo_path": "/ayE4LIqoAWotavo7xdvYngwqGML.png",
+          "name": "Toei Animation",
+          "origin_country": "JP"
+        }
+      ],
+      "production_countries": [
+        {
+          "iso_3166_1": "FR",
+          "name": "France"
+        },
+        {
+          "iso_3166_1": "JP",
+          "name": "Japan"
+        },
+        {
+          "iso_3166_1": "KR",
+          "name": "South Korea"
+        }
+      ],
+      "seasons": [
+        {
+          "air_date": "2016-12-11",
+          "episode_count": 24,
+          "id": 97260,
+          "name": "Specials",
+          "overview": "",
+          "poster_path": "/4M1ZX4qvX3lsW269jtEr0coasyn.jpg",
+          "season_number": 0
+        },
+        {
+          "air_date": "2015-10-19",
+          "episode_count": 26,
+          "id": 73968,
+          "name": "Season 1",
+          "overview": "",
+          "poster_path": "/fhTNhyT8BypPkZzefO72Eux9bRx.jpg",
+          "season_number": 1
+        },
+        {
+          "air_date": "2017-10-26",
+          "episode_count": 25,
+          "id": 95065,
+          "name": "Season 2",
+          "overview": "",
+          "poster_path": "/32yoyMPjw0tpPk4xmhkXT3gypkc.jpg",
+          "season_number": 2
+        },
+        {
+          "air_date": "2019-04-14",
+          "episode_count": 26,
+          "id": 113599,
+          "name": "Season 3",
+          "overview": "",
+          "poster_path": "/hya1UUJF8zdhqeW84NC8OULF8Zp.jpg",
+          "season_number": 3
+        },
+        {
+          "air_date": "2021-04-03",
+          "episode_count": 4,
+          "id": 188198,
+          "name": "Season 4",
+          "overview": "",
+          "poster_path": "/7mFLUEsxzDT0dXlgphTKynPNe92.jpg",
+          "season_number": 4
+        }
+      ],
+      "spoken_languages": [
+        {
+          "english_name": "French",
+          "iso_639_1": "fr",
+          "name": "Français"
+        }
+      ],
+      "status": "Returning Series",
+      "tagline": "Time to de-evilize!",
+      "type": "Scripted",
+      "vote_average": 7.9,
+      "vote_count": 2477
+    }
+  ]
+}
