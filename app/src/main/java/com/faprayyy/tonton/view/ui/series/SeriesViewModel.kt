@@ -1,10 +1,10 @@
 package com.faprayyy.tonton.view.ui.series
 
-import android.content.Context
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
 import com.faprayyy.tonton.data.Response.DiscoverSeriesResponse
 import com.faprayyy.tonton.data.SeriesModel
+import com.faprayyy.tonton.utils.getSeriesResponse
 import com.google.gson.Gson
 import java.lang.Exception
 
@@ -13,13 +13,13 @@ class SeriesViewModel : ViewModel() {
     val isLoading = MutableLiveData<Boolean>()
     val listSeries = MutableLiveData<ArrayList<SeriesModel>>()
 
-    fun getData(context: Context){
+    fun getData(){
         isLoading.postValue(true)
-        val fileName = "seriesresponse.json"
-        val jsonString: String
+
+        val dataJsonString = getSeriesResponse()
+
         try {
-            jsonString = context.assets.open(fileName).bufferedReader().use { it.readText() }
-            val obj = Gson().fromJson(jsonString, DiscoverSeriesResponse::class.java)
+            val obj = Gson().fromJson(dataJsonString, DiscoverSeriesResponse::class.java)
             listSeries.postValue(obj.results)
         } catch (e : Exception){
             e.printStackTrace()

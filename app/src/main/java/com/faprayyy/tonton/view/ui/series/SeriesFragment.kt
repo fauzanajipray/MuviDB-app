@@ -41,7 +41,7 @@ class SeriesFragment : Fragment() {
             setHasFixedSize(true)
         }
 
-        seriesViewModel.getData(requireContext())
+        seriesViewModel.getData()
 
         seriesViewModel.listSeries.observe(viewLifecycleOwner){
             if (it != null){

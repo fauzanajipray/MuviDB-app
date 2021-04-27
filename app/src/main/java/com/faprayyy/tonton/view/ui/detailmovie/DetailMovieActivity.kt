@@ -34,7 +34,7 @@ class DetailMovieActivity : AppCompatActivity() {
         binding.toolbar.setNavigationOnClickListener { onBackPressed() }
         movieData = intent.getParcelableExtra<MovieModel>(EXTRA_MOVIE) as MovieModel
 
-        viewModel.setDataJson(movieData.id, this)
+        viewModel.setDataJson(movieData.id)
         viewModel.movieDetail.observe(this){
             setData(it)
         }
