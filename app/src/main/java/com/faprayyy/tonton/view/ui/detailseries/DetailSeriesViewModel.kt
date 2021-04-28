@@ -13,7 +13,6 @@ class DetailSeriesViewModel : ViewModel() {
 
     val seriesDetail = MutableLiveData<SerieDetail>()
 
-    @SuppressLint("LogNotTimber")
     fun setDataJson(idSerie: Int) {
         val dataJsonString = getListSeriesDetail()
         try {

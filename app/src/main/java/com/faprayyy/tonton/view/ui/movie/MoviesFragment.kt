@@ -34,7 +34,7 @@ class MoviesFragment : Fragment() {
         super.onActivityCreated(savedInstanceState)
         mAdapter = MovieAdapter()
         mAdapter.notifyDataSetChanged()
-        binding.recyclerView.apply {
+        binding.rvMovies.apply {
             adapter = mAdapter
             setHasFixedSize(true)
         }
@@ -59,7 +59,7 @@ class MoviesFragment : Fragment() {
 
     private fun showLoading(state: Boolean) {
         val mProgressBar = binding.progressBar
-        if (state == true){
+        if (state){
             mProgressBar.visibility = View.VISIBLE
         } else {
             mProgressBar.visibility = View.INVISIBLE

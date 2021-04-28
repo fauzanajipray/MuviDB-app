@@ -13,7 +13,6 @@ class MoviesViewModel : ViewModel() {
     val isLoading = MutableLiveData<Boolean>()
     val listMovie = MutableLiveData<ArrayList<MovieModel>>()
 
-    @SuppressLint("LogNotTimber")
     fun getData(){
         isLoading.postValue(true)
         val dataJsonString = getMovieResponse()

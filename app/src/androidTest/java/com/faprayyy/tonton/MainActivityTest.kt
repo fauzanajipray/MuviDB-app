@@ -33,26 +33,23 @@ class MainActivityTest {
     fun setup(){
         val obj = Gson().fromJson(getMovieResponse(), DiscoverMovieResponse::class.java)
         listMovie = obj.results
-
         val obj2 = Gson().fromJson(getSeriesResponse(), DiscoverSeriesResponse::class.java)
         listSeries = obj2.results
-
         val obj3 = Gson().fromJson(getListMovieDetail(), MovieDetailResponse::class.java)
         movieDetail = obj3.results[0]
-
         val obj4 = Gson().fromJson(getListSeriesDetail(), SerieDetailResponse::class.java)
         seriesDetail = obj4.results[0]
     }
 
     @Test
     fun loadMovie(){
-        onView(withId(R.id.recyclerView)).check(ViewAssertions.matches(isDisplayed()))
-        onView(withId(R.id.recyclerView)).perform(RecyclerViewActions.scrollToPosition<RecyclerView.ViewHolder>(listMovie.size))
+        onView(withId(R.id.rv_movies)).check(ViewAssertions.matches(isDisplayed()))
+        onView(withId(R.id.rv_movies)).perform(RecyclerViewActions.scrollToPosition<RecyclerView.ViewHolder>(listMovie.size))
     }
 
     @Test
     fun loadDetailMovie(){
-        onView(withId(R.id.recyclerView)).perform(RecyclerViewActions.actionOnItemAtPosition<RecyclerView.ViewHolder>(0, click()))
+        onView(withId(R.id.rv_movies)).perform(RecyclerViewActions.actionOnItemAtPosition<RecyclerView.ViewHolder>(0, click()))
         onView(withId(R.id.movie_title)).check(ViewAssertions.matches(isDisplayed()))
         onView(withId(R.id.movie_title)).check(ViewAssertions.matches(withText(movieDetail.title)))
         onView(withId(R.id.movie_release)).check(ViewAssertions.matches(isDisplayed()))
@@ -70,8 +67,8 @@ class MainActivityTest {
     @Test
     fun loadDetailSeries(){
         onView(withId(R.id.seriesFragment)).perform(click())
-        onView(withId(R.id.recyclerView)).check(ViewAssertions.matches(isDisplayed()))
-        onView(withId(R.id.recyclerView)).perform(RecyclerViewActions.actionOnItemAtPosition<RecyclerView.ViewHolder>(0, click()))
+        onView(withId(R.id.rv_series)).check(ViewAssertions.matches(isDisplayed()))
+        onView(withId(R.id.rv_series)).perform(RecyclerViewActions.actionOnItemAtPosition<RecyclerView.ViewHolder>(0, click()))
         onView(withId(R.id.series_title)).check(ViewAssertions.matches(isDisplayed()))
         onView(withId(R.id.series_title)).check(ViewAssertions.matches(withText(seriesDetail.name)))
         onView(withId(R.id.series_release)).check(ViewAssertions.matches(isDisplayed()))
@@ -84,13 +81,12 @@ class MainActivityTest {
         onView(withId(R.id.series_lang)).check(ViewAssertions.matches(withText(seriesDetail.originalLanguage)))
         onView(withId(R.id.series_rating)).check(ViewAssertions.matches(isDisplayed()))
         onView(withId(R.id.series_rating)).check(ViewAssertions.matches(withText(seriesDetail.voteAverage.toString())))
-
     }
 
     @Test
     fun loadSeries(){
         onView(withId(R.id.seriesFragment)).perform(click())
-        onView(withId(R.id.recyclerView)).check(ViewAssertions.matches(isDisplayed()))
-        onView(withId(R.id.recyclerView)).perform(RecyclerViewActions.scrollToPosition<RecyclerView.ViewHolder>(listSeries.size))
+        onView(withId(R.id.rv_series)).check(ViewAssertions.matches(isDisplayed()))
+        onView(withId(R.id.rv_series)).perform(RecyclerViewActions.scrollToPosition<RecyclerView.ViewHolder>(listSeries.size))
     }
 }

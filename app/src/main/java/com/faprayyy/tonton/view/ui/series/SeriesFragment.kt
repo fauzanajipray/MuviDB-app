@@ -35,7 +35,7 @@ class SeriesFragment : Fragment() {
         super.onActivityCreated(savedInstanceState)
         mAdapter = SeriesAdapter()
         mAdapter.notifyDataSetChanged()
-        binding.recyclerView.apply {
+        binding.rvSeries.apply {
             adapter = mAdapter
             setHasFixedSize(true)
         }

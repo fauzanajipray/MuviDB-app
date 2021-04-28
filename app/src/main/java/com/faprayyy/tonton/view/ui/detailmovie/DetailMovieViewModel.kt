@@ -13,7 +13,6 @@ class DetailMovieViewModel : ViewModel() {
 
     val movieDetail = MutableLiveData<MovieDetail>()
 
-    @SuppressLint("LogNotTimber")
     fun setDataJson(idMovie: Int) {
         val dataJsonString = getListMovieDetail()
         try {
