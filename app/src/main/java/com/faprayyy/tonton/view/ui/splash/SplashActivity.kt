@@ -16,16 +16,12 @@ class SplashActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         binding = ActivitySplashBinding.inflate(layoutInflater)
         setContentView(binding.root)
-
         val handler = Handler(Looper.getMainLooper())
         handler.postDelayed({
-
             val i = Intent(this, MainActivity::class.java)
             startActivity(i)
             finish()
-
         }, 1000)
-
         AppCompatDelegate.setDefaultNightMode(AppCompatDelegate.MODE_NIGHT_NO)
     }
 }

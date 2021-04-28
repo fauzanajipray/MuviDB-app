@@ -14,7 +14,7 @@ import com.faprayyy.tonton.databinding.ItemMovieBinding
 class MovieAdapter : RecyclerView.Adapter<MovieAdapter.MovieHolder>() {
 
     private lateinit var onItemClickCallback: OnItemClickCallback
-    val mData = ArrayList<MovieModel>()
+    private val mData = ArrayList<MovieModel>()
 
     fun setData(items: ArrayList<MovieModel>) {
         mData.clear()

@@ -27,9 +27,7 @@ class MoviesFragment : Fragment() {
         moviesViewModel =
                 ViewModelProvider(this).get(MoviesViewModel::class.java)
         _binding = FragmentMovieBinding.inflate(inflater, container, false)
-        val view = binding.root
-
-        return view
+        return binding.root
     }
 
     override fun onActivityCreated(savedInstanceState: Bundle?) {
@@ -40,19 +38,15 @@ class MoviesFragment : Fragment() {
             adapter = mAdapter
             setHasFixedSize(true)
         }
-
         moviesViewModel.getData()
-
         moviesViewModel.listMovie.observe(viewLifecycleOwner){
             if (it != null){
                 mAdapter.setData(it)
             }
         }
-
         moviesViewModel.isLoading.observe(viewLifecycleOwner){
             showLoading(it)
         }
-
         mAdapter.setOnItemClickCallback(object : MovieAdapter.OnItemClickCallback{
             override fun onItemClicked(data: MovieModel) {
                 val intent = Intent(context, DetailMovieActivity::class.java)

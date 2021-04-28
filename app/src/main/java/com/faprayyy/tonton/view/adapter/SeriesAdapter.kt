@@ -15,7 +15,7 @@ import com.faprayyy.tonton.databinding.ItemMovieBinding
 class SeriesAdapter : RecyclerView.Adapter<SeriesAdapter.SeriesHolder>() {
 
     private lateinit var onItemClickCallback: OnItemClickCallback
-    val mData = ArrayList<SeriesModel>()
+    private val mData = ArrayList<SeriesModel>()
 
     fun setData(items: ArrayList<SeriesModel>) {
         mData.clear()
@@ -44,7 +44,6 @@ class SeriesAdapter : RecyclerView.Adapter<SeriesAdapter.SeriesHolder>() {
 
     override fun onBindViewHolder(holder: SeriesHolder, position: Int) {
         holder.bind(mData[position])
-
         holder.itemView.setOnClickListener{
             onItemClickCallback.onItemClicked(mData[holder.adapterPosition])
         }

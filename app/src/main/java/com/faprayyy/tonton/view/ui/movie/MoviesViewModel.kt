@@ -17,7 +17,6 @@ class MoviesViewModel : ViewModel() {
     fun getData(){
         isLoading.postValue(true)
         val dataJsonString = getMovieResponse()
-
         try {
             val obj = Gson().fromJson(dataJsonString, DiscoverMovieResponse::class.java)
             listMovie.postValue(obj.results)

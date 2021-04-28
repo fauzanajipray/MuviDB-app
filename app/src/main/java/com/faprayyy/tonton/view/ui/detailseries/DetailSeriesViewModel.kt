@@ -11,7 +11,7 @@ import com.google.gson.Gson
 
 class DetailSeriesViewModel : ViewModel() {
 
-    val serieDetail = MutableLiveData<SerieDetail>()
+    val seriesDetail = MutableLiveData<SerieDetail>()
 
     @SuppressLint("LogNotTimber")
     fun setDataJson(idSerie: Int) {
@@ -21,7 +21,7 @@ class DetailSeriesViewModel : ViewModel() {
             val serieList = obj.results
             for (i in 0 until serieList.size){
                 if (serieList[i].id == idSerie){
-                    serieDetail.postValue(serieList[i])
+                    seriesDetail.postValue(serieList[i])
                     break
                 }
             }

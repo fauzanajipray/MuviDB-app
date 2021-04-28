@@ -25,7 +25,7 @@ class DetailSeriesViewModelTest {
     @Before
     fun setup(){
         viewModel = DetailSeriesViewModel()
-        viewModel.serieDetail.observeForever(observer)
+        viewModel.seriesDetail.observeForever(observer)
         val dataJsonString = getListSeriesDetail()
         response = Gson().fromJson(dataJsonString, SerieDetailResponse::class.java)
     }

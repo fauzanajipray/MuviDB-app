@@ -27,9 +27,8 @@ class SeriesFragment : Fragment() {
         seriesViewModel =
             ViewModelProvider(this).get(SeriesViewModel::class.java)
         _binding = FragmentSeriesBinding.inflate(inflater, container, false)
-        val view = binding.root
 
-        return view
+        return binding.root
     }
 
     override fun onActivityCreated(savedInstanceState: Bundle?) {
@@ -40,19 +39,15 @@ class SeriesFragment : Fragment() {
             adapter = mAdapter
             setHasFixedSize(true)
         }
-
         seriesViewModel.getData()
-
         seriesViewModel.listSeries.observe(viewLifecycleOwner){
             if (it != null){
                 mAdapter.setData(it)
             }
         }
-
         seriesViewModel.isLoading.observe(viewLifecycleOwner){
             showLoading(it)
         }
-
         mAdapter.setOnItemClickCallback(object : SeriesAdapter.OnItemClickCallback{
             override fun onItemClicked(data: SeriesModel) {
                 val intent = Intent(context, DetailSeriesActivity::class.java)
@@ -64,7 +59,6 @@ class SeriesFragment : Fragment() {
 
     private fun showLoading(state: Boolean) {
         val mProgressBar = binding.progressBar
-
         if (state){
             mProgressBar.visibility = View.VISIBLE
         } else {

@@ -16,7 +16,6 @@ class DetailMovieViewModel : ViewModel() {
     @SuppressLint("LogNotTimber")
     fun setDataJson(idMovie: Int) {
         val dataJsonString = getListMovieDetail()
-
         try {
             val obj = Gson().fromJson(dataJsonString, MovieDetailResponse::class.java)
             val movieList = obj.results
@@ -26,7 +25,6 @@ class DetailMovieViewModel : ViewModel() {
                     break
                 }
             }
-
         } catch (e: Exception){
             Log.e("Failed","${e.printStackTrace()}")
         }

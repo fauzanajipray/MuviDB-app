@@ -15,16 +15,13 @@ class SeriesViewModel : ViewModel() {
 
     fun getData(){
         isLoading.postValue(true)
-
         val dataJsonString = getSeriesResponse()
-
         try {
             val obj = Gson().fromJson(dataJsonString, DiscoverSeriesResponse::class.java)
             listSeries.postValue(obj.results)
         } catch (e : Exception){
             e.printStackTrace()
         }
-
         isLoading.postValue(false)
     }
 

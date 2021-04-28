@@ -13,4 +13,6 @@
     <color name="blue800">#1E2747</color>
     <color name="blue900">#141A32</color>
     <color name="yelow">#FEC63C</color>
+
+    <color name="ic_launcher_background">#EEEEEE</color>
 </resources>

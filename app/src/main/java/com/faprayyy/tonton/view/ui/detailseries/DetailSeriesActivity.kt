@@ -4,6 +4,7 @@ import android.annotation.SuppressLint
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.util.Log
+import androidx.core.app.ShareCompat
 import androidx.lifecycle.ViewModelProvider
 import com.bumptech.glide.Glide
 import com.bumptech.glide.request.RequestOptions
@@ -30,15 +31,17 @@ class DetailSeriesActivity : AppCompatActivity() {
         setContentView(binding.root)
 
         serieDetail = SerieDetail()
+        setupToolbar(serieDetail)
         viewModel = ViewModelProvider(this).get(DetailSeriesViewModel::class.java)
         binding.toolbar.setNavigationOnClickListener { onBackPressed() }
         serieData = intent.getParcelableExtra<SeriesModel>(EXTRA_SERIE) as SeriesModel
         viewModel.setDataJson(serieData.id)
-        viewModel.serieDetail.observe(this){
+        viewModel.seriesDetail.observe(this){
             setData(it)
+            setupToolbar(it)
+            serieDetail = it
         }
         setData(serieDetail)
-
     }
 
     @SuppressLint("LogNotTimber")
@@ -47,7 +50,10 @@ class DetailSeriesActivity : AppCompatActivity() {
         binding.apply {
             collapsingToolbar.title = serieDetail.name
             seriesTitle.text = serieDetail.name
-            seriesRelease.text = serieDetail.firstAirDate
+            seriesTagline.text = serieDetail.tagline
+            seriesLang.text = serieDetail.originalLanguage
+            seriesRating.text = serieDetail.voteAverage.toString()
+            seriesRelease.text = resources.getString(R.string.first_air_date, serieDetail.firstAirDate)
             seriesOverview.text = serieDetail.overview
         }
         val posterImg = serieData.backdropPath?.let { Config.getBackdropPath(it) }
@@ -56,5 +62,26 @@ class DetailSeriesActivity : AppCompatActivity() {
             .apply(RequestOptions().override(3000))
             .apply(RequestOptions.placeholderOf(R.drawable.ic_loading_backdrop).error(R.drawable.ic_error_backdrop))
             .into(binding.backdropImg)
+    }
+
+    private fun setupToolbar(serieDetail: SerieDetail) {
+        binding.toolbar.apply {
+            setOnMenuItemClickListener {
+                when(it?.itemId){
+                    R.id.menu_share_item -> { onShareClick(serieDetail)}
+                }
+                true
+            }
+        }
+    }
+
+    private fun onShareClick(serieDetail: SerieDetail) {
+        val mimeType = "text/plain"
+        ShareCompat.IntentBuilder
+                .from(this)
+                .setType(mimeType)
+                .setChooserTitle("Share")
+                .setText(resources.getString(R.string.share_text, serieDetail.name))
+                .startChooser()
     }
 }
