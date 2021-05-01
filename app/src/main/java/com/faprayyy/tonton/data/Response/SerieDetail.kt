@@ -13,7 +13,7 @@ data class SerieDetail(
     var firstAirDate : String? = "",
     @SerializedName("genres")
     @Expose
-    var genres : ArrayList<Genre>? = ArrayList(),
+    var genres : ArrayList<Genre> = ArrayList(),
     @SerializedName("homepage")
     @Expose
     var homepage : String? = "",

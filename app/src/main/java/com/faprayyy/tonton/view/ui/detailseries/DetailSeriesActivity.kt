@@ -14,6 +14,8 @@ import com.faprayyy.tonton.api.Config
 import com.faprayyy.tonton.data.Response.SerieDetail
 import com.faprayyy.tonton.data.SeriesModel
 import com.faprayyy.tonton.databinding.ActivityDetailSeriesBinding
+import com.faprayyy.tonton.helper.convertGenres
+import java.util.*
 
 class DetailSeriesActivity : AppCompatActivity() {
 
@@ -64,11 +66,12 @@ class DetailSeriesActivity : AppCompatActivity() {
             collapsingToolbar.title = serieDetail.name
             seriesTitle.text = serieDetail.name
             seriesTagline.text = serieDetail.tagline
-            seriesLang.text = serieDetail.originalLanguage
+            seriesLang.text = serieDetail.originalLanguage?.toUpperCase(Locale.ROOT)
             seriesRating.rating = serieDetail.voteAverage?.div(2)?.toFloat() as Float
             seriesVoteCount.text = resources.getString(R.string.voters, serieDetail.voteCount)
             seriesRelease.text =  serieDetail.firstAirDate
             seriesOverview.text = serieDetail.overview
+            seriesGenres.text = convertGenres(serieDetail.genres)
         }
         val posterImg = serieData.backdropPath?.let { Config.getBackdropPath(it) }
         Glide.with(this)
