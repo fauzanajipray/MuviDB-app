@@ -7,10 +7,12 @@ import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.Fragment
 import androidx.lifecycle.ViewModelProvider
+import com.faprayyy.tonton.R
 import com.faprayyy.tonton.data.SeriesModel
 import com.faprayyy.tonton.databinding.FragmentSeriesBinding
 import com.faprayyy.tonton.view.adapter.SeriesAdapter
 import com.faprayyy.tonton.view.ui.detailseries.DetailSeriesActivity
+import com.faprayyy.tonton.view.ui.search.SearchActivity
 
 class SeriesFragment : Fragment() {
 
@@ -27,9 +29,8 @@ class SeriesFragment : Fragment() {
         seriesViewModel =
             ViewModelProvider(this).get(SeriesViewModel::class.java)
         _binding = FragmentSeriesBinding.inflate(inflater, container, false)
-        val view = binding.root
 
-        return view
+        return binding.root
     }
 
     override fun onActivityCreated(savedInstanceState: Bundle?) {
@@ -41,8 +42,8 @@ class SeriesFragment : Fragment() {
             setHasFixedSize(true)
         }
 
+        setupToolbar()
         seriesViewModel.setData()
-
         seriesViewModel.listSeries.observe(viewLifecycleOwner){
             if (it != null){
                 mAdapter.setData(it)
@@ -62,10 +63,24 @@ class SeriesFragment : Fragment() {
         })
     }
 
+    private fun setupToolbar() {
+        binding.toolbar.apply {
+            setOnMenuItemClickListener {
+                when(it?.itemId){
+                    R.id.menu_search_item -> {
+                        val intent = Intent(context, SearchActivity::class.java)
+                        startActivity(intent)
+                    }
+                }
+                true
+            }
+        }
+    }
+
     private fun showLoading(state: Boolean) {
         val mProgressBar = binding.progressBar
 
-        if (state == true){
+        if (state){
             mProgressBar.visibility = View.VISIBLE
         } else {
             mProgressBar.visibility = View.INVISIBLE

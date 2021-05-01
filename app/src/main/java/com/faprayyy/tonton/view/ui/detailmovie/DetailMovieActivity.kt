@@ -1,6 +1,7 @@
 package com.faprayyy.tonton.view.ui.detailmovie
 
 import android.annotation.SuppressLint
+import android.content.Intent
 import android.os.Bundle
 import android.util.Log
 import android.view.View
@@ -16,6 +17,7 @@ import com.faprayyy.tonton.data.MovieModel
 import com.faprayyy.tonton.data.Response.MovieDetail
 import com.faprayyy.tonton.databinding.ActivityDetailMovieBinding
 import com.faprayyy.tonton.helper.convertGenres
+import com.faprayyy.tonton.view.ui.search.SearchActivity
 import java.util.*
 
 
@@ -99,7 +101,11 @@ class DetailMovieActivity : AppCompatActivity() {
         binding.toolbar.apply {
             setOnMenuItemClickListener {
                 when(it?.itemId){
-                    R.id.menu_share_item -> { onShareClick(movieDetail)}
+                    R.id.menu_share_item -> { onShareClick(movieDetail) }
+                    R.id.menu_search_item -> {
+                        val intent = Intent(context, SearchActivity::class.java)
+                        startActivity(intent)
+                    }
                 }
                 true
             }

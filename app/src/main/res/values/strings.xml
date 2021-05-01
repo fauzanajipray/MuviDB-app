@@ -1,5 +1,5 @@
 <resources>
-    <string name="app_name">Tonton Apps</string>
+    <string name="app_name">The Tonton</string>
     <string name="title_activity_main">MainActivity</string>
     <string name="title_home">Home</string>
     <string name="title_movies">Movies</string>
@@ -19,5 +19,6 @@
     <string name="lorem2">Ded do eiusmod tempor incididunt ut labore</string>
     <string name="lorem">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</string>
     <string name="voters_tools">(900 voters)</string>
+    <string name="search">Search</string>
 
 </resources>

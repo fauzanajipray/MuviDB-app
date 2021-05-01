@@ -7,10 +7,12 @@ import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.Fragment
 import androidx.lifecycle.ViewModelProvider
+import com.faprayyy.tonton.R
 import com.faprayyy.tonton.data.MovieModel
 import com.faprayyy.tonton.databinding.FragmentMovieBinding
 import com.faprayyy.tonton.view.adapter.MovieAdapter
 import com.faprayyy.tonton.view.ui.detailmovie.DetailMovieActivity
+import com.faprayyy.tonton.view.ui.search.SearchActivity
 
 class MoviesFragment : Fragment() {
 
@@ -40,9 +42,8 @@ class MoviesFragment : Fragment() {
             adapter = mAdapter
             setHasFixedSize(true)
         }
-
+        setupToolbar()
         moviesViewModel.setData()
-
         moviesViewModel.listMovie.observe(viewLifecycleOwner){
             if (it != null){
                 mAdapter.setData(it)
@@ -58,14 +59,27 @@ class MoviesFragment : Fragment() {
                 val intent = Intent(context, DetailMovieActivity::class.java)
                 intent.putExtra(DetailMovieActivity.EXTRA_MOVIE, data)
                 startActivity(intent)
-
             }
         })
     }
 
+    private fun setupToolbar() {
+        binding.toolbar.apply {
+            setOnMenuItemClickListener {
+                when(it?.itemId){
+                    R.id.menu_search_item -> {
+                        val intent = Intent(context, SearchActivity::class.java)
+                        startActivity(intent)
+                    }
+                }
+                true
+            }
+        }
+    }
+
     private fun showLoading(state: Boolean) {
         val mProgressBar = binding.progressBar
-        if (state == true){
+        if (state){
             mProgressBar.visibility = View.VISIBLE
         } else {
             mProgressBar.visibility = View.INVISIBLE

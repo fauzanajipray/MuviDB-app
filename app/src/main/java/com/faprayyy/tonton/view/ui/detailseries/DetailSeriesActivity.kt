@@ -1,6 +1,7 @@
 package com.faprayyy.tonton.view.ui.detailseries
 
 import android.annotation.SuppressLint
+import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.util.Log
@@ -15,6 +16,7 @@ import com.faprayyy.tonton.data.Response.SerieDetail
 import com.faprayyy.tonton.data.SeriesModel
 import com.faprayyy.tonton.databinding.ActivityDetailSeriesBinding
 import com.faprayyy.tonton.helper.convertGenres
+import com.faprayyy.tonton.view.ui.search.SearchActivity
 import java.util.*
 
 class DetailSeriesActivity : AppCompatActivity() {
@@ -85,7 +87,11 @@ class DetailSeriesActivity : AppCompatActivity() {
         binding.toolbar.apply {
             setOnMenuItemClickListener {
                 when(it?.itemId){
-                    R.id.menu_share_item -> { onShareClick(serieDetail)}
+                    R.id.menu_share_item -> { onShareClick(serieDetail) }
+                    R.id.menu_search_item -> {
+                        val intent = Intent(context, SearchActivity::class.java)
+                        startActivity(intent)
+                    }
                 }
                 true
             }
