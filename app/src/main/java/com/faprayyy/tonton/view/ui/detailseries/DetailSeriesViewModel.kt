@@ -1,9 +1,9 @@
 package com.faprayyy.tonton.view.ui.detailseries
 
-import android.annotation.SuppressLint
 import android.util.Log
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
+import com.faprayyy.tonton.BuildConfig
 import com.faprayyy.tonton.api.ApiConfig
 import com.faprayyy.tonton.data.Response.SerieDetail
 import retrofit2.Call
@@ -15,10 +15,8 @@ class DetailSeriesViewModel : ViewModel() {
     val isLoading = MutableLiveData<Boolean>()
     val serieDetail = MutableLiveData<SerieDetail>()
 
-    // TODO GANTI BUILD IMPORT
-    private val apikey = com.faprayyy.tonton.utils.apikey.apiKey
+    private val apikey = BuildConfig.THEMOVIEDB_TOKEN
 
-    @SuppressLint("LogNotTimber")
     fun setData(movieId: Int){
         isLoading.postValue(true)
         val client = ApiConfig.getApiService().getSerie(movieId,apikey)

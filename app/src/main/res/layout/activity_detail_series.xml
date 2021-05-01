@@ -42,6 +42,7 @@
                     android:id="@+id/toolbar"
                     android:layout_width="match_parent"
                     android:layout_height="?attr/actionBarSize"
+                    app:menu="@menu/detail_menu"
                     app:layout_collapseMode="pin"
                     app:popupTheme="@style/ThemeOverlay.MaterialComponents"
                     app:navigationIcon="@drawable/ic_baseline_arrow_back_24" />
@@ -61,45 +62,115 @@
                 android:padding="@dimen/activity_vertical_margin"
                 android:orientation="vertical">
 
-                <TextView
-                    android:id="@+id/series_title"
-                    style="@style/App.TextView"
+                <ProgressBar
+                    android:id="@+id/progressBar"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:layout_marginTop="@dimen/layout_margin_top"
-                    android:textStyle="bold"
-                    android:textSize="@dimen/text_header"
-                    android:text="@string/title_movies" />
+                    android:visibility="visible"
+                    android:layout_gravity="center"/>
 
-                <TextView
-                    android:id="@+id/series_release"
-                    style="@style/App.TextView.Sub2"
+                <LinearLayout
+                    android:id="@+id/data_detail"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:textSize="@dimen/text_size"
-                    android:layout_marginTop="@dimen/layout_margin_top"
-                    android:text="@string/relese_date" />
+                    android:orientation="vertical">
 
-                <TextView
-                    android:id="@+id/overview_title"
-                    style="@style/App.TextView.Sub2"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:textSize="@dimen/text_header_3"
-                    android:textStyle="bold"
-                    android:layout_marginTop="@dimen/layout_margin_top2"
-                    android:text="@string/overview_title" />
+                    <TextView
+                        android:id="@+id/series_title"
+                        style="@style/App.TextView"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        tools:text="@string/title_movies"
+                        android:textSize="@dimen/text_header"
+                        android:textStyle="bold"
+                        android:layout_marginEnd="70dp"/>
+                    <TextView
+                        android:id="@+id/series_tagline"
+                        style="@style/App.TextView.Sub2"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:textStyle="italic"
+                        android:textSize="@dimen/text_size"
+                        tools:text="@string/lorem2" />
+                    <LinearLayout
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="@dimen/layout_margin_top2"
+                        android:orientation="horizontal" >
+                        <RatingBar
+                            android:id="@+id/series_rating"
+                            style="@style/RatingBar.Small"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:rating="@string/rating_tools"
+                            android:layout_gravity="fill"
+                            android:theme="@style/RatingBar"/>
 
-                <TextView
-                    android:id="@+id/series_overview"
-                    style="@style/App.TextView.Sub2"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:textSize="@dimen/text_size"
-                    android:layout_marginTop="@dimen/layout_margin_top"
-                    android:text="@string/lorem2" />
+                        <TextView
+                            android:id="@+id/series_vote_count"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginStart="@dimen/layout_margin_top"
+                            android:text="@string/voters_tools"/>
+                    </LinearLayout>
+                    <LinearLayout
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:orientation="horizontal"
+                        android:layout_marginTop="@dimen/layout_margin_top">
+
+                        <TextView
+                            android:id="@+id/series_release"
+                            style="@style/App.TextView.Sub2"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:drawablePadding="5dp"
+                            android:textSize="@dimen/text_size"
+                            app:drawableStartCompat="@drawable/ic_baseline_calendar"
+                            tools:text="@string/relese_date_tools" />
+
+                        <TextView
+                            android:id="@+id/series_lang"
+                            style="@style/App.TextView.Sub2"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            tools:text="@string/lang_tools"
+                            android:drawablePadding="5dp"
+                            android:layout_marginStart="@dimen/layout_margin_top3"
+                            app:drawableStartCompat="@drawable/ic_baseline_language"
+                            android:textSize="@dimen/text_size" />
+
+                    </LinearLayout>
+                    <TextView
+                        android:id="@+id/overview_title"
+                        style="@style/App.TextView.Sub2"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="@dimen/layout_margin_top2"
+                        android:text="@string/overview_title"
+                        android:textSize="@dimen/text_header_3"
+                        android:textStyle="bold" />
+                    <TextView
+                        android:id="@+id/series_overview"
+                        style="@style/App.TextView.Sub2"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="@dimen/layout_margin_top"
+                        tools:text="@string/lorem"
+                        android:textSize="@dimen/text_size" />
+
+                </LinearLayout>
             </LinearLayout>
         </androidx.core.widget.NestedScrollView>
+        <com.google.android.material.floatingactionbutton.FloatingActionButton
+            android:id="@+id/fab"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_margin="@dimen/fab_margin"
+            app:layout_anchor="@id/appbar"
+            app:layout_anchorGravity="bottom|end"
+            app:srcCompat="@drawable/ic_baseline_favorite_24"
+            android:contentDescription="@string/add_to_favorite" />
 
     </androidx.coordinatorlayout.widget.CoordinatorLayout>
 </layout>

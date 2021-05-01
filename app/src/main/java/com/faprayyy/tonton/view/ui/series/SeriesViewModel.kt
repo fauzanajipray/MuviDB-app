@@ -4,6 +4,7 @@ import android.annotation.SuppressLint
 import android.util.Log
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
+import com.faprayyy.tonton.BuildConfig
 import com.faprayyy.tonton.api.ApiConfig
 import com.faprayyy.tonton.data.Response.DiscoverSeriesResponse
 import com.faprayyy.tonton.data.SeriesModel
@@ -17,9 +18,8 @@ class SeriesViewModel : ViewModel() {
     val listSeries = MutableLiveData<ArrayList<SeriesModel>>()
 
     // TODO GANTI BUILD IMPORT
-    val apikey = com.faprayyy.tonton.utils.apikey.apiKey
+    val apikey = BuildConfig.THEMOVIEDB_TOKEN
 
-    @SuppressLint("LogNotTimber")
     fun setData(){
         isLoading.postValue(true)
         val client = ApiConfig.getApiService().getDiscoverSeries(apikey)

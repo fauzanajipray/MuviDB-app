@@ -4,8 +4,20 @@
     <string name="title_home">Home</string>
     <string name="title_movies">Movies</string>
     <string name="title_series">Series</string>
-    <string name="relese_date">2021–03–31</string>
-    <string name="lorem">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</string>
     <string name="overview_title">Overview</string>
     <string name="the_movie_poster">The Movie Poster</string>
+    <string name="app_name_logo">The Tonton Apps Logo</string>
+    <string name="share_text">Cek %s di aplikasi android Tonton</string>
+    <string name="share">Share</string>
+    <string name="voters">(%s voters)</string>
+    <string name="add_to_favorite">Add to favorite</string>
+
+    <string name="relese_date_tools">2021–03–31</string>
+    <string name="rating_tools">3.5</string>
+    <string name="lang_tools">en</string>
+    <string name="genre_tools">Action, Superhero, Romance</string>
+    <string name="lorem2">Ded do eiusmod tempor incididunt ut labore</string>
+    <string name="lorem">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</string>
+    <string name="voters_tools">(900 voters)</string>
+
 </resources>
