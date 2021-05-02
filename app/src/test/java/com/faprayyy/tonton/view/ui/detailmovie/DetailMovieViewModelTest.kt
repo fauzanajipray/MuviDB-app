@@ -12,7 +12,8 @@ import org.junit.Test
 import org.junit.Before
 import org.junit.Rule
 import org.mockito.ArgumentCaptor
-import org.mockito.Mockito.*
+import org.mockito.Mockito.times
+import org.mockito.Mockito.verify
 
 class DetailMovieViewModelTest {
 
