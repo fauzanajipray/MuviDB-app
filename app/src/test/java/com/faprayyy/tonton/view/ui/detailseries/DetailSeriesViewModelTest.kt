@@ -2,8 +2,8 @@ package com.faprayyy.tonton.view.ui.detailseries
 
 import androidx.arch.core.executor.testing.InstantTaskExecutorRule
 import androidx.lifecycle.Observer
-import com.faprayyy.tonton.data.Response.SerieDetail
-import com.faprayyy.tonton.data.Response.SerieDetailResponse
+import com.faprayyy.tonton.data.Response.SeriesDetail
+import com.faprayyy.tonton.data.Response.SeriesDetailResponse
 import com.faprayyy.tonton.mock
 import com.faprayyy.tonton.utils.getListSeriesDetail
 import com.google.gson.Gson
@@ -19,15 +19,15 @@ class DetailSeriesViewModelTest {
     @get:Rule
     val rule = InstantTaskExecutorRule()
 
-    private val observer: Observer<SerieDetail> = mock()
+    private val observer: Observer<SeriesDetail> = mock()
     private lateinit var viewModel: DetailSeriesViewModel
-    private lateinit var response: SerieDetailResponse
+    private lateinit var response: SeriesDetailResponse
     @Before
     fun setup(){
         viewModel = DetailSeriesViewModel()
         viewModel.seriesDetail.observeForever(observer)
         val dataJsonString = getListSeriesDetail()
-        response = Gson().fromJson(dataJsonString, SerieDetailResponse::class.java)
+        response = Gson().fromJson(dataJsonString, SeriesDetailResponse::class.java)
     }
 
     @Test
@@ -35,7 +35,7 @@ class DetailSeriesViewModelTest {
         val expect = response.results[0]
 
         viewModel.setDataJson(88396)
-        val captor = ArgumentCaptor.forClass(SerieDetail::class.java)
+        val captor = ArgumentCaptor.forClass(SeriesDetail::class.java)
         captor.run {
             Mockito.verify(observer, Mockito.times(1)).onChanged(capture())
             println(value)

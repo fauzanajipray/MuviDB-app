@@ -4,7 +4,7 @@ import com.faprayyy.tonton.data.Genre
 import com.google.gson.annotations.Expose
 import com.google.gson.annotations.SerializedName
 
-data class SerieDetail(
+data class SeriesDetail(
     @SerializedName("backdrop_path")
     @Expose
     var backdropPath : String? = "",

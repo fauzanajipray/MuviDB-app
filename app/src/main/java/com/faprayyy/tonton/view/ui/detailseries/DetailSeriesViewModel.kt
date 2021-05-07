@@ -1,26 +1,25 @@
 package com.faprayyy.tonton.view.ui.detailseries
 
-import android.annotation.SuppressLint
 import android.util.Log
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
-import com.faprayyy.tonton.data.Response.SerieDetail
-import com.faprayyy.tonton.data.Response.SerieDetailResponse
+import com.faprayyy.tonton.data.Response.SeriesDetail
+import com.faprayyy.tonton.data.Response.SeriesDetailResponse
 import com.faprayyy.tonton.utils.getListSeriesDetail
 import com.google.gson.Gson
 
 class DetailSeriesViewModel : ViewModel() {
 
-    val seriesDetail = MutableLiveData<SerieDetail>()
+    val seriesDetail = MutableLiveData<SeriesDetail>()
 
-    fun setDataJson(idSerie: Int) {
+    fun setDataJson(idSeries: Int) {
         val dataJsonString = getListSeriesDetail()
         try {
-            val obj = Gson().fromJson(dataJsonString, SerieDetailResponse::class.java)
-            val serieList = obj.results
-            for (i in 0 until serieList.size){
-                if (serieList[i].id == idSerie){
-                    seriesDetail.postValue(serieList[i])
+            val obj = Gson().fromJson(dataJsonString, SeriesDetailResponse::class.java)
+            val seriesList = obj.results
+            for (i in 0 until seriesList.size){
+                if (seriesList[i].id == idSeries){
+                    seriesDetail.postValue(seriesList[i])
                     break
                 }
             }

@@ -10,19 +10,19 @@ import com.bumptech.glide.Glide
 import com.bumptech.glide.request.RequestOptions
 import com.faprayyy.tonton.R
 import com.faprayyy.tonton.api.Config
-import com.faprayyy.tonton.data.Response.SerieDetail
+import com.faprayyy.tonton.data.Response.SeriesDetail
 import com.faprayyy.tonton.data.SeriesModel
 import com.faprayyy.tonton.databinding.ActivityDetailSeriesBinding
 
 class DetailSeriesActivity : AppCompatActivity() {
 
     companion object{
-        const val EXTRA_SERIE = "extra_movie"
+        const val EXTRA_SERIES = "extra_movie"
     }
 
     private lateinit var binding: ActivityDetailSeriesBinding
     private lateinit var serieData: SeriesModel
-    private lateinit var serieDetail: SerieDetail
+    private lateinit var seriesDetail: SeriesDetail
     private lateinit var viewModel: DetailSeriesViewModel
 
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -30,31 +30,31 @@ class DetailSeriesActivity : AppCompatActivity() {
         binding = ActivityDetailSeriesBinding.inflate(layoutInflater)
         setContentView(binding.root)
 
-        serieDetail = SerieDetail()
-        setupToolbar(serieDetail)
+        seriesDetail = SeriesDetail()
+        setupToolbar(seriesDetail)
         viewModel = ViewModelProvider(this).get(DetailSeriesViewModel::class.java)
         binding.toolbar.setNavigationOnClickListener { onBackPressed() }
-        serieData = intent.getParcelableExtra<SeriesModel>(EXTRA_SERIE) as SeriesModel
+        serieData = intent.getParcelableExtra<SeriesModel>(EXTRA_SERIES) as SeriesModel
         viewModel.setDataJson(serieData.id)
         viewModel.seriesDetail.observe(this){
             setData(it)
             setupToolbar(it)
-            serieDetail = it
+            seriesDetail = it
         }
-        setData(serieDetail)
+        setData(seriesDetail)
     }
 
     @SuppressLint("LogNotTimber")
-    private fun setData(serieDetail: SerieDetail) {
+    private fun setData(seriesDetail: SeriesDetail) {
         Log.d("TAG", "$serieData")
         binding.apply {
-            collapsingToolbar.title = serieDetail.name
-            seriesTitle.text = serieDetail.name
-            seriesTagline.text = serieDetail.tagline
-            seriesLang.text = serieDetail.originalLanguage
-            seriesRating.text = serieDetail.voteAverage.toString()
-            seriesRelease.text = resources.getString(R.string.first_air_date, serieDetail.firstAirDate)
-            seriesOverview.text = serieDetail.overview
+            collapsingToolbar.title = seriesDetail.name
+            seriesTitle.text = seriesDetail.name
+            seriesTagline.text = seriesDetail.tagline
+            seriesLang.text = seriesDetail.originalLanguage
+            seriesRating.text = seriesDetail.voteAverage.toString()
+            seriesRelease.text = resources.getString(R.string.first_air_date, seriesDetail.firstAirDate)
+            seriesOverview.text = seriesDetail.overview
         }
         val posterImg = serieData.backdropPath?.let { Config.getBackdropPath(it) }
         Glide.with(this)
@@ -64,24 +64,24 @@ class DetailSeriesActivity : AppCompatActivity() {
             .into(binding.backdropImg)
     }
 
-    private fun setupToolbar(serieDetail: SerieDetail) {
+    private fun setupToolbar(seriesDetail: SeriesDetail) {
         binding.toolbar.apply {
             setOnMenuItemClickListener {
                 when(it?.itemId){
-                    R.id.menu_share_item -> { onShareClick(serieDetail)}
+                    R.id.menu_share_item -> { onShareClick(seriesDetail)}
                 }
                 true
             }
         }
     }
 
-    private fun onShareClick(serieDetail: SerieDetail) {
+    private fun onShareClick(seriesDetail: SeriesDetail) {
         val mimeType = "text/plain"
         ShareCompat.IntentBuilder
                 .from(this)
                 .setType(mimeType)
                 .setChooserTitle("Share")
-                .setText(resources.getString(R.string.share_text, serieDetail.name))
+                .setText(resources.getString(R.string.share_text, seriesDetail.name))
                 .startChooser()
     }
 }

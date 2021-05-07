@@ -24,7 +24,7 @@ class MainActivityTest {
     private lateinit var listMovie: ArrayList<MovieModel>
     private lateinit var listSeries: ArrayList<SeriesModel>
     private lateinit var movieDetail: MovieDetail
-    private lateinit var seriesDetail: SerieDetail
+    private lateinit var seriesDetail: SeriesDetail
 
     @get:Rule
     var activityRule = ActivityScenarioRule(MainActivity::class.java)
@@ -37,7 +37,7 @@ class MainActivityTest {
         listSeries = obj2.results
         val obj3 = Gson().fromJson(getListMovieDetail(), MovieDetailResponse::class.java)
         movieDetail = obj3.results[0]
-        val obj4 = Gson().fromJson(getListSeriesDetail(), SerieDetailResponse::class.java)
+        val obj4 = Gson().fromJson(getListSeriesDetail(), SeriesDetailResponse::class.java)
         seriesDetail = obj4.results[0]
     }
 

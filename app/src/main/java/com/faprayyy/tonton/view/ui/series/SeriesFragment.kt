@@ -51,7 +51,7 @@ class SeriesFragment : Fragment() {
         mAdapter.setOnItemClickCallback(object : SeriesAdapter.OnItemClickCallback{
             override fun onItemClicked(data: SeriesModel) {
                 val intent = Intent(context, DetailSeriesActivity::class.java)
-                intent.putExtra(DetailSeriesActivity.EXTRA_SERIE, data)
+                intent.putExtra(DetailSeriesActivity.EXTRA_SERIES, data)
                 startActivity(intent)
             }
         })
