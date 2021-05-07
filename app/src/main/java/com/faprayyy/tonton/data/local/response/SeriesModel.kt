@@ -1,4 +1,4 @@
-package com.faprayyy.tonton.data
+package com.faprayyy.tonton.data.local.response
 
 import android.os.Parcelable
 import com.google.gson.annotations.SerializedName

@@ -7,15 +7,14 @@ import androidx.recyclerview.widget.RecyclerView
 import com.bumptech.glide.Glide
 import com.bumptech.glide.request.RequestOptions
 import com.faprayyy.tonton.R
-import com.faprayyy.tonton.api.Config
-import com.faprayyy.tonton.data.MovieModel
-import com.faprayyy.tonton.data.SeriesModel
+import com.faprayyy.tonton.data.remote.Config
+import com.faprayyy.tonton.data.local.response.SeriesModel
 import com.faprayyy.tonton.databinding.ItemMovieBinding
 
 class SeriesAdapter : RecyclerView.Adapter<SeriesAdapter.SeriesHolder>() {
 
     private lateinit var onItemClickCallback: OnItemClickCallback
-    val mData = ArrayList<SeriesModel>()
+    private val mData = ArrayList<SeriesModel>()
 
     fun setData(items: ArrayList<SeriesModel>) {
         mData.clear()

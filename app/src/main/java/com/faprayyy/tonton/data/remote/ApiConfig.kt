@@ -1,4 +1,4 @@
-package com.faprayyy.tonton.api
+package com.faprayyy.tonton.data.remote
 
 import okhttp3.OkHttpClient
 import okhttp3.logging.HttpLoggingInterceptor

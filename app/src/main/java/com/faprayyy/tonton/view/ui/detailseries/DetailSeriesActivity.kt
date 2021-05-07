@@ -11,12 +11,13 @@ import androidx.lifecycle.ViewModelProvider
 import com.bumptech.glide.Glide
 import com.bumptech.glide.request.RequestOptions
 import com.faprayyy.tonton.R
-import com.faprayyy.tonton.api.Config
-import com.faprayyy.tonton.data.Response.SerieDetail
-import com.faprayyy.tonton.data.SeriesModel
+import com.faprayyy.tonton.data.remote.Config
+import com.faprayyy.tonton.data.Response.SeriesDetail
+import com.faprayyy.tonton.data.local.response.SeriesModel
 import com.faprayyy.tonton.databinding.ActivityDetailSeriesBinding
 import com.faprayyy.tonton.helper.convertGenres
 import com.faprayyy.tonton.view.ui.search.SearchActivity
+import com.faprayyy.tonton.viewmodel.ViewModelFactory
 import java.util.*
 
 class DetailSeriesActivity : AppCompatActivity() {
@@ -26,8 +27,8 @@ class DetailSeriesActivity : AppCompatActivity() {
     }
 
     private lateinit var binding: ActivityDetailSeriesBinding
-    private lateinit var serieData: SeriesModel
-    private lateinit var serieDetail: SerieDetail
+    private lateinit var seriesData: SeriesModel
+    private lateinit var seriesDetail: SeriesDetail
     private lateinit var viewModel: DetailSeriesViewModel
 
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -35,20 +36,21 @@ class DetailSeriesActivity : AppCompatActivity() {
         binding = ActivityDetailSeriesBinding.inflate(layoutInflater)
         setContentView(binding.root)
 
-        serieDetail = SerieDetail()
-        setupToolbar(serieDetail)
+        seriesDetail = SeriesDetail()
+        setupToolbar(seriesDetail)
         showProgressBar(true)
         showData(false)
-        viewModel = ViewModelProvider(this).get(DetailSeriesViewModel::class.java)
+        val factory = ViewModelFactory.getInstance()
+        viewModel =  ViewModelProvider(this, factory)[DetailSeriesViewModel::class.java]
         binding.toolbar.setNavigationOnClickListener { onBackPressed() }
-        serieData = intent.getParcelableExtra<SeriesModel>(EXTRA_SERIE) as SeriesModel
-        viewModel.setData(serieData.id)
-        viewModel.serieDetail.observe(this){
+        seriesData = intent.getParcelableExtra<SeriesModel>(EXTRA_SERIE) as SeriesModel
+
+        viewModel.getSeries(seriesData.id).observe(this){
             setData(it)
             setupToolbar(it)
-            serieDetail = it
+            seriesDetail = it
         }
-        viewModel.isLoading.observe(this){
+        viewModel.getLoadingState().observe(this){
             if (it){
                 showData(false)
                 showProgressBar(true)
@@ -57,25 +59,25 @@ class DetailSeriesActivity : AppCompatActivity() {
                 showProgressBar(false)
             }
         }
-        setData(serieDetail)
+        setData(seriesDetail)
 
     }
 
     @SuppressLint("StringFormatMatches")
-    private fun setData(serieDetail: SerieDetail) {
-        Log.d("TAG", "$serieData")
+    private fun setData(seriesDetail: SeriesDetail) {
+        Log.d("TAG", "$seriesData")
         binding.apply {
-            collapsingToolbar.title = serieDetail.name
-            seriesTitle.text = serieDetail.name
-            seriesTagline.text = serieDetail.tagline
-            seriesLang.text = serieDetail.originalLanguage?.toUpperCase(Locale.ROOT)
-            seriesRating.rating = serieDetail.voteAverage?.div(2)?.toFloat() as Float
-            seriesVoteCount.text = resources.getString(R.string.voters, serieDetail.voteCount)
-            seriesRelease.text =  serieDetail.firstAirDate
-            seriesOverview.text = serieDetail.overview
-            seriesGenres.text = convertGenres(serieDetail.genres)
+            collapsingToolbar.title = seriesDetail.name
+            seriesTitle.text = seriesDetail.name
+            seriesTagline.text = seriesDetail.tagline
+            seriesLang.text = seriesDetail.originalLanguage?.toUpperCase(Locale.ROOT)
+            seriesRating.rating = seriesDetail.voteAverage?.div(2)?.toFloat() as Float
+            seriesVoteCount.text = resources.getString(R.string.voters, seriesDetail.voteCount)
+            seriesRelease.text =  seriesDetail.firstAirDate
+            seriesOverview.text = seriesDetail.overview
+            seriesGenres.text = convertGenres(seriesDetail.genres)
         }
-        val posterImg = serieData.backdropPath?.let { Config.getBackdropPath(it) }
+        val posterImg = seriesData.backdropPath?.let { Config.getBackdropPath(it) }
         Glide.with(this)
             .load(posterImg)
             .apply(RequestOptions().override(3000))
@@ -83,11 +85,11 @@ class DetailSeriesActivity : AppCompatActivity() {
             .into(binding.backdropImg)
     }
 
-    private fun setupToolbar(serieDetail: SerieDetail) {
+    private fun setupToolbar(seriesDetail: SeriesDetail) {
         binding.toolbar.apply {
             setOnMenuItemClickListener {
                 when(it?.itemId){
-                    R.id.menu_share_item -> { onShareClick(serieDetail) }
+                    R.id.menu_share_item -> { onShareClick(seriesDetail) }
                     R.id.menu_search_item -> {
                         val intent = Intent(context, SearchActivity::class.java)
                         startActivity(intent)
@@ -98,13 +100,13 @@ class DetailSeriesActivity : AppCompatActivity() {
         }
     }
 
-    private fun onShareClick(serieDetail: SerieDetail) {
+    private fun onShareClick(seriesDetail: SeriesDetail) {
         val mimeType = "text/plain"
         ShareCompat.IntentBuilder
             .from(this)
             .setType(mimeType)
             .setChooserTitle("Share")
-            .setText(resources.getString(R.string.share_text, serieDetail.name))
+            .setText(resources.getString(R.string.share_text, seriesDetail.name))
             .startChooser()
     }
 

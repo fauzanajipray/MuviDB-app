@@ -8,11 +8,12 @@ import android.view.ViewGroup
 import androidx.fragment.app.Fragment
 import androidx.lifecycle.ViewModelProvider
 import com.faprayyy.tonton.R
-import com.faprayyy.tonton.data.MovieModel
+import com.faprayyy.tonton.data.local.response.MovieModel
 import com.faprayyy.tonton.databinding.FragmentMovieBinding
 import com.faprayyy.tonton.view.adapter.MovieAdapter
 import com.faprayyy.tonton.view.ui.detailmovie.DetailMovieActivity
 import com.faprayyy.tonton.view.ui.search.SearchActivity
+import com.faprayyy.tonton.viewmodel.ViewModelFactory
 
 class MoviesFragment : Fragment() {
 
@@ -26,12 +27,12 @@ class MoviesFragment : Fragment() {
             container: ViewGroup?,
             savedInstanceState: Bundle?
     ): View {
-        moviesViewModel =
-                ViewModelProvider(this).get(MoviesViewModel::class.java)
-        _binding = FragmentMovieBinding.inflate(inflater, container, false)
-        val view = binding.root
+        val factory = ViewModelFactory.getInstance()
+        moviesViewModel = ViewModelProvider(this, factory)[MoviesViewModel::class.java]
 
-        return view
+        _binding = FragmentMovieBinding.inflate(inflater, container, false)
+
+        return binding.root
     }
 
     override fun onActivityCreated(savedInstanceState: Bundle?) {
@@ -43,15 +44,12 @@ class MoviesFragment : Fragment() {
             setHasFixedSize(true)
         }
         setupToolbar()
-        moviesViewModel.setData()
-        moviesViewModel.listMovie.observe(viewLifecycleOwner){
-            if (it != null){
-                mAdapter.setData(it)
-            }
+        moviesViewModel.getLoadingState().observe(viewLifecycleOwner){
+            showLoading(it)
         }
 
-        moviesViewModel.isLoading.observe(viewLifecycleOwner){
-            showLoading(it)
+        moviesViewModel.getMoviesList().observe(viewLifecycleOwner){
+            mAdapter.setData(it)
         }
 
         mAdapter.setOnItemClickCallback(object : MovieAdapter.OnItemClickCallback{

@@ -1,4 +1,4 @@
-package com.faprayyy.tonton.api
+package com.faprayyy.tonton.data.remote
 
 object Config {
 

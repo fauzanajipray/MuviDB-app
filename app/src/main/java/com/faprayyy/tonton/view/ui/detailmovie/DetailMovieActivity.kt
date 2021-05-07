@@ -3,7 +3,6 @@ package com.faprayyy.tonton.view.ui.detailmovie
 import android.annotation.SuppressLint
 import android.content.Intent
 import android.os.Bundle
-import android.util.Log
 import android.view.View
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.app.ShareCompat
@@ -11,13 +10,14 @@ import androidx.lifecycle.ViewModelProvider
 import com.bumptech.glide.Glide
 import com.bumptech.glide.request.RequestOptions
 import com.faprayyy.tonton.R
-import com.faprayyy.tonton.api.Config
-import com.faprayyy.tonton.data.Genre
-import com.faprayyy.tonton.data.MovieModel
+import com.faprayyy.tonton.data.remote.Config
+import com.faprayyy.tonton.data.local.response.MovieModel
 import com.faprayyy.tonton.data.Response.MovieDetail
 import com.faprayyy.tonton.databinding.ActivityDetailMovieBinding
 import com.faprayyy.tonton.helper.convertGenres
+import com.faprayyy.tonton.view.ui.movie.MoviesViewModel
 import com.faprayyy.tonton.view.ui.search.SearchActivity
+import com.faprayyy.tonton.viewmodel.ViewModelFactory
 import java.util.*
 
 
@@ -41,18 +41,18 @@ class DetailMovieActivity : AppCompatActivity() {
         setupToolbar(movieDetail)
         showProgressBar(true)
         showData(false)
-        viewModel = ViewModelProvider(this).get(DetailMovieViewModel::class.java)
+        val factory = ViewModelFactory.getInstance()
+        viewModel =  ViewModelProvider(this, factory)[DetailMovieViewModel::class.java]
         binding.toolbar.setNavigationOnClickListener { onBackPressed() }
         movieData = intent.getParcelableExtra<MovieModel>(EXTRA_MOVIE) as MovieModel
 
-        viewModel.setData(movieData.id)
-        viewModel.movieDetail.observe(this){
+        viewModel.getMovie(movieData.id).observe(this){
             setData(it)
             setupToolbar(it)
             movieDetail = it
         }
 
-        viewModel.isLoading.observe(this){
+        viewModel.getLoadingState().observe(this){
             if (it){
                 showData(false)
                 showProgressBar(true)

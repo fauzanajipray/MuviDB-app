@@ -1,5 +1,5 @@
 <resources>
-    <string name="app_name">The Tonton</string>
+    <string name="app_name">MuviDB</string>
     <string name="title_activity_main">MainActivity</string>
     <string name="title_home">Home</string>
     <string name="title_movies">Movies</string>

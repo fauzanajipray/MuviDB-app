@@ -1,6 +1,6 @@
 package com.faprayyy.tonton.helper
 
-import com.faprayyy.tonton.data.Genre
+import com.faprayyy.tonton.data.local.response.Genre
 
 fun convertGenres(genres: ArrayList<Genre>) : String {
     var stringGenre = ""

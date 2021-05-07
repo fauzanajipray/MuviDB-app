@@ -1,49 +1,29 @@
 package com.faprayyy.tonton.view.ui.series
 
-import android.annotation.SuppressLint
 import android.util.Log
+import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
-import com.faprayyy.tonton.BuildConfig
-import com.faprayyy.tonton.api.ApiConfig
+import com.faprayyy.tonton.data.remote.ApiConfig
 import com.faprayyy.tonton.data.Response.DiscoverSeriesResponse
-import com.faprayyy.tonton.data.SeriesModel
+import com.faprayyy.tonton.data.local.repository.MuviDBRepository
+import com.faprayyy.tonton.data.local.response.MovieModel
+import com.faprayyy.tonton.data.local.response.SeriesModel
 import retrofit2.Call
 import retrofit2.Callback
 import retrofit2.Response
 
-class SeriesViewModel : ViewModel() {
+class SeriesViewModel(private val mMuviDBRepository: MuviDBRepository) : ViewModel() {
 
     val isLoading = MutableLiveData<Boolean>()
-    val listSeries = MutableLiveData<ArrayList<SeriesModel>>()
 
-    // TODO GANTI BUILD IMPORT
-    val apikey = BuildConfig.THEMOVIEDB_TOKEN
-
-    fun setData(){
+    fun getSeriesList(): LiveData<ArrayList<SeriesModel>> {
         isLoading.postValue(true)
-        val client = ApiConfig.getApiService().getDiscoverSeries(apikey)
-        client.enqueue(object : Callback<DiscoverSeriesResponse> {
-            override fun onResponse(
-                call: Call<DiscoverSeriesResponse>,
-                response: Response<DiscoverSeriesResponse>
-            ) {
-                if (response.isSuccessful) {
-                    isLoading.postValue(false)
-                    Log.d("MainViewModel", "HIT API")
-                    listSeries.postValue(response.body()?.results)
-                } else {
-                    Log.e("MainViewModel", "onFailure: ${response.message()}")
-                }
-            }
-
-            override fun onFailure(call: Call<DiscoverSeriesResponse>, t: Throwable) {
-                isLoading.postValue(false)
-                Log.e("MainViewModel", "onFailure: ${t.message.toString()}")
-            }
-
-
-        })
+        val data = mMuviDBRepository.getSeriesFromApi()
+        isLoading.postValue(false)
+        return data
     }
+
+    fun getLoadingState(): LiveData<Boolean> = isLoading
 
 }

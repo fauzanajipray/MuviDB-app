@@ -8,11 +8,13 @@ import android.view.ViewGroup
 import androidx.fragment.app.Fragment
 import androidx.lifecycle.ViewModelProvider
 import com.faprayyy.tonton.R
-import com.faprayyy.tonton.data.SeriesModel
+import com.faprayyy.tonton.data.local.response.SeriesModel
 import com.faprayyy.tonton.databinding.FragmentSeriesBinding
 import com.faprayyy.tonton.view.adapter.SeriesAdapter
 import com.faprayyy.tonton.view.ui.detailseries.DetailSeriesActivity
+import com.faprayyy.tonton.view.ui.movie.MoviesViewModel
 import com.faprayyy.tonton.view.ui.search.SearchActivity
+import com.faprayyy.tonton.viewmodel.ViewModelFactory
 
 class SeriesFragment : Fragment() {
 
@@ -26,8 +28,8 @@ class SeriesFragment : Fragment() {
             container: ViewGroup?,
             savedInstanceState: Bundle?
     ): View {
-        seriesViewModel =
-            ViewModelProvider(this).get(SeriesViewModel::class.java)
+        val factory = ViewModelFactory.getInstance()
+        seriesViewModel = ViewModelProvider(this, factory)[SeriesViewModel::class.java]
         _binding = FragmentSeriesBinding.inflate(inflater, container, false)
 
         return binding.root
@@ -43,8 +45,7 @@ class SeriesFragment : Fragment() {
         }
 
         setupToolbar()
-        seriesViewModel.setData()
-        seriesViewModel.listSeries.observe(viewLifecycleOwner){
+        seriesViewModel.getSeriesList().observe(viewLifecycleOwner){
             if (it != null){
                 mAdapter.setData(it)
             }

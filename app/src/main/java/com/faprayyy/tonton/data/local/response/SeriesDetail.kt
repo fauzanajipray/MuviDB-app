@@ -1,68 +1,68 @@
 package com.faprayyy.tonton.data.Response
 
-import com.faprayyy.tonton.data.Genre
+import com.faprayyy.tonton.data.local.response.Genre
 import com.google.gson.annotations.Expose
 import com.google.gson.annotations.SerializedName
 
-data class SerieDetail(
-    @SerializedName("backdrop_path")
+data class SeriesDetail(
+        @SerializedName("backdrop_path")
     @Expose
     var backdropPath : String? = "",
-    @SerializedName("first_air_date")
+        @SerializedName("first_air_date")
     @Expose
     var firstAirDate : String? = "",
-    @SerializedName("genres")
+        @SerializedName("genres")
     @Expose
     var genres : ArrayList<Genre> = ArrayList(),
-    @SerializedName("homepage")
+        @SerializedName("homepage")
     @Expose
     var homepage : String? = "",
-    @SerializedName("id")
+        @SerializedName("id")
     @Expose
     var id : Int? = -2,
-    @SerializedName("in_production")
+        @SerializedName("in_production")
     @Expose
     var inProduction : Boolean? = false,
-    @SerializedName("last_air_date")
+        @SerializedName("last_air_date")
     @Expose
     var lastAirDate : String? = "",
-    @SerializedName("name")
+        @SerializedName("name")
     @Expose
     var name : String? = "",
-    @SerializedName("number_of_episodes")
+        @SerializedName("number_of_episodes")
     @Expose
     var numberOfEpisodes : Int? = 0,
-    @SerializedName("number_of_seasons")
+        @SerializedName("number_of_seasons")
     @Expose
     var numberOfSeasons : Int? = 0,
-    @SerializedName("original_language")
+        @SerializedName("original_language")
     @Expose
     var originalLanguage : String? = "",
-    @SerializedName("original_name")
+        @SerializedName("original_name")
     @Expose
     var originalName : String? = "",
-    @SerializedName("overview")
+        @SerializedName("overview")
     @Expose
     var overview : String? = "",
-    @SerializedName("popularity")
+        @SerializedName("popularity")
     @Expose
     var popularity : Double? = 0.0,
-    @SerializedName("poster_path")
+        @SerializedName("poster_path")
     @Expose
     var posterPath : String? = "",
-    @SerializedName("status")
+        @SerializedName("status")
     @Expose
     var status : String? = "",
-    @SerializedName("tagline")
+        @SerializedName("tagline")
     @Expose
     var tagline : String? = "",
-    @SerializedName("type")
+        @SerializedName("type")
     @Expose
     var type : String? = "",
-    @SerializedName("vote_average")
+        @SerializedName("vote_average")
     @Expose
     var voteAverage : Double? = 0.0,
-    @SerializedName("vote_count")
+        @SerializedName("vote_count")
     @Expose
     var voteCount : Int? = 0
 )
