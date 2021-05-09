@@ -133,7 +133,7 @@
                             android:drawablePadding="5dp"
                             android:textSize="@dimen/text_size"
                             app:drawableStartCompat="@drawable/ic_baseline_calendar"
-                            tools:text="@string/relese_date_tools" />
+                            tools:text="@string/release_date_tools" />
 
                         <TextView
                             android:id="@+id/series_lang"
@@ -168,15 +168,5 @@
                 </LinearLayout>
             </LinearLayout>
         </androidx.core.widget.NestedScrollView>
-        <com.google.android.material.floatingactionbutton.FloatingActionButton
-            android:id="@+id/fab"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_margin="@dimen/fab_margin"
-            app:layout_anchor="@id/appbar"
-            app:layout_anchorGravity="bottom|end"
-            app:srcCompat="@drawable/ic_baseline_favorite_24"
-            android:contentDescription="@string/add_to_favorite" />
-
     </androidx.coordinatorlayout.widget.CoordinatorLayout>
 </layout>

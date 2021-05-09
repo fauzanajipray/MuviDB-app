@@ -1,20 +1,10 @@
-package com.faprayyy.tonton.data.Response
+package com.faprayyy.tonton.data.local.response
 
-import com.faprayyy.tonton.data.local.response.SeriesModel
 import com.google.gson.annotations.Expose
 import com.google.gson.annotations.SerializedName
 
 class DiscoverSeriesResponse (
-        @SerializedName("page")
+    @SerializedName("results")
     @Expose
-    var page: Int = 0,
-        @SerializedName("results")
-    @Expose
-    var results: ArrayList<SeriesModel> = ArrayList(),
-        @SerializedName("total_pages")
-    @Expose
-    var totalPages: Int = 0,
-        @SerializedName("total_results")
-    @Expose
-    var totalResults : Int = 0
+    var results: ArrayList<SeriesModel> = ArrayList()
 )

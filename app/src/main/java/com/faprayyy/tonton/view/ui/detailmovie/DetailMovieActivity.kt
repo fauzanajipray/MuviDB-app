@@ -1,7 +1,6 @@
 package com.faprayyy.tonton.view.ui.detailmovie
 
 import android.annotation.SuppressLint
-import android.content.Intent
 import android.os.Bundle
 import android.view.View
 import androidx.appcompat.app.AppCompatActivity
@@ -12,12 +11,10 @@ import com.bumptech.glide.request.RequestOptions
 import com.faprayyy.tonton.R
 import com.faprayyy.tonton.data.remote.Config
 import com.faprayyy.tonton.data.local.response.MovieModel
-import com.faprayyy.tonton.data.Response.MovieDetail
+import com.faprayyy.tonton.data.local.response.MovieDetail
 import com.faprayyy.tonton.databinding.ActivityDetailMovieBinding
-import com.faprayyy.tonton.helper.convertGenres
-import com.faprayyy.tonton.view.ui.movie.MoviesViewModel
-import com.faprayyy.tonton.view.ui.search.SearchActivity
-import com.faprayyy.tonton.viewmodel.ViewModelFactory
+import com.faprayyy.tonton.utils.convertGenres
+import com.faprayyy.tonton.view.viewmodel.ViewModelFactory
 import java.util.*
 
 
@@ -67,10 +64,10 @@ class DetailMovieActivity : AppCompatActivity() {
 
     private fun showData(state: Boolean) {
         with(binding.dataDetail){
-            if (state){
-                visibility = View.VISIBLE
+            visibility = if (state){
+                View.VISIBLE
             } else {
-                visibility = View.GONE
+                View.GONE
             }
         }
     }
@@ -102,10 +99,6 @@ class DetailMovieActivity : AppCompatActivity() {
             setOnMenuItemClickListener {
                 when(it?.itemId){
                     R.id.menu_share_item -> { onShareClick(movieDetail) }
-                    R.id.menu_search_item -> {
-                        val intent = Intent(context, SearchActivity::class.java)
-                        startActivity(intent)
-                    }
                 }
                 true
             }
@@ -124,10 +117,10 @@ class DetailMovieActivity : AppCompatActivity() {
 
     private fun showProgressBar(state : Boolean){
         with(binding.progressBar){
-            if (state){
-                visibility = View.VISIBLE
+            visibility = if (state){
+                View.VISIBLE
             } else {
-                visibility = View.GONE
+                View.GONE
             }
         }
     }

@@ -1,6 +1,5 @@
-package com.faprayyy.tonton.data.Response
+package com.faprayyy.tonton.data.local.response
 
-import com.faprayyy.tonton.data.local.response.Genre
 import com.google.gson.annotations.Expose
 import com.google.gson.annotations.SerializedName
 
