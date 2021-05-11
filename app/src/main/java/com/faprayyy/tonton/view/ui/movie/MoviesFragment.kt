@@ -7,13 +7,11 @@ import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.Fragment
 import androidx.lifecycle.ViewModelProvider
-import com.faprayyy.tonton.R
 import com.faprayyy.tonton.data.local.response.MovieModel
 import com.faprayyy.tonton.databinding.FragmentMovieBinding
 import com.faprayyy.tonton.view.adapter.MovieAdapter
 import com.faprayyy.tonton.view.ui.detailmovie.DetailMovieActivity
-import com.faprayyy.tonton.view.ui.search.SearchActivity
-import com.faprayyy.tonton.viewmodel.ViewModelFactory
+import com.faprayyy.tonton.view.viewmodel.ViewModelFactory
 
 class MoviesFragment : Fragment() {
 
@@ -39,11 +37,10 @@ class MoviesFragment : Fragment() {
         super.onActivityCreated(savedInstanceState)
         mAdapter = MovieAdapter()
         mAdapter.notifyDataSetChanged()
-        binding.recyclerView.apply {
+        binding.rvMovies.apply {
             adapter = mAdapter
             setHasFixedSize(true)
         }
-        setupToolbar()
         moviesViewModel.getLoadingState().observe(viewLifecycleOwner){
             showLoading(it)
         }
@@ -59,20 +56,6 @@ class MoviesFragment : Fragment() {
                 startActivity(intent)
             }
         })
-    }
-
-    private fun setupToolbar() {
-        binding.toolbar.apply {
-            setOnMenuItemClickListener {
-                when(it?.itemId){
-                    R.id.menu_search_item -> {
-                        val intent = Intent(context, SearchActivity::class.java)
-                        startActivity(intent)
-                    }
-                }
-                true
-            }
-        }
     }
 
     private fun showLoading(state: Boolean) {

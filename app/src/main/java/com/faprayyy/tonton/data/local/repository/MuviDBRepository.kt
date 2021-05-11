@@ -3,14 +3,9 @@ package com.faprayyy.tonton.data.local.repository
 import android.util.Log
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
-import com.faprayyy.tonton.data.Response.DiscoverMovieResponse
-import com.faprayyy.tonton.data.Response.DiscoverSeriesResponse
-import com.faprayyy.tonton.data.Response.MovieDetail
-import com.faprayyy.tonton.data.Response.SeriesDetail
-import com.faprayyy.tonton.data.local.response.MovieModel
-import com.faprayyy.tonton.data.local.response.SeriesModel
-import com.faprayyy.tonton.data.remote.ApiConfig
+import com.faprayyy.tonton.data.local.response.*
 import com.faprayyy.tonton.data.remote.ApiService
+import com.faprayyy.tonton.utils.EspressoIdlingResource
 import retrofit2.Call
 import retrofit2.Callback
 import retrofit2.Response
@@ -29,6 +24,7 @@ class MuviDBRepository private constructor(
     }
 
     override fun getDetailMovieFromApi(movieId: Int): LiveData<MovieDetail> {
+        EspressoIdlingResource.increment()
         val movieDetail = MutableLiveData<MovieDetail>()
         val client = apiService.getMovie(movieId)
         client.enqueue(object : Callback<MovieDetail>{
@@ -43,10 +39,12 @@ class MuviDBRepository private constructor(
                 Log.e("DetailMovieViewModel", "onFailure: ${t.message.toString()}")
             }
         })
+        EspressoIdlingResource.decrement()
         return movieDetail
     }
 
     override fun getDetailSeriesFromApi(seriesId: Int): LiveData<SeriesDetail> {
+        EspressoIdlingResource.increment()
         val seriesDetail = MutableLiveData<SeriesDetail>()
         val client = apiService.getSeries(seriesId)
         client.enqueue(object : Callback<SeriesDetail> {
@@ -61,18 +59,17 @@ class MuviDBRepository private constructor(
                 Log.e("DetailSerieViewModel", "onFailure: ${t.message.toString()}")
             }
         })
-
+        EspressoIdlingResource.decrement()
         return seriesDetail
     }
 
     override fun getMovieFromApi(): LiveData<ArrayList<MovieModel>> {
+        EspressoIdlingResource.increment()
         val listMovie = MutableLiveData<ArrayList<MovieModel>>()
-
         val client = apiService.getDiscoverMovies()
         client.enqueue(object : Callback<DiscoverMovieResponse> {
             override fun onResponse(call: Call<DiscoverMovieResponse>, response: Response<DiscoverMovieResponse>) {
                 if (response.isSuccessful) {
-                    Log.d("TryInjection", "${response.body()}")
                     listMovie.postValue(response.body()?.results)
                 } else {
                     Log.e("MainViewModel", "onFailure: ${response.message()}")
@@ -82,10 +79,12 @@ class MuviDBRepository private constructor(
                 Log.e("MainViewModel", "onFailure: ${t.message.toString()}")
             }
         })
+        EspressoIdlingResource.decrement()
         return listMovie
     }
 
     override fun getSeriesFromApi(): LiveData<ArrayList<SeriesModel>> {
+        EspressoIdlingResource.increment()
         val listSeries = MutableLiveData<ArrayList<SeriesModel>>()
         val client = apiService.getDiscoverSeries()
         client.enqueue(object : Callback<DiscoverSeriesResponse> {
@@ -103,6 +102,7 @@ class MuviDBRepository private constructor(
                 Log.e("MainViewModel", "onFailure: ${t.message.toString()}")
             }
         })
+        EspressoIdlingResource.decrement()
         return listSeries
     }
 

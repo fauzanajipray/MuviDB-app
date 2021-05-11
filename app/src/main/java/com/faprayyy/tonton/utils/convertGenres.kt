@@ -1,4 +1,4 @@
-package com.faprayyy.tonton.helper
+package com.faprayyy.tonton.utils
 
 import com.faprayyy.tonton.data.local.response.Genre
 

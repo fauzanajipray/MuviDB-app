@@ -1,4 +1,4 @@
-package com.faprayyy.tonton.viewmodel
+package com.faprayyy.tonton.view.viewmodel
 
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.ViewModelProvider

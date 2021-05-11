@@ -1,16 +1,10 @@
 package com.faprayyy.tonton.view.ui.detailseries
 
-import android.util.Log
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
-import com.faprayyy.tonton.BuildConfig
-import com.faprayyy.tonton.data.remote.ApiConfig
-import com.faprayyy.tonton.data.Response.SeriesDetail
 import com.faprayyy.tonton.data.local.repository.MuviDBRepository
-import retrofit2.Call
-import retrofit2.Callback
-import retrofit2.Response
+import com.faprayyy.tonton.data.local.response.SeriesDetail
 
 class DetailSeriesViewModel(private val mMuviDBRepository: MuviDBRepository) : ViewModel() {
 

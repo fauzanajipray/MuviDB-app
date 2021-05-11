@@ -1,7 +1,6 @@
 package com.faprayyy.tonton.view.ui.detailseries
 
 import android.annotation.SuppressLint
-import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.util.Log
@@ -12,18 +11,17 @@ import com.bumptech.glide.Glide
 import com.bumptech.glide.request.RequestOptions
 import com.faprayyy.tonton.R
 import com.faprayyy.tonton.data.remote.Config
-import com.faprayyy.tonton.data.Response.SeriesDetail
+import com.faprayyy.tonton.data.local.response.SeriesDetail
 import com.faprayyy.tonton.data.local.response.SeriesModel
 import com.faprayyy.tonton.databinding.ActivityDetailSeriesBinding
-import com.faprayyy.tonton.helper.convertGenres
-import com.faprayyy.tonton.view.ui.search.SearchActivity
-import com.faprayyy.tonton.viewmodel.ViewModelFactory
+import com.faprayyy.tonton.utils.convertGenres
+import com.faprayyy.tonton.view.viewmodel.ViewModelFactory
 import java.util.*
 
 class DetailSeriesActivity : AppCompatActivity() {
 
     companion object{
-        const val EXTRA_SERIE = "extra_movie"
+        const val EXTRA_SERIES = "extra_movie"
     }
 
     private lateinit var binding: ActivityDetailSeriesBinding
@@ -43,7 +41,7 @@ class DetailSeriesActivity : AppCompatActivity() {
         val factory = ViewModelFactory.getInstance()
         viewModel =  ViewModelProvider(this, factory)[DetailSeriesViewModel::class.java]
         binding.toolbar.setNavigationOnClickListener { onBackPressed() }
-        seriesData = intent.getParcelableExtra<SeriesModel>(EXTRA_SERIE) as SeriesModel
+        seriesData = intent.getParcelableExtra<SeriesModel>(EXTRA_SERIES) as SeriesModel
 
         viewModel.getSeries(seriesData.id).observe(this){
             setData(it)
@@ -90,10 +88,6 @@ class DetailSeriesActivity : AppCompatActivity() {
             setOnMenuItemClickListener {
                 when(it?.itemId){
                     R.id.menu_share_item -> { onShareClick(seriesDetail) }
-                    R.id.menu_search_item -> {
-                        val intent = Intent(context, SearchActivity::class.java)
-                        startActivity(intent)
-                    }
                 }
                 true
             }
@@ -113,20 +107,20 @@ class DetailSeriesActivity : AppCompatActivity() {
 
     private fun showData(state: Boolean) {
         with(binding.dataDetail){
-            if (state){
-                visibility = View.VISIBLE
+            visibility = if (state){
+                View.VISIBLE
             } else {
-                visibility = View.GONE
+                View.GONE
             }
         }
     }
 
     private fun showProgressBar(state : Boolean){
         with(binding.progressBar){
-            if (state){
-                visibility = View.VISIBLE
+            visibility = if (state){
+                View.VISIBLE
             } else {
-                visibility = View.GONE
+                View.GONE
             }
         }
     }
