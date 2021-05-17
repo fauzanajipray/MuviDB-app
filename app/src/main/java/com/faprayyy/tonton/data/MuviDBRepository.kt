@@ -1,25 +1,32 @@
-package com.faprayyy.tonton.data.local.repository
+package com.faprayyy.tonton.data
 
 import android.util.Log
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
-import com.faprayyy.tonton.data.local.response.*
+import androidx.paging.DataSource
+import com.faprayyy.tonton.data.local.LocalDataSource
+import com.faprayyy.tonton.data.local.entity.FavoriteEntity
 import com.faprayyy.tonton.data.remote.ApiService
+import com.faprayyy.tonton.data.remote.response.*
 import com.faprayyy.tonton.utils.EspressoIdlingResource
 import retrofit2.Call
 import retrofit2.Callback
 import retrofit2.Response
+import java.util.concurrent.ExecutorService
 
 class MuviDBRepository private constructor(
-        private val apiService: ApiService
+        private val apiService: ApiService,
+        private val mLocalDataSource: LocalDataSource,
+        private val mExecutor: ExecutorService
 ): MuviDBDataSource {
 
     companion object {
         @Volatile
         private var instance: MuviDBRepository? = null
-        fun getInstance(apiService: ApiService): MuviDBRepository =
-                instance ?: synchronized(this) {
-                    MuviDBRepository(apiService).apply { instance = this }
+        fun getInstance(apiService: ApiService, mLocalDataSource: LocalDataSource, executorService: ExecutorService): MuviDBRepository =
+                instance
+                        ?: synchronized(this) {
+                    MuviDBRepository(apiService, mLocalDataSource, executorService).apply { instance = this }
                 }
     }
 
@@ -106,5 +113,24 @@ class MuviDBRepository private constructor(
         return listSeries
     }
 
+    override fun getFavorite(): DataSource.Factory<Int, FavoriteEntity> {
+        return mLocalDataSource.getAllFavorite()
+    }
 
+    override fun setFavorite(fav: FavoriteEntity) {
+        mExecutor.execute { mLocalDataSource.insert(fav) }
+    }
+
+    override fun getFavoriteById(id: Int, type: String): LiveData<FavoriteEntity> {
+        val data = MutableLiveData<FavoriteEntity>()
+        mExecutor.execute {
+            data.postValue(mLocalDataSource.getFavoriteByIdAndType(id, type))
+        }
+        return data
+    }
+
+
+    override fun deleteFavorite(id: Int, type: String) {
+        mExecutor.execute { mLocalDataSource.delete(id, type) }
+    }
 }

@@ -1,10 +1,10 @@
-package com.faprayyy.tonton.data.local.response
+package com.faprayyy.tonton.data.remote.response
 
 import com.google.gson.annotations.Expose
 import com.google.gson.annotations.SerializedName
 
 data class MovieDetail(
-        @SerializedName("adult")
+    @SerializedName("adult")
     @Expose
     var adult: Boolean? = false,
         @SerializedName("backdrop_path")
@@ -21,7 +21,7 @@ data class MovieDetail(
     var homepage: String? = "",
         @SerializedName("id")
     @Expose
-    var id: Int? = -2,
+    var id: Int = -2,
         @SerializedName("imdb_id")
     @Expose
     var imdbId: String? = "",

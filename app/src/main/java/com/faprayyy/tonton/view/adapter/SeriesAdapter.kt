@@ -8,7 +8,7 @@ import com.bumptech.glide.Glide
 import com.bumptech.glide.request.RequestOptions
 import com.faprayyy.tonton.R
 import com.faprayyy.tonton.data.remote.Config
-import com.faprayyy.tonton.data.local.response.SeriesModel
+import com.faprayyy.tonton.data.remote.response.SeriesModel
 import com.faprayyy.tonton.databinding.ItemMovieBinding
 
 class SeriesAdapter : RecyclerView.Adapter<SeriesAdapter.SeriesHolder>() {

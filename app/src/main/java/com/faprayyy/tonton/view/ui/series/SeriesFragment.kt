@@ -6,11 +6,15 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.Fragment
+import androidx.lifecycle.Observer
 import androidx.lifecycle.ViewModelProvider
-import com.faprayyy.tonton.data.local.response.SeriesModel
+import com.faprayyy.tonton.R
+import com.faprayyy.tonton.data.remote.response.SeriesModel
 import com.faprayyy.tonton.databinding.FragmentSeriesBinding
 import com.faprayyy.tonton.view.adapter.SeriesAdapter
 import com.faprayyy.tonton.view.ui.detailseries.DetailSeriesActivity
+import com.faprayyy.tonton.view.ui.favorite.FavoriteActivity
+import com.faprayyy.tonton.view.ui.search.SearchActivity
 import com.faprayyy.tonton.view.viewmodel.ViewModelFactory
 
 class SeriesFragment : Fragment() {
@@ -25,7 +29,7 @@ class SeriesFragment : Fragment() {
             container: ViewGroup?,
             savedInstanceState: Bundle?
     ): View {
-        val factory = ViewModelFactory.getInstance()
+        val factory = ViewModelFactory.getInstance(requireActivity())
         seriesViewModel = ViewModelProvider(this, factory)[SeriesViewModel::class.java]
         _binding = FragmentSeriesBinding.inflate(inflater, container, false)
 
@@ -40,16 +44,16 @@ class SeriesFragment : Fragment() {
             adapter = mAdapter
             setHasFixedSize(true)
         }
+        seriesViewModel.getSeriesListFromApi()
+        showLoading(true)
+        setupToolbar()
 
-        seriesViewModel.getSeriesList().observe(viewLifecycleOwner){
+        seriesViewModel.getSeriesList().observe(viewLifecycleOwner, Observer {
+            showLoading(false)
             if (it != null){
                 mAdapter.setData(it)
             }
-        }
-
-        seriesViewModel.getLoadingState().observe(viewLifecycleOwner){
-            showLoading(it)
-        }
+        })
 
         mAdapter.setOnItemClickCallback(object : SeriesAdapter.OnItemClickCallback{
             override fun onItemClicked(data: SeriesModel) {
@@ -67,6 +71,24 @@ class SeriesFragment : Fragment() {
             mProgressBar.visibility = View.VISIBLE
         } else {
             mProgressBar.visibility = View.INVISIBLE
+        }
+    }
+
+    private fun setupToolbar() {
+        binding.toolbar.apply {
+            setOnMenuItemClickListener {
+                when(it?.itemId){
+                    R.id.menu_search_item -> {
+                        val intent = Intent(context, SearchActivity::class.java)
+                        startActivity(intent)
+                    }
+                    R.id.menu_favorite_item -> {
+                        val intent = Intent(context, FavoriteActivity::class.java)
+                        startActivity(intent)
+                    }
+                }
+                true
+            }
         }
     }
 }

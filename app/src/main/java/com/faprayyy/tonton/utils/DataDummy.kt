@@ -1,6 +1,6 @@
 package com.faprayyy.tonton.utils
 
-import com.faprayyy.tonton.data.local.response.*
+import com.faprayyy.tonton.data.remote.response.*
 import com.google.gson.Gson
 
 object DataDummy{

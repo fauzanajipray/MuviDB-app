@@ -3,8 +3,8 @@ package com.faprayyy.tonton.view.ui.series
 import androidx.arch.core.executor.testing.InstantTaskExecutorRule
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.Observer
-import com.faprayyy.tonton.data.local.repository.MuviDBRepository
-import com.faprayyy.tonton.data.local.response.SeriesModel
+import com.faprayyy.tonton.data.MuviDBRepository
+import com.faprayyy.tonton.data.remote.response.SeriesModel
 import com.faprayyy.tonton.utils.DataDummy.generateSeriesList
 import org.junit.Test
 import org.junit.Assert.*

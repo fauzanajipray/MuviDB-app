@@ -1,11 +1,13 @@
 package com.faprayyy.tonton.view.viewmodel
 
+import android.content.Context
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.ViewModelProvider
-import com.faprayyy.tonton.data.local.repository.MuviDBRepository
+import com.faprayyy.tonton.data.MuviDBRepository
 import com.faprayyy.tonton.di.Injection
 import com.faprayyy.tonton.view.ui.detailmovie.DetailMovieViewModel
 import com.faprayyy.tonton.view.ui.detailseries.DetailSeriesViewModel
+import com.faprayyy.tonton.view.ui.favorite.FavoriteViewModel
 import com.faprayyy.tonton.view.ui.movie.MoviesViewModel
 import com.faprayyy.tonton.view.ui.series.SeriesViewModel
 
@@ -15,9 +17,9 @@ class ViewModelFactory private constructor(private val mMuviDBRepository: MuviDB
         @Volatile
         private var instance: ViewModelFactory? = null
 
-        fun getInstance(): ViewModelFactory =
+        fun getInstance(context: Context): ViewModelFactory =
                 instance ?: synchronized(this) {
-                    ViewModelFactory(Injection.provideRepository()).apply { instance = this }
+                    ViewModelFactory(Injection.provideRepository(context)).apply { instance = this }
                 }
     }
 
@@ -35,6 +37,9 @@ class ViewModelFactory private constructor(private val mMuviDBRepository: MuviDB
             }
             modelClass.isAssignableFrom(DetailSeriesViewModel::class.java) -> {
                 DetailSeriesViewModel(mMuviDBRepository) as T
+            }
+            modelClass.isAssignableFrom(FavoriteViewModel::class.java) -> {
+                FavoriteViewModel(mMuviDBRepository) as T
             }
             else -> throw Throwable("Unknown ViewModel class: " + modelClass.name)
         }

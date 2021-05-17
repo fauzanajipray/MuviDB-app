@@ -3,8 +3,8 @@ package com.faprayyy.tonton.view.ui.movie
 import androidx.arch.core.executor.testing.InstantTaskExecutorRule
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.Observer
-import com.faprayyy.tonton.data.local.repository.MuviDBRepository
-import com.faprayyy.tonton.data.local.response.MovieModel
+import com.faprayyy.tonton.data.MuviDBRepository
+import com.faprayyy.tonton.data.remote.response.MovieModel
 import com.faprayyy.tonton.utils.DataDummy.generateMoviesList
 import org.junit.Assert
 import org.junit.Before

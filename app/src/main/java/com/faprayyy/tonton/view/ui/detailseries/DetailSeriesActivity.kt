@@ -1,20 +1,23 @@
 package com.faprayyy.tonton.view.ui.detailseries
 
 import android.annotation.SuppressLint
+import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.util.Log
 import android.view.View
 import androidx.core.app.ShareCompat
 import androidx.lifecycle.ViewModelProvider
+import androidx.lifecycle.Observer
 import com.bumptech.glide.Glide
 import com.bumptech.glide.request.RequestOptions
 import com.faprayyy.tonton.R
 import com.faprayyy.tonton.data.remote.Config
-import com.faprayyy.tonton.data.local.response.SeriesDetail
-import com.faprayyy.tonton.data.local.response.SeriesModel
+import com.faprayyy.tonton.data.remote.response.SeriesDetail
+import com.faprayyy.tonton.data.remote.response.SeriesModel
 import com.faprayyy.tonton.databinding.ActivityDetailSeriesBinding
 import com.faprayyy.tonton.utils.convertGenres
+import com.faprayyy.tonton.view.ui.search.SearchActivity
 import com.faprayyy.tonton.view.viewmodel.ViewModelFactory
 import java.util.*
 
@@ -38,17 +41,17 @@ class DetailSeriesActivity : AppCompatActivity() {
         setupToolbar(seriesDetail)
         showProgressBar(true)
         showData(false)
-        val factory = ViewModelFactory.getInstance()
+        val factory = ViewModelFactory.getInstance(this)
         viewModel =  ViewModelProvider(this, factory)[DetailSeriesViewModel::class.java]
         binding.toolbar.setNavigationOnClickListener { onBackPressed() }
         seriesData = intent.getParcelableExtra<SeriesModel>(EXTRA_SERIES) as SeriesModel
 
-        viewModel.getSeries(seriesData.id).observe(this){
+        viewModel.getSeries(seriesData.id).observe(this, Observer{
             setData(it)
             setupToolbar(it)
             seriesDetail = it
-        }
-        viewModel.getLoadingState().observe(this){
+        })
+        viewModel.getLoadingState().observe(this, Observer {
             if (it){
                 showData(false)
                 showProgressBar(true)
@@ -56,7 +59,7 @@ class DetailSeriesActivity : AppCompatActivity() {
                 showData(true)
                 showProgressBar(false)
             }
-        }
+        })
         setData(seriesDetail)
 
     }
@@ -88,6 +91,10 @@ class DetailSeriesActivity : AppCompatActivity() {
             setOnMenuItemClickListener {
                 when(it?.itemId){
                     R.id.menu_share_item -> { onShareClick(seriesDetail) }
+                    R.id.menu_search_item -> {
+                        val intent = Intent(context, SearchActivity::class.java)
+                        startActivity(intent)
+                    }
                 }
                 true
             }

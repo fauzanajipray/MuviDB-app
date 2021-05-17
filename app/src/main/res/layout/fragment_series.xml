@@ -20,6 +20,7 @@
             app:layout_scrollFlags="scroll|enterAlways"
             app:popupTheme="@style/ThemeOverlay.AppCompat"
             app:title="@string/app_name"
+            app:menu="@menu/main_menu"
             app:titleTextColor="@color/white" />
 
     </com.google.android.material.appbar.AppBarLayout>

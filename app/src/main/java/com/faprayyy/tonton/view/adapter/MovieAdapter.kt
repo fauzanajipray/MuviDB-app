@@ -8,7 +8,7 @@ import com.bumptech.glide.Glide
 import com.bumptech.glide.request.RequestOptions
 import com.faprayyy.tonton.R
 import com.faprayyy.tonton.data.remote.Config
-import com.faprayyy.tonton.data.local.response.MovieModel
+import com.faprayyy.tonton.data.remote.response.MovieModel
 import com.faprayyy.tonton.databinding.ItemMovieBinding
 
 class MovieAdapter : RecyclerView.Adapter<MovieAdapter.MovieHolder>() {

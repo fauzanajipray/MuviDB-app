@@ -9,10 +9,10 @@ import androidx.test.espresso.assertion.ViewAssertions
 import androidx.test.espresso.contrib.RecyclerViewActions
 import androidx.test.espresso.matcher.ViewMatchers.*
 import androidx.test.ext.junit.rules.ActivityScenarioRule
-import com.faprayyy.tonton.data.local.response.MovieDetail
-import com.faprayyy.tonton.data.local.response.MovieModel
-import com.faprayyy.tonton.data.local.response.SeriesDetail
-import com.faprayyy.tonton.data.local.response.SeriesModel
+import com.faprayyy.tonton.data.remote.response.MovieDetail
+import com.faprayyy.tonton.data.remote.response.MovieModel
+import com.faprayyy.tonton.data.remote.response.SeriesDetail
+import com.faprayyy.tonton.data.remote.response.SeriesModel
 import com.faprayyy.tonton.utils.DataDummy.generateMoviesDetailList
 import com.faprayyy.tonton.utils.DataDummy.generateMoviesList
 import com.faprayyy.tonton.utils.DataDummy.generateSeriesDetailList

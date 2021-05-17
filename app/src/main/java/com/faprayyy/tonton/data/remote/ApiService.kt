@@ -1,10 +1,10 @@
 package com.faprayyy.tonton.data.remote
 
 import com.faprayyy.tonton.BuildConfig
-import com.faprayyy.tonton.data.local.response.DiscoverMovieResponse
-import com.faprayyy.tonton.data.local.response.DiscoverSeriesResponse
-import com.faprayyy.tonton.data.local.response.MovieDetail
-import com.faprayyy.tonton.data.local.response.SeriesDetail
+import com.faprayyy.tonton.data.remote.response.DiscoverMovieResponse
+import com.faprayyy.tonton.data.remote.response.DiscoverSeriesResponse
+import com.faprayyy.tonton.data.remote.response.MovieDetail
+import com.faprayyy.tonton.data.remote.response.SeriesDetail
 import retrofit2.Call
 import retrofit2.http.*
 
