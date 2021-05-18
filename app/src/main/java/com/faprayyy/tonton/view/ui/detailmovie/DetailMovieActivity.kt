@@ -30,7 +30,7 @@ class DetailMovieActivity : AppCompatActivity() {
     companion object{
         const val EXTRA_MOVIE = "extra_movie"
         const val EXTRA_FAVORITE = "extra_fav"
-        const val MOVIETYPE = "MOVIE"
+        const val MOVIE_TYPE = "MOVIE"
     }
 
     private lateinit var binding: ActivityDetailMovieBinding
@@ -54,7 +54,7 @@ class DetailMovieActivity : AppCompatActivity() {
 
         movieDetail = MovieDetail()
         setupToolbar(movieDetail)
-        showLoading(true)
+        showProgressBar(true)
         showData(false)
         val factory = ViewModelFactory.getInstance(this)
         viewModel =  ViewModelProvider(this, factory)[DetailMovieViewModel::class.java]
@@ -74,12 +74,11 @@ class DetailMovieActivity : AppCompatActivity() {
         }
 
         getFavFromDB(movieId)
-
         viewModel.getMovieFromApi(movieId)
-        showLoading(true)
+        showProgressBar(true)
         showData(false)
         viewModel.getMovie().observe(this, Observer {
-            showLoading(false)
+            showProgressBar(false)
             if (it != null){
                 setData(it)
                 setupToolbar(it)
@@ -107,7 +106,7 @@ class DetailMovieActivity : AppCompatActivity() {
                 it.originalTitle,
                 it.posterPath,
                 it.backdropPath,
-                MOVIETYPE
+                MOVIE_TYPE
             )
         }
     }
@@ -141,7 +140,7 @@ class DetailMovieActivity : AppCompatActivity() {
 
     private fun getFavFromDB(movieId: Int) {
         Log.d("CekData", "Cek fav from DB")
-        viewModel.getMovieFromDB(movieId, MOVIETYPE).observe(this, Observer {
+        viewModel.getMovieFromDB(movieId, MOVIE_TYPE).observe(this, Observer {
             Log.d("CekDataFav", "$it")
             stateFavorite = false
             if (it != null) {
@@ -214,7 +213,7 @@ class DetailMovieActivity : AppCompatActivity() {
             .startChooser()
     }
 
-    private fun showLoading(state : Boolean){
+    private fun showProgressBar(state : Boolean){
         with(binding.progressBar){
             visibility = if (state){
                 View.VISIBLE

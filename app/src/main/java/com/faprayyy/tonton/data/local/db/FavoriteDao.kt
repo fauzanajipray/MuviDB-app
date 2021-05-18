@@ -14,7 +14,7 @@ interface FavoriteDao {
     @Query("DELETE FROM favorite WHERE id = :id AND type = :type")
     fun deleteFavorite(id: Int, type: String)
 
-    @Query("SELECT * FROM favorite ORDER BY name ASC")
+    @Query("SELECT * FROM favorite ORDER BY idfav ASC")
     fun readAllData(): DataSource.Factory<Int, FavoriteEntity>
 
     @Query("SELECT * FROM favorite WHERE id = :id AND type = :type LIMIT 1")

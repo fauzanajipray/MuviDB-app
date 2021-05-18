@@ -14,7 +14,7 @@ import com.faprayyy.tonton.data.local.entity.FavoriteEntity
 import com.faprayyy.tonton.data.remote.Config
 import com.faprayyy.tonton.databinding.ItemFavoriteBinding
 import com.faprayyy.tonton.view.ui.detailmovie.DetailMovieActivity
-import com.faprayyy.tonton.view.ui.detailmovie.DetailMovieActivity.Companion.MOVIETYPE
+import com.faprayyy.tonton.view.ui.detailmovie.DetailMovieActivity.Companion.MOVIE_TYPE
 
 class FavoriteAdapter(private val activity: Activity) : PagedListAdapter<FavoriteEntity, FavoriteAdapter.FavoriteViewHolder>(DIFF_CALLBACK) {
 
@@ -32,7 +32,7 @@ class FavoriteAdapter(private val activity: Activity) : PagedListAdapter<Favorit
                     .into(binding.imgPoster)
 
                 layoutConstraint.setOnClickListener {
-                    if (fav.type == MOVIETYPE){
+                    if (fav.type == MOVIE_TYPE){
                         val intent = Intent(activity, DetailMovieActivity::class.java)
                         intent.putExtra(DetailMovieActivity.EXTRA_FAVORITE, fav)
                         activity.startActivity(intent)
