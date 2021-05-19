@@ -4,7 +4,7 @@ import com.google.gson.annotations.Expose
 import com.google.gson.annotations.SerializedName
 
 data class SeriesDetail(
-        @SerializedName("backdrop_path")
+    @SerializedName("backdrop_path")
     @Expose
     var backdropPath : String? = "",
         @SerializedName("first_air_date")
@@ -18,7 +18,7 @@ data class SeriesDetail(
     var homepage : String? = "",
         @SerializedName("id")
     @Expose
-    var id : Int? = -2,
+    var id : Int = -2,
         @SerializedName("in_production")
     @Expose
     var inProduction : Boolean? = false,

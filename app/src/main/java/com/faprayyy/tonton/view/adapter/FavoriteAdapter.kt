@@ -15,6 +15,7 @@ import com.faprayyy.tonton.data.remote.Config
 import com.faprayyy.tonton.databinding.ItemFavoriteBinding
 import com.faprayyy.tonton.view.ui.detailmovie.DetailMovieActivity
 import com.faprayyy.tonton.view.ui.detailmovie.DetailMovieActivity.Companion.MOVIE_TYPE
+import com.faprayyy.tonton.view.ui.detailseries.DetailSeriesActivity
 
 class FavoriteAdapter(private val activity: Activity) : PagedListAdapter<FavoriteEntity, FavoriteAdapter.FavoriteViewHolder>(DIFF_CALLBACK) {
 
@@ -37,8 +38,8 @@ class FavoriteAdapter(private val activity: Activity) : PagedListAdapter<Favorit
                         intent.putExtra(DetailMovieActivity.EXTRA_FAVORITE, fav)
                         activity.startActivity(intent)
                     } else {
-                        val intent = Intent(activity, DetailMovieActivity::class.java)
-                        intent.putExtra(DetailMovieActivity.EXTRA_FAVORITE, fav)
+                        val intent = Intent(activity, DetailSeriesActivity::class.java)
+                        intent.putExtra(DetailSeriesActivity.EXTRA_FAVORITE, fav)
                         activity.startActivity(intent)
                     }
                 }

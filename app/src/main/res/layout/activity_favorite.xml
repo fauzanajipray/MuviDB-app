@@ -21,6 +21,7 @@
             app:layout_scrollFlags="scroll|enterAlways"
             app:popupTheme="@style/ThemeOverlay.AppCompat"
             app:title="Favorite List"
+            app:menu="@menu/fav_menu"
             app:navigationIcon="@drawable/ic_baseline_arrow_back_24"
             app:titleTextColor="@color/white" />
 

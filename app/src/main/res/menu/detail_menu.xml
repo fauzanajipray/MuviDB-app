@@ -4,7 +4,7 @@
     <item
         android:id="@+id/menu_search_item"
         android:icon="@drawable/ic_baseline_search_24"
-        android:title="@string/share"
+        android:title="@string/search"
         app:showAsAction="never" />
     <item
         android:id="@+id/menu_share_item"
@@ -14,7 +14,6 @@
     <item
         android:id="@+id/menu_item_favorite"
         android:icon="@drawable/ic_baseline_favorite_24"
-        android:title="@string/favorite_movie"
+        android:title="@string/favorite_list"
         app:showAsAction="never" />
-
 </menu>

@@ -6,11 +6,16 @@ import androidx.paging.LivePagedListBuilder
 import androidx.paging.PagedList
 import com.faprayyy.tonton.data.local.entity.FavoriteEntity
 import com.faprayyy.tonton.data.MuviDBRepository
+import com.faprayyy.tonton.utils.SortUtils
 
 class FavoriteViewModel(private val mMuviDBRepository: MuviDBRepository) : ViewModel() {
 
-    fun getfavoriteListFromDB() : LiveData<PagedList<FavoriteEntity>> {
-        return LivePagedListBuilder(mMuviDBRepository.getFavorite(), 20).build()
+    fun getFavoriteListFromDB(sort: String) : LiveData<PagedList<FavoriteEntity>> {
+        return mMuviDBRepository.getFavorites(sort)
+    }
+    fun getFavoriteListFromDB() : LiveData<PagedList<FavoriteEntity>> {
+        val sort = SortUtils.NEWEST
+        return mMuviDBRepository.getFavorites(sort)
     }
 
 }

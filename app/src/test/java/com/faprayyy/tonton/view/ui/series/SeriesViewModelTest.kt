@@ -41,11 +41,12 @@ class SeriesViewModelTest {
         seriesListLive.value = dummySeriesList
 
         `when`(muviDBRepository.getSeriesFromApi()).thenReturn(seriesListLive)
+        viewModel.getSeriesListFromApi()
         val seriesList = viewModel.getSeriesList().value
 
         verify(muviDBRepository).getSeriesFromApi()
         assertNotNull(seriesList)
-        assertEquals(15, seriesList?.size)
+        assertEquals(dummySeriesList.size, seriesList?.size)
 
         viewModel.getSeriesList().observeForever(observer)
         verify(observer).onChanged(dummySeriesList)

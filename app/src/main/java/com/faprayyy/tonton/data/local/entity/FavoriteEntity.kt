@@ -10,9 +10,9 @@ import kotlinx.android.parcel.Parcelize
 @Parcelize
 data class FavoriteEntity(
     var id : Int,
-    var name : String?,
-    var posterPath : String?,
-    var backdropPath : String?,
+    var name : String? = "",
+    var posterPath : String? = "",
+    var backdropPath : String? = "",
     var type : String = "",
     @PrimaryKey(autoGenerate = true)
     @NonNull

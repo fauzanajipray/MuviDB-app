@@ -62,7 +62,6 @@ class DetailMovieActivity : AppCompatActivity() {
 
         stateFavorite = false
         val favData = intent.getParcelableExtra<FavoriteEntity>(EXTRA_FAVORITE)
-        Log.d("CekData", "$favData")
         movieId = if (favData == null){
             movieData = intent.getParcelableExtra<MovieModel>(EXTRA_MOVIE) as MovieModel
             backdropImg = movieData.backdropPath as String

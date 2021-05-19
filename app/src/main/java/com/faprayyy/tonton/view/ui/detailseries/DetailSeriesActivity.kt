@@ -62,8 +62,7 @@ class DetailSeriesActivity : AppCompatActivity() {
         binding.toolbar.setNavigationOnClickListener { onBackPressed() }
 
         stateFavorite = false
-        val favData = intent.getParcelableExtra<FavoriteEntity>(DetailMovieActivity.EXTRA_FAVORITE)
-        Log.d("CekData", "$favData")
+        val favData = intent.getParcelableExtra<FavoriteEntity>(EXTRA_FAVORITE)
         seriesId = if (favData == null){
             seriesData = intent.getParcelableExtra<SeriesModel>(EXTRA_SERIES) as SeriesModel
             backdropImg = seriesData.backdropPath as String
@@ -131,7 +130,6 @@ class DetailSeriesActivity : AppCompatActivity() {
     }
 
     private fun getFavFromDB(seriesId: Int) {
-        Log.d("CekData", "Cek fav from DB")
         viewModel.getSeriesFromDB(seriesId, SERIES_TYPE).observe(this, Observer {
             Log.d("CekDataFav", "$it")
             stateFavorite = false
@@ -156,7 +154,6 @@ class DetailSeriesActivity : AppCompatActivity() {
 
     @SuppressLint("StringFormatMatches")
     private fun setData(seriesDetail: SeriesDetail) {
-        Log.d("TAG", "$seriesData")
         binding.apply {
             collapsingToolbar.title = seriesDetail.name
             seriesTitle.text = seriesDetail.name
@@ -168,7 +165,7 @@ class DetailSeriesActivity : AppCompatActivity() {
             seriesOverview.text = seriesDetail.overview
             seriesGenres.text = convertGenres(seriesDetail.genres)
         }
-        val posterImg = seriesData.backdropPath?.let { Config.getBackdropPath(it) }
+        val posterImg = Config.getBackdropPath(backdropImg)
         Glide.with(this)
             .load(posterImg)
             .apply(RequestOptions().override(3000))

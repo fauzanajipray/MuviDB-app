@@ -4,16 +4,17 @@ import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.util.Log
 import android.view.View
+import androidx.appcompat.widget.Toolbar
 import androidx.lifecycle.Observer
 import androidx.lifecycle.ViewModelProvider
 import androidx.paging.PagedList
 import androidx.recyclerview.widget.LinearLayoutManager
+import com.faprayyy.tonton.R
 import com.faprayyy.tonton.data.local.entity.FavoriteEntity
 import com.faprayyy.tonton.databinding.ActivityFavoriteBinding
+import com.faprayyy.tonton.utils.SortUtils
 import com.faprayyy.tonton.view.adapter.FavoriteAdapter
-import com.faprayyy.tonton.view.ui.detailmovie.DetailMovieViewModel
 import com.faprayyy.tonton.view.viewmodel.ViewModelFactory
-import org.w3c.dom.Entity
 
 class FavoriteActivity : AppCompatActivity() {
 
@@ -29,19 +30,35 @@ class FavoriteActivity : AppCompatActivity() {
         val factory = ViewModelFactory.getInstance(this)
         viewModel =  ViewModelProvider(this, factory)[FavoriteViewModel::class.java]
         binding.toolbar.setNavigationOnClickListener { onBackPressed() }
-        viewModel.getfavoriteListFromDB().observe(this , favObserver)
+        viewModel.getFavoriteListFromDB(SortUtils.NEWEST).observe(this , favObserver)
 
         mFavoriteAdapter = FavoriteAdapter(this)
 
         binding.rvFavorite.layoutManager = LinearLayoutManager(this)
         binding.rvFavorite.setHasFixedSize(true)
         binding.rvFavorite.adapter = mFavoriteAdapter
+
+        setupToolbar(binding.toolbar)
+    }
+
+    private fun setupToolbar(toolbar: Toolbar) {
+
+        toolbar.setOnMenuItemClickListener{ item ->
+            var sort = ""
+            when (item.itemId) {
+                R.id.action_newest -> sort = SortUtils.NEWEST
+                R.id.action_oldest -> sort = SortUtils.OLDEST
+                R.id.action_random -> sort = SortUtils.RANDOM
+            }
+            viewModel.getFavoriteListFromDB(sort).observe(this, favObserver)
+            item.isChecked  = true
+            true
+        }
     }
 
     private val favObserver = Observer<PagedList<FavoriteEntity>> { noteList ->
         showWarning(false)
         if (noteList != null) {
-            Log.d("CEKDATA", "DATA : $noteList")
             if (noteList.toString() == "[]"){
                 showWarning(true)
             }
@@ -57,6 +74,5 @@ class FavoriteActivity : AppCompatActivity() {
         }
         binding.warning.visibility = stateView
     }
-
 
 }

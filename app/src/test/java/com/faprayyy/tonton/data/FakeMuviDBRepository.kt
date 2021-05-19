@@ -3,7 +3,6 @@ package com.faprayyy.tonton.data
 import android.util.Log
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
-import androidx.paging.DataSource
 import androidx.paging.LivePagedListBuilder
 import androidx.paging.PagedList
 import com.faprayyy.tonton.data.local.LocalDataSource
@@ -17,27 +16,17 @@ import retrofit2.Callback
 import retrofit2.Response
 import java.util.concurrent.ExecutorService
 
-class MuviDBRepository private constructor(
+class FakeMuviDBRepository constructor(
         private val apiService: ApiService,
         private val mLocalDataSource: LocalDataSource,
         private val mExecutor: ExecutorService
-): MuviDBDataSource {
-
-    companion object {
-        @Volatile
-        private var instance: MuviDBRepository? = null
-        fun getInstance(apiService: ApiService, mLocalDataSource: LocalDataSource, executorService: ExecutorService): MuviDBRepository =
-                instance
-                        ?: synchronized(this) {
-                    MuviDBRepository(apiService, mLocalDataSource, executorService).apply { instance = this }
-                }
-    }
+): MuviDBDataSource  {
 
     override fun getDetailMovieFromApi(movieId: Int): LiveData<MovieDetail> {
         EspressoIdlingResource.increment()
         val movieDetail = MutableLiveData<MovieDetail>()
         val client = apiService.getMovie(movieId)
-        client.enqueue(object : Callback<MovieDetail>{
+        client.enqueue(object : Callback<MovieDetail> {
             override fun onResponse(call: Call<MovieDetail>, response: Response<MovieDetail>) {
                 if (response.isSuccessful) {
                     movieDetail.postValue(response.body())
@@ -74,7 +63,6 @@ class MuviDBRepository private constructor(
     }
 
     override fun getMovieFromApi(): LiveData<ArrayList<MovieModel>> {
-        EspressoIdlingResource.increment()
         val listMovie = MutableLiveData<ArrayList<MovieModel>>()
         val client = apiService.getDiscoverMovies()
         client.enqueue(object : Callback<DiscoverMovieResponse> {
@@ -89,7 +77,6 @@ class MuviDBRepository private constructor(
                 Log.e("MainViewModel", "onFailure: ${t.message.toString()}")
             }
         })
-        EspressoIdlingResource.decrement()
         return listMovie
     }
 
@@ -126,16 +113,16 @@ class MuviDBRepository private constructor(
         return LivePagedListBuilder(mLocalDataSource.getAllFavorite(query), config).build()
     }
 
-    override fun setFavorite(fav: FavoriteEntity) {
-        mExecutor.execute { mLocalDataSource.insert(fav) }
-    }
-
     override fun getFavoriteById(id: Int, type: String): LiveData<FavoriteEntity> {
         val data = MutableLiveData<FavoriteEntity>()
         mExecutor.execute {
             data.postValue(mLocalDataSource.getFavoriteByIdAndType(id, type))
         }
         return data
+    }
+
+    override fun setFavorite(fav: FavoriteEntity) {
+        mExecutor.execute { mLocalDataSource.insert(fav) }
     }
 
     override fun deleteFavorite(id: Int, type: String) {

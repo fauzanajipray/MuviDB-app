@@ -19,8 +19,8 @@ import org.mockito.junit.MockitoJUnitRunner
 class MoviesViewModelTest{
 
     private lateinit var viewModel: MoviesViewModel
-    @get:Rule
 
+    @get:Rule
     var instantTaskExecutorRule = InstantTaskExecutorRule()
 
     @Mock
@@ -41,6 +41,7 @@ class MoviesViewModelTest{
         moviesListLive.value = dummyMovieList
 
         `when`(muviDBRepository.getMovieFromApi()).thenReturn(moviesListLive)
+        viewModel.getMoviesListFromApi()
         val moviesList = viewModel.getMoviesList().value
 
         verify(muviDBRepository).getMovieFromApi()

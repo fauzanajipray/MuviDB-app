@@ -4,7 +4,8 @@ import androidx.recyclerview.widget.RecyclerView
 import androidx.test.core.app.ActivityScenario
 import androidx.test.espresso.Espresso.onView
 import androidx.test.espresso.IdlingRegistry
-import androidx.test.espresso.action.ViewActions.click
+import androidx.test.espresso.action.ViewActions
+import androidx.test.espresso.action.ViewActions.*
 import androidx.test.espresso.assertion.ViewAssertions
 import androidx.test.espresso.contrib.RecyclerViewActions
 import androidx.test.espresso.matcher.ViewMatchers.*
@@ -13,9 +14,9 @@ import com.faprayyy.tonton.data.remote.response.MovieDetail
 import com.faprayyy.tonton.data.remote.response.MovieModel
 import com.faprayyy.tonton.data.remote.response.SeriesDetail
 import com.faprayyy.tonton.data.remote.response.SeriesModel
-import com.faprayyy.tonton.utils.DataDummy.generateMoviesDetailList
+import com.faprayyy.tonton.utils.DataDummy.generateDetailMovie
+import com.faprayyy.tonton.utils.DataDummy.generateDetailSeries
 import com.faprayyy.tonton.utils.DataDummy.generateMoviesList
-import com.faprayyy.tonton.utils.DataDummy.generateSeriesDetailList
 import com.faprayyy.tonton.utils.DataDummy.generateSeriesList
 import com.faprayyy.tonton.utils.EspressoIdlingResource
 import com.faprayyy.tonton.utils.convertGenres
@@ -23,6 +24,7 @@ import org.junit.After
 import org.junit.Before
 import org.junit.Rule
 import org.junit.Test
+
 
 class MainActivityTest{
 
@@ -38,8 +40,8 @@ class MainActivityTest{
     fun setup(){
         listMovie = generateMoviesList()
         listSeries = generateSeriesList()
-        movieDetail = generateMoviesDetailList()[0]
-        seriesDetail = generateSeriesDetailList()[0]
+        seriesDetail = generateDetailSeries()
+        movieDetail = generateDetailMovie()
 
         ActivityScenario.launch(MainActivity::class.java)
         IdlingRegistry.getInstance().register(EspressoIdlingResource.idlingResource)
@@ -96,6 +98,9 @@ class MainActivityTest{
         onView(withId(R.id.series_rating)).check(ViewAssertions.matches(isDisplayed()))
         onView(withId(R.id.series_vote_count)).check(ViewAssertions.matches(isDisplayed()))
         onView(withId(R.id.series_vote_count)).check(ViewAssertions.matches(withText("(${ seriesDetail.voteCount } voters)")))
+        onView(withId(R.id.data_detail)).perform(swipeUp())
+        onView(withId(R.id.data_detail)).perform(swipeDown())
+
     }
 
     @Test
@@ -103,5 +108,48 @@ class MainActivityTest{
         onView(withId(R.id.seriesFragment)).perform(click())
         onView(withId(R.id.rv_series)).check(ViewAssertions.matches(isDisplayed()))
         onView(withId(R.id.rv_series)).perform(RecyclerViewActions.scrollToPosition<RecyclerView.ViewHolder>(listSeries.size))
+    }
+
+    @Test
+    fun addAndDeleteMovieFromFavorite(){
+        onView(withId(R.id.rv_movies)).check(ViewAssertions.matches(isDisplayed()))
+        onView(withId(R.id.rv_movies)).perform(RecyclerViewActions.actionOnItemAtPosition<RecyclerView.ViewHolder>(0, click()))
+        onView(withId(R.id.fab)).check(ViewAssertions.matches(isDisplayed()))
+        onView(withId(R.id.fab)).perform(click())
+        onView(withId(R.id.data_detail)).perform(swipeUp())
+        onView(withId(R.id.data_detail)).perform(swipeDown())
+        onView(isRoot()).perform(pressBack())
+        onView(withId(R.id.rv_movies)).check(ViewAssertions.matches(isDisplayed()))
+        onView(withId(R.id.menu_favorite_item)).perform(click())
+        onView(withId(R.id.rv_favorite)).check(ViewAssertions.matches(isDisplayed()))
+        onView(withId(R.id.rv_favorite)).perform(RecyclerViewActions.actionOnItemAtPosition<RecyclerView.ViewHolder>(0, click()))
+        onView(withId(R.id.fab)).check(ViewAssertions.matches(isDisplayed()))
+        onView(withId(R.id.fab)).perform(click())
+        onView(withId(R.id.data_detail)).perform(swipeUp())
+        onView(withId(R.id.data_detail)).perform(swipeDown())
+        onView(isRoot()).perform(pressBack())
+        onView(withId(R.id.warning)).check(ViewAssertions.matches(isDisplayed()))
+    }
+
+    @Test
+    fun addAndDeleteSeriesFromFavorite(){
+        onView(withId(R.id.seriesFragment)).perform(click())
+        onView(withId(R.id.rv_series)).check(ViewAssertions.matches(isDisplayed()))
+        onView(withId(R.id.rv_series)).perform(RecyclerViewActions.actionOnItemAtPosition<RecyclerView.ViewHolder>(0, click()))
+        onView(withId(R.id.fab)).check(ViewAssertions.matches(isDisplayed()))
+        onView(withId(R.id.fab)).perform(click())
+        onView(withId(R.id.data_detail)).perform(swipeUp())
+        onView(withId(R.id.data_detail)).perform(swipeDown())
+        onView(isRoot()).perform(pressBack())
+        onView(withId(R.id.rv_series)).check(ViewAssertions.matches(isDisplayed()))
+        onView(withId(R.id.menu_favorite_item)).perform(click())
+        onView(withId(R.id.rv_favorite)).check(ViewAssertions.matches(isDisplayed()))
+        onView(withId(R.id.rv_favorite)).perform(RecyclerViewActions.actionOnItemAtPosition<RecyclerView.ViewHolder>(0, click()))
+        onView(withId(R.id.fab)).check(ViewAssertions.matches(isDisplayed()))
+        onView(withId(R.id.fab)).perform(click())
+        onView(withId(R.id.data_detail)).perform(swipeUp())
+        onView(withId(R.id.data_detail)).perform(swipeDown())
+        onView(isRoot()).perform(pressBack())
+        onView(withId(R.id.warning)).check(ViewAssertions.matches(isDisplayed()))
     }
 }

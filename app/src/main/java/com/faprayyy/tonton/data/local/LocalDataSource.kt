@@ -1,6 +1,7 @@
 package com.faprayyy.tonton.data.local
 
 import androidx.paging.DataSource
+import androidx.sqlite.db.SupportSQLiteQuery
 import com.faprayyy.tonton.data.local.db.FavoriteDao
 import com.faprayyy.tonton.data.local.entity.FavoriteEntity
 
@@ -16,9 +17,8 @@ class LocalDataSource private constructor(private val mFavoriteDao: FavoriteDao)
 
     }
 
-
-    fun getAllFavorite(): DataSource.Factory<Int, FavoriteEntity> {
-        return mFavoriteDao.readAllData()
+    fun getAllFavorite(query: SupportSQLiteQuery): DataSource.Factory<Int, FavoriteEntity> {
+        return mFavoriteDao.readAllData(query)
     }
 
     fun getFavoriteByIdAndType(id : Int, type: String): FavoriteEntity {

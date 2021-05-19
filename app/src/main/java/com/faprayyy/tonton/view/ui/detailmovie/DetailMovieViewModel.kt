@@ -23,6 +23,7 @@ class DetailMovieViewModel(private val mMuviDBRepository: MuviDBRepository) : Vi
     fun setFavorite(favoriteEntity: FavoriteEntity) {
         mMuviDBRepository.setFavorite(favoriteEntity)
     }
+
     fun deleteFavorite(id : Int, type : String) {
         mMuviDBRepository.deleteFavorite(id, type)
     }
