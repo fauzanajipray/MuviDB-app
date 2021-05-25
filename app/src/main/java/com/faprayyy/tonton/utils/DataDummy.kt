@@ -1,8 +1,9 @@
 package com.faprayyy.tonton.utils
 
 import com.faprayyy.tonton.data.local.entity.FavoriteEntity
+import com.faprayyy.tonton.data.local.entity.MovieEntity
+import com.faprayyy.tonton.data.local.entity.SeriesEntity
 import com.faprayyy.tonton.data.remote.response.*
-import com.faprayyy.tonton.view.ui.detail.detailmovie.DetailMovieActivity
 import com.faprayyy.tonton.view.ui.detail.detailmovie.DetailMovieActivity.Companion.MOVIE_TYPE
 import com.faprayyy.tonton.view.ui.detail.detailseries.DetailSeriesActivity.Companion.SERIES_TYPE
 import com.google.gson.Gson
@@ -64,6 +65,48 @@ object DataDummy{
     fun generateSeriesList() : ArrayList<SeriesModel>{
         val obj = Gson().fromJson(stringListSeriesResponse, DiscoverSeriesResponse::class.java)
         return  obj.results
+    }
+
+    fun generateMovieEntityList() : List<MovieEntity> {
+        val dataMovieModel = generateMoviesList()
+        val movieList = ArrayList<MovieEntity>()
+        for (response in dataMovieModel){
+            val movie = MovieEntity(
+                    response.id,
+                    response.voteAverage,
+                    response.popularity,
+                    response.title,
+                    response.posterPath,
+                    response.originalLanguage,
+                    response.originalTitle,
+                    response.backdropPath,
+                    response.releaseDate,
+                    response.overview)
+            movieList.add( movie )
+        }
+
+        return movieList
+    }
+
+    fun generateSeriesEntityList() : List<SeriesEntity> {
+        val dataSeriesModel = generateSeriesList()
+        val seriesList = ArrayList<SeriesEntity>()
+        for (response in dataSeriesModel) {
+            val series = SeriesEntity(
+                    response.id,
+                    response.voteAverage,
+                    response.popularity,
+                    response.title,
+                    response.posterPath,
+                    response.originalLanguage,
+                    response.originalTitle,
+                    response.backdropPath,
+                    response.release_date,
+                    response.overview
+            )
+            seriesList.add(series)
+        }
+        return seriesList
     }
 
     fun generateDetailMovie() : MovieDetail {

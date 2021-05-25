@@ -17,17 +17,6 @@ class MainViewModel @Inject constructor(
     private val repository: MuviDBRepository
     ) : ViewModel() {
 
-//    private var movieList = MutableLiveData<ArrayList<MovieModel>>()
-//
-//    fun getMoviesListFromApi() {
-//        val data = mMuviDBRepository.getMovieFromApi()
-//        movieList = data as MutableLiveData<ArrayList<MovieModel>>
-//    }
-//
-//    fun getMoviesList() : LiveData<ArrayList<MovieModel>>{
-//        return movieList
-//    }
-
     fun getMovieList(): LiveData<Resource<PagedList<MovieEntity>>> = repository.getMovieFromApi()
 
     fun getSeriesList() : LiveData<Resource<PagedList<SeriesEntity>>> = repository.getSeriesFromApi()

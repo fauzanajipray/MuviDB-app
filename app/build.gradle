@@ -74,9 +74,6 @@ dependencies {
     implementation "com.google.dagger:hilt-android:$hiltVersion"
     kapt "com.google.dagger:hilt-compiler:$hiltVersion"
 
-    implementation "com.github.javaherisaber.MockFit:runtime:1.1.0"
-    kapt "com.github.javaherisaber.MockFit:compiler:1.1.0" // for Kotlin (make sure to include kapt plugin also)
-
     testImplementation 'junit:junit:4.13.2'
     androidTestImplementation 'androidx.test.ext:junit:1.1.2'
     androidTestImplementation 'androidx.test.espresso:espresso-core:3.3.0'

@@ -21,7 +21,6 @@ class DetailViewModelTest {
     @get:Rule
     var instantTaskExecutorRule = InstantTaskExecutorRule()
 
-    private val stringSort = SortUtils.NEWEST
     private val dummyMovieDetail = DataDummy.generateDetailMovie()
     private val movieId = dummyMovieDetail.id
     private val dummySeriesDetail = DataDummy.generateDetailSeries()
