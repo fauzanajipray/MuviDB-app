@@ -4,7 +4,6 @@ import androidx.arch.core.executor.testing.InstantTaskExecutorRule
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.Observer
 import androidx.paging.PagedList
-import androidx.paging.PositionalDataSource
 import com.faprayyy.tonton.data.MuviDBRepository
 import com.faprayyy.tonton.data.local.entity.FavoriteEntity
 import com.faprayyy.tonton.utils.DataDummy
@@ -18,7 +17,6 @@ import org.junit.runner.RunWith
 import org.mockito.Mock
 import org.mockito.Mockito
 import org.mockito.junit.MockitoJUnitRunner
-import java.util.concurrent.Executors
 
 @RunWith(MockitoJUnitRunner::class)
 class FavoriteViewModelTest{

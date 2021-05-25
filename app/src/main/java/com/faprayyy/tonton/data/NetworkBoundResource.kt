@@ -22,8 +22,8 @@ abstract class NetworkBoundResource<ResultType, RequestType>(private val executo
             if (shouldFecth(data)){
                 fetchFromNetwork(dbSource)
             }else{
-                resultData.addSource( dbSource ){ data ->
-                    resultData.value = Resource.success( data )
+                resultData.addSource( dbSource ){
+                    resultData.value = Resource.success( it )
                 }
             }
         }
@@ -73,6 +73,7 @@ abstract class NetworkBoundResource<ResultType, RequestType>(private val executo
                         resultData.value = Resource.error(data.message, newData)
                     }
                 }
+                else -> { }
             }
         }
     }

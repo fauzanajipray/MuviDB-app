@@ -13,12 +13,12 @@ import com.faprayyy.tonton.data.remote.response.MovieDetail
 import com.faprayyy.tonton.data.remote.response.MovieModel
 import com.faprayyy.tonton.data.remote.response.SeriesDetail
 import com.faprayyy.tonton.data.remote.response.SeriesModel
+import com.faprayyy.tonton.utils.Converter.convertGenres
 import com.faprayyy.tonton.utils.DataDummy.generateDetailMovie
 import com.faprayyy.tonton.utils.DataDummy.generateDetailSeries
 import com.faprayyy.tonton.utils.DataDummy.generateMoviesList
 import com.faprayyy.tonton.utils.DataDummy.generateSeriesList
 import com.faprayyy.tonton.utils.EspressoIdlingResource
-import com.faprayyy.tonton.utils.convertGenres
 import com.faprayyy.tonton.view.ui.main.MainActivity
 import org.junit.After
 import org.junit.Before

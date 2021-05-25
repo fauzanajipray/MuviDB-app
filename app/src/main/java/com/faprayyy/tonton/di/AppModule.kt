@@ -55,9 +55,9 @@ object AppModule {
     @Provides
     @Singleton
     fun provideRemoteDataSource(
-        herbifyDao: MuviDao
+        apiService: ApiService
     ) : RemoteDataSource {
-        return RemoteDataSource(provideApiService())
+        return RemoteDataSource(apiService)
     }
 
     @Provides

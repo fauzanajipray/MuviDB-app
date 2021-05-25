@@ -20,7 +20,7 @@ import com.faprayyy.tonton.data.remote.response.SeriesDetail
 import com.faprayyy.tonton.databinding.ActivityDetailSeriesBinding
 import com.faprayyy.tonton.utils.Converter.convertGenres
 import com.faprayyy.tonton.view.ui.detail.DetailViewModel
-import com.faprayyy.tonton.view.ui.search.SearchActivity
+import com.faprayyy.tonton.view.ui.favorite.FavoriteActivity
 import com.faprayyy.tonton.vo.StatusMessage
 import dagger.hilt.android.AndroidEntryPoint
 import java.util.*
@@ -190,8 +190,8 @@ class DetailSeriesActivity : AppCompatActivity() {
             setOnMenuItemClickListener {
                 when(it?.itemId){
                     R.id.menu_share_item -> { onShareClick(seriesDetail) }
-                    R.id.menu_search_item -> {
-                        val intent = Intent(context, SearchActivity::class.java)
+                    R.id.menu_favorite_item -> {
+                        val intent = Intent(context, FavoriteActivity::class.java)
                         startActivity(intent)
                     }
                 }

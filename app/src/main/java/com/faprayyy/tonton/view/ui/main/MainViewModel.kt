@@ -1,13 +1,11 @@
 package com.faprayyy.tonton.view.ui.main
 
 import androidx.lifecycle.LiveData
-import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
 import androidx.paging.PagedList
 import com.faprayyy.tonton.data.MuviDBRepository
 import com.faprayyy.tonton.data.local.entity.MovieEntity
 import com.faprayyy.tonton.data.local.entity.SeriesEntity
-import com.faprayyy.tonton.data.remote.response.MovieModel
 import com.faprayyy.tonton.vo.Resource
 import dagger.hilt.android.lifecycle.HiltViewModel
 import javax.inject.Inject

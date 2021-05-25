@@ -2,7 +2,6 @@ package com.faprayyy.tonton.view.ui.main.series
 
 import android.content.Intent
 import android.os.Bundle
-import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
@@ -12,11 +11,9 @@ import com.faprayyy.tonton.R
 import com.faprayyy.tonton.data.local.entity.SeriesEntity
 import com.faprayyy.tonton.databinding.FragmentSeriesBinding
 import com.faprayyy.tonton.view.adapter.SeriesAdapter
-import com.faprayyy.tonton.view.ui.detail.detailmovie.DetailMovieActivity
 import com.faprayyy.tonton.view.ui.detail.detailseries.DetailSeriesActivity
 import com.faprayyy.tonton.view.ui.favorite.FavoriteActivity
 import com.faprayyy.tonton.view.ui.main.MainViewModel
-import com.faprayyy.tonton.view.ui.search.SearchActivity
 import com.faprayyy.tonton.vo.StatusMessage
 import dagger.hilt.android.AndroidEntryPoint
 
@@ -77,10 +74,6 @@ class SeriesFragment : Fragment() {
         binding.toolbar.apply {
             setOnMenuItemClickListener {
                 when(it?.itemId){
-                    R.id.menu_search_item -> {
-                        val intent = Intent(context, SearchActivity::class.java)
-                        startActivity(intent)
-                    }
                     R.id.menu_favorite_item -> {
                         val intent = Intent(context, FavoriteActivity::class.java)
                         startActivity(intent)

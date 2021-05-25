@@ -2,7 +2,6 @@ package com.faprayyy.tonton.view.adapter
 
 import android.annotation.SuppressLint
 import android.view.LayoutInflater
-import android.view.View
 import android.view.ViewGroup
 import androidx.paging.PagedListAdapter
 import androidx.recyclerview.widget.DiffUtil
@@ -10,10 +9,8 @@ import androidx.recyclerview.widget.RecyclerView
 import com.bumptech.glide.Glide
 import com.bumptech.glide.request.RequestOptions
 import com.faprayyy.tonton.R
-import com.faprayyy.tonton.data.local.entity.MovieEntity
 import com.faprayyy.tonton.data.local.entity.SeriesEntity
 import com.faprayyy.tonton.data.remote.Config
-import com.faprayyy.tonton.data.remote.response.SeriesModel
 import com.faprayyy.tonton.databinding.ItemMovieBinding
 
 class SeriesAdapter(private val listener : OnItemClickCallback) : PagedListAdapter<SeriesEntity, SeriesAdapter.SeriesViewHolder>(

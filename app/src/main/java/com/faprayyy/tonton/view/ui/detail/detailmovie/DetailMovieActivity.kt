@@ -20,7 +20,7 @@ import com.faprayyy.tonton.data.remote.response.MovieDetail
 import com.faprayyy.tonton.databinding.ActivityDetailMovieBinding
 import com.faprayyy.tonton.utils.Converter.convertGenres
 import com.faprayyy.tonton.view.ui.detail.DetailViewModel
-import com.faprayyy.tonton.view.ui.search.SearchActivity
+import com.faprayyy.tonton.view.ui.favorite.FavoriteActivity
 import com.faprayyy.tonton.vo.StatusMessage
 import dagger.hilt.android.AndroidEntryPoint
 import java.util.*
@@ -201,8 +201,8 @@ class DetailMovieActivity : AppCompatActivity() {
             setOnMenuItemClickListener {
                 when(it?.itemId){
                     R.id.menu_share_item -> { onShareClick(movieDetail) }
-                    R.id.menu_search_item -> {
-                        val intent = Intent(context, SearchActivity::class.java)
+                    R.id.menu_favorite_item -> {
+                        val intent = Intent(context, FavoriteActivity::class.java)
                         startActivity(intent)
                     }
                 }

@@ -1,7 +1,6 @@
 package com.faprayyy.tonton.view.adapter
 
 import android.annotation.SuppressLint
-import android.app.Activity
 import android.view.LayoutInflater
 import android.view.ViewGroup
 import androidx.paging.PagedListAdapter

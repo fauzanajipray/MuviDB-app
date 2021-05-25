@@ -8,11 +8,11 @@ import com.faprayyy.tonton.data.remote.response.MovieDetail
 import com.faprayyy.tonton.data.remote.response.SeriesDetail
 import com.faprayyy.tonton.utils.DataDummy
 import com.faprayyy.tonton.utils.LiveDataTestUtils
-import com.faprayyy.tonton.utils.SortUtils
 import com.faprayyy.tonton.view.ui.detail.detailmovie.DetailMovieActivity.Companion.MOVIE_TYPE
 import com.faprayyy.tonton.view.ui.detail.detailseries.DetailSeriesActivity.Companion.SERIES_TYPE
 import com.faprayyy.tonton.vo.Resource
-import org.junit.Assert.*
+import org.junit.Assert.assertEquals
+import org.junit.Assert.assertNotNull
 import org.junit.Rule
 import org.junit.Test
 import org.mockito.Mockito

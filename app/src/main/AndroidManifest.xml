@@ -11,8 +11,7 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.Tonton">
-        <activity android:name=".view.ui.favorite.FavoriteActivity"></activity>
-        <activity android:name=".view.ui.search.SearchActivity" />
+        <activity android:name=".view.ui.favorite.FavoriteActivity" />
         <activity android:name=".view.ui.detail.detailseries.DetailSeriesActivity" />
         <activity android:name=".view.ui.splash.SplashActivity">
             <intent-filter>

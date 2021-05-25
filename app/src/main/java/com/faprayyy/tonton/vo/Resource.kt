@@ -8,6 +8,5 @@ class Resource<T>(val status: StatusMessage, val data: T?, val message: String?)
 
         fun <T> loading(data: T?): Resource<T> = Resource(StatusMessage.LOADING, data, null)
 
-        fun <T> empty(msg: String, data: T?): Resource<T> = Resource(StatusMessage.EMPTY, data, msg)
     }
 }
