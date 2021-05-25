@@ -3,15 +3,13 @@ package com.faprayyy.tonton.view.ui.detail.detailseries
 import android.annotation.SuppressLint
 import android.content.Intent
 import android.graphics.drawable.Drawable
-import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
-import android.util.Log
 import android.view.View
 import android.widget.Toast
 import androidx.activity.viewModels
+import androidx.appcompat.app.AppCompatActivity
 import androidx.core.app.ShareCompat
 import androidx.core.content.res.ResourcesCompat
-import androidx.lifecycle.Observer
 import com.bumptech.glide.Glide
 import com.bumptech.glide.request.RequestOptions
 import com.faprayyy.tonton.R
@@ -20,7 +18,8 @@ import com.faprayyy.tonton.data.local.entity.SeriesEntity
 import com.faprayyy.tonton.data.remote.Config
 import com.faprayyy.tonton.data.remote.response.SeriesDetail
 import com.faprayyy.tonton.databinding.ActivityDetailSeriesBinding
-import com.faprayyy.tonton.utils.convertGenres
+import com.faprayyy.tonton.utils.Converter.convertGenres
+import com.faprayyy.tonton.view.ui.detail.DetailViewModel
 import com.faprayyy.tonton.view.ui.search.SearchActivity
 import com.faprayyy.tonton.vo.StatusMessage
 import dagger.hilt.android.AndroidEntryPoint
@@ -38,7 +37,7 @@ class DetailSeriesActivity : AppCompatActivity() {
     private lateinit var binding: ActivityDetailSeriesBinding
     private lateinit var seriesData: SeriesEntity
     private lateinit var seriesDetail: SeriesDetail
-    private val viewModel: DetailSeriesViewModel by viewModels()
+    private val viewModel: DetailViewModel by viewModels()
     private lateinit var mFavoriteEntity: FavoriteEntity
     private lateinit var backdropImg: String
     private lateinit var imgNotFavorite : Drawable
@@ -143,7 +142,7 @@ class DetailSeriesActivity : AppCompatActivity() {
     }
 
     private fun getFavFromDB(seriesId: Int) {
-        viewModel.getSeriesFromDB(seriesId, SERIES_TYPE).observe(this, {
+        viewModel.getMovieFromDB(seriesId, SERIES_TYPE).observe(this, {
 
             stateFavorite = false
             if (it != null) {

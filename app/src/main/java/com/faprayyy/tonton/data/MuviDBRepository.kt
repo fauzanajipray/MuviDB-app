@@ -123,7 +123,7 @@ class MuviDBRepository @Inject constructor(
     }
 
     override fun setFavorite(fav: FavoriteEntity) {
-        mExecutor.diskIO().execute { mLocalDataSource.insert(fav) }
+        mExecutor.diskIO().execute { mLocalDataSource.insertFavorite(fav) }
     }
 
     override fun getFavoriteById(id: Int, type: String): LiveData<FavoriteEntity> {
@@ -135,7 +135,7 @@ class MuviDBRepository @Inject constructor(
     }
 
     override fun deleteFavorite(id: Int, type: String) {
-        mExecutor.diskIO().execute { mLocalDataSource.delete(id, type) }
+        mExecutor.diskIO().execute { mLocalDataSource.deleteFavorite(id, type) }
     }
 
 }

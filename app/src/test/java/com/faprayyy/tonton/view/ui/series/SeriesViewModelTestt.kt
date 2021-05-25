@@ -15,6 +15,7 @@ import org.mockito.Mock
 import org.mockito.Mockito.*
 import org.mockito.junit.MockitoJUnitRunner
 
+/*
 @RunWith(MockitoJUnitRunner::class)
 class SeriesViewModelTest {
 
@@ -52,3 +53,5 @@ class SeriesViewModelTest {
         verify(observer).onChanged(dummySeriesList)
     }
 }
+
+ */

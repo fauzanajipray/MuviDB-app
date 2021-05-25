@@ -19,18 +19,18 @@ class LocalDataSource @Inject constructor(private val mMuviDao: MuviDao) {
     fun insertSeries(series : List<SeriesEntity>) = mMuviDao.insertSeries(series)
 
     fun getAllFavorite(query: SupportSQLiteQuery): DataSource.Factory<Int, FavoriteEntity> {
-        return mMuviDao.readAllData(query)
+        return mMuviDao.getAllFavorite(query)
     }
 
     fun getFavoriteByIdAndType(id : Int, type: String): FavoriteEntity {
-        return mMuviDao.readDataByIdAndType(id, type)
+        return mMuviDao.getFavoriteByIdAndType(id, type)
     }
 
-    fun insert(fav: FavoriteEntity) {
+    fun insertFavorite(fav: FavoriteEntity) {
          mMuviDao.addFavorite(fav)
     }
 
-    fun delete(id: Int, type: String) {
+    fun deleteFavorite(id: Int, type: String) {
          mMuviDao.deleteFavorite(id, type)
     }
 

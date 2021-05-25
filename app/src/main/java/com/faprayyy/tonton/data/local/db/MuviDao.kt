@@ -30,8 +30,8 @@ interface MuviDao {
     fun deleteFavorite(id: Int, type: String)
 
     @Query("SELECT * FROM favorite WHERE id = :id AND type = :type LIMIT 1")
-    fun readDataByIdAndType(id: Int, type : String): FavoriteEntity
+    fun getFavoriteByIdAndType(id: Int, type : String): FavoriteEntity
 
     @RawQuery(observedEntities = [FavoriteEntity::class])
-    fun readAllData(query: SupportSQLiteQuery): DataSource.Factory<Int, FavoriteEntity>
+    fun getAllFavorite(query: SupportSQLiteQuery): DataSource.Factory<Int, FavoriteEntity>
 }

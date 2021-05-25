@@ -4,7 +4,6 @@ import android.annotation.SuppressLint
 import android.content.Intent
 import android.graphics.drawable.Drawable
 import android.os.Bundle
-import android.util.Log
 import android.view.View
 import android.widget.Toast
 import androidx.activity.viewModels
@@ -19,7 +18,8 @@ import com.faprayyy.tonton.data.local.entity.MovieEntity
 import com.faprayyy.tonton.data.remote.Config
 import com.faprayyy.tonton.data.remote.response.MovieDetail
 import com.faprayyy.tonton.databinding.ActivityDetailMovieBinding
-import com.faprayyy.tonton.utils.convertGenres
+import com.faprayyy.tonton.utils.Converter.convertGenres
+import com.faprayyy.tonton.view.ui.detail.DetailViewModel
 import com.faprayyy.tonton.view.ui.search.SearchActivity
 import com.faprayyy.tonton.vo.StatusMessage
 import dagger.hilt.android.AndroidEntryPoint
@@ -38,7 +38,7 @@ class DetailMovieActivity : AppCompatActivity() {
     private lateinit var movieData: MovieEntity
     private lateinit var movieDetail: MovieDetail
     private lateinit var movieFavorite: FavoriteEntity
-    private val viewModel: DetailMovieViewModel by viewModels()
+    private val viewModel: DetailViewModel by viewModels()
     private lateinit var backdropImg: String
     private lateinit var imgNotFavorite : Drawable
     private lateinit var imgFavorite : Drawable
