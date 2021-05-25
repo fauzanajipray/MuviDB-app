@@ -5,6 +5,7 @@ import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
 import androidx.paging.LivePagedListBuilder
 import androidx.paging.PagedList
+import com.bumptech.glide.load.engine.Resource
 import com.faprayyy.tonton.data.local.LocalDataSource
 import com.faprayyy.tonton.data.local.entity.FavoriteEntity
 import com.faprayyy.tonton.data.remote.ApiService
@@ -62,21 +63,15 @@ class FakeMuviDBRepository constructor(
         return seriesDetail
     }
 
-    override fun getMovieFromApi(): LiveData<ArrayList<MovieModel>> {
+    override fun getMovieFromApi(): LiveData<Resource<PagedList<MovieModel>>> {
         val listMovie = MutableLiveData<ArrayList<MovieModel>>()
-        val client = apiService.getDiscoverMovies()
-        client.enqueue(object : Callback<DiscoverMovieResponse> {
-            override fun onResponse(call: Call<DiscoverMovieResponse>, response: Response<DiscoverMovieResponse>) {
-                if (response.isSuccessful) {
-                    listMovie.postValue(response.body()?.results)
-                } else {
-                    Log.e("MainViewModel", "onFailure: ${response.message()}")
-                }
-            }
-            override fun onFailure(call: Call<DiscoverMovieResponse>, t: Throwable) {
-                Log.e("MainViewModel", "onFailure: ${t.message.toString()}")
-            }
-        })
+        val response = apiService.getDiscoverMovies().execute()
+        if (response.isSuccessful) {
+            Log.d("FakeRepo" , response.body()?.results.toString())
+            listMovie.value = response.body()?.results
+        } else {
+            Log.e("MainViewModel", "onFailure: ${response.message()}")
+        }
         return listMovie
     }
 

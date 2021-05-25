@@ -8,8 +8,9 @@ import com.faprayyy.tonton.data.local.entity.FavoriteEntity
 import com.faprayyy.tonton.data.remote.response.SeriesDetail
 import com.faprayyy.tonton.utils.DataDummy
 import com.faprayyy.tonton.utils.DataDummy.generateDetailSeries
-import com.faprayyy.tonton.view.ui.detailmovie.DetailMovieActivity
-import com.faprayyy.tonton.view.ui.detailseries.DetailSeriesActivity.Companion.SERIES_TYPE
+import com.faprayyy.tonton.view.ui.detail.detailmovie.DetailMovieActivity
+import com.faprayyy.tonton.view.ui.detail.detailseries.DetailSeriesActivity.Companion.SERIES_TYPE
+import com.faprayyy.tonton.view.ui.detail.detailseries.DetailSeriesViewModel
 import org.junit.Assert.assertEquals
 import org.junit.Assert.assertNotNull
 import org.junit.Before

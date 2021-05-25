@@ -2,32 +2,28 @@ package com.faprayyy.tonton.data.remote.response
 
 import android.os.Parcelable
 import com.google.gson.annotations.SerializedName
-import kotlinx.android.parcel.Parcelize
+import kotlinx.parcelize.Parcelize
 
 @Parcelize
 data class MovieModel (
         @SerializedName("id")
         var id: Int = -1,
-        @SerializedName("vote_count")
-        var voteCount: Int = 0,
         @SerializedName("vote_average")
         var voteAverage: Double = 0.0,
-        @SerializedName("adult")
-        var adult: Boolean = false,
         @SerializedName("popularity")
         var popularity: Double = 0.0,
         @SerializedName("title")
         var title: String,
         @SerializedName("poster_path")
-        var posterPath: String? = null,
+        var posterPath: String,
         @SerializedName("original_language")
         var originalLanguage: String,
         @SerializedName("original_title")
         var originalTitle: String,
         @SerializedName("backdrop_path")
-        var backdropPath: String? = null,
+        var backdropPath: String,
         @SerializedName("release_date")
         var releaseDate: String,
         @SerializedName("overview")
-        var overview: String? = null
+        var overview: String
 ) : Parcelable

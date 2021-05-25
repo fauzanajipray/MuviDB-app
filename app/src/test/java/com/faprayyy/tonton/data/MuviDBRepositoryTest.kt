@@ -3,14 +3,13 @@ package com.faprayyy.tonton.data
 import androidx.arch.core.executor.testing.InstantTaskExecutorRule
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.Observer
+import androidx.paging.DataSource
 import com.faprayyy.tonton.data.local.LocalDataSource
+import com.faprayyy.tonton.data.local.entity.FavoriteEntity
 import com.faprayyy.tonton.data.remote.ApiService
 import com.faprayyy.tonton.data.remote.response.DiscoverMovieResponse
 import com.faprayyy.tonton.data.remote.response.MovieModel
-import com.faprayyy.tonton.utils.CallFake
-import com.faprayyy.tonton.utils.DataDummy
-import com.faprayyy.tonton.utils.LiveDataTestUtils
-import com.faprayyy.tonton.utils.SortUtils
+import com.faprayyy.tonton.utils.*
 import com.nhaarman.mockitokotlin2.doReturn
 import com.nhaarman.mockitokotlin2.mock
 import junit.framework.Assert
@@ -38,17 +37,17 @@ class MuviDBRepositoryTest{
 //    private val remote = mock(ApiServiceMock::class.java)
     private val local = mock(LocalDataSource::class.java)
     private val appExecutors = Executors.newSingleThreadExecutor()
-    private var apiResponse = mock(ApiService::class.java)
-    private lateinit var muviDBRepository : MuviDBRepository
+    private var apiService = mock(ApiService::class.java, RETURNS_DEEP_STUBS)
+    private lateinit var muviDBRepository : FakeMuviDBRepository
 
-
+    private val stringSort = SortUtils.NEWEST
     private val dummyMovieList = DataDummy.generateMoviesList()
+    private val dummySeriesList = DataDummy.generateMoviesList()
+    private val dummyFavList = DataDummy.generateFavEntity(stringSort)
     private val movieId = dummyMovieList[0].id
     private val movieDetail = DataDummy.generateDetailMovie()
-    private val dummySeriesList = DataDummy.generateMoviesList()
     private val seriesId = dummySeriesList[0].id
     private val seriesDetail = DataDummy.generateDetailSeries()
-    private val stringSort = SortUtils.NEWEST
 
     @Mock
     private lateinit var observer: Observer<ArrayList<MovieModel>>
@@ -56,24 +55,41 @@ class MuviDBRepositoryTest{
 
     @Before
     fun setUp() {
-        muviDBRepository = MuviDBRepository.getInstance(apiResponse,local,appExecutors)
+        muviDBRepository = FakeMuviDBRepository(apiService,local,appExecutors)
     }
 
     @Test
     fun `get discover movies and should return success`(){
-        val dummyListMovie = MutableLiveData<ArrayList<MovieModel>>()
-        dummyListMovie.value = dummyMovieList
+//        val liveListMovie = MutableLiveData<ArrayList<MovieModel>>()
+//        liveListMovie.value = dummyMovieList
+//
+//        val response : Response<DiscoverMovieResponse> = Response.success(DiscoverMovieResponse(dummyMovieList))
+//        println(response.body())
+//        `when`(apiService).thenReturn()
+//        `when`(apiService.getDiscoverMovies().execute()).thenReturn(response)
+//        val resultRemote = muviDBRepository.getMovieFromApi().value
+//
+//        verify(apiService.getDiscoverMovies())
+//
+//        println(resultRemote)
+//        assertNotNull(resultRemote)
+//        assertEquals(dummyMovieList.size, resultRemote?.size)
+//        muviDBRepository.getMovieFromApi().observeForever(observer)
+//        verify(observer).onChanged(dummyMovieList)
+    }
 
-        `when`(muviDBRepository.getMovieFromApi()).thenReturn(dummyListMovie)
-        val resultRemote = muviDBRepository.getMovieFromApi().value
+    @Test
+    fun `get favorite list from DB should return success`(){
+        val dataSourceFactory = mock(DataSource.Factory::class.java) as DataSource.Factory<Int, FavoriteEntity>
 
-        verify(muviDBRepository).getMovieFromApi()
+        val query = SortUtils.getSortedQuery(stringSort)
+        `when`(local.getAllFavorite(query)).thenReturn(dataSourceFactory)
+        muviDBRepository.getFavorites(stringSort)
 
-        println(resultRemote)
-        assertNotNull(resultRemote)
-        assertEquals(dummyMovieList.size, resultRemote?.size)
-        muviDBRepository.getMovieFromApi().observeForever(observer)
-        verify(observer).onChanged(dummyMovieList)
+        val courseEntities = PagedListUtil.mockPagedList(DataDummy.generateFavEntityList())
+        com.nhaarman.mockitokotlin2.verify(local).getAllFavorite(query)
+        assertNotNull(courseEntities)
+        assertEquals(dummyFavList.size.toLong(), courseEntities.data?.size?.toLong())
 
     }
 

@@ -12,16 +12,16 @@ import retrofit2.Callback
 import retrofit2.Response
 import java.util.concurrent.TimeUnit
 
-class ApiServiceMock : ApiService{
-    override fun getMovie(movie_id: Int, api_key: String): Call<MovieDetail> {
+class ApiServiceMock {
+     fun getMovie(movie_id: Int, api_key: String): Call<MovieDetail> {
         TODO("Not yet implemented")
     }
 
-    override fun getSeries(series_id: Int, api_key: String): Call<SeriesDetail> {
+     fun getSeries(series_id: Int, api_key: String): Call<SeriesDetail> {
         TODO("Not yet implemented")
     }
 
-    override fun getDiscoverMovies(api_key: String): Call<DiscoverMovieResponse> {
+     fun getDiscoverMovies(api_key: String): Call<DiscoverMovieResponse> {
         return object: Call<DiscoverMovieResponse> {
             override fun enqueue(callback: Callback<DiscoverMovieResponse>) { }
 
@@ -51,7 +51,7 @@ class ApiServiceMock : ApiService{
         }
     }
 
-    override fun getDiscoverSeries(api_key: String): Call<DiscoverSeriesResponse> {
+    fun getDiscovssserSeries(api_key: String): Call<DiscoverSeriesResponse> {
         return object: Call<DiscoverSeriesResponse> {
             override fun enqueue(callback: Callback<DiscoverSeriesResponse>) { }
 

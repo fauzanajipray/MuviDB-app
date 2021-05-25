@@ -6,6 +6,7 @@ import androidx.lifecycle.Observer
 import com.faprayyy.tonton.data.MuviDBRepository
 import com.faprayyy.tonton.data.remote.response.MovieModel
 import com.faprayyy.tonton.utils.DataDummy.generateMoviesList
+import com.faprayyy.tonton.view.ui.main.MainViewModel
 import org.junit.Assert
 import org.junit.Before
 import org.junit.Rule
@@ -16,9 +17,9 @@ import org.mockito.Mockito.*
 import org.mockito.junit.MockitoJUnitRunner
 
 @RunWith(MockitoJUnitRunner::class)
-class MoviesViewModelTest{
+class MainViewModelTest{
 
-    private lateinit var viewModel: MoviesViewModel
+    private lateinit var viewModel: MainViewModel
 
     @get:Rule
     var instantTaskExecutorRule = InstantTaskExecutorRule()
@@ -31,7 +32,7 @@ class MoviesViewModelTest{
 
     @Before
     fun setUp() {
-        viewModel = MoviesViewModel(muviDBRepository)
+        viewModel = MainViewModel(muviDBRepository)
     }
 
     @Test

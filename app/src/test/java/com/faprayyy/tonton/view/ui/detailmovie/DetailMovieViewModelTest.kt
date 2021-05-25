@@ -8,7 +8,8 @@ import com.faprayyy.tonton.data.local.entity.FavoriteEntity
 import com.faprayyy.tonton.data.remote.response.MovieDetail
 import com.faprayyy.tonton.utils.DataDummy.generateDetailMovie
 import com.faprayyy.tonton.utils.DataDummy.generateFavEntity
-import com.faprayyy.tonton.view.ui.detailmovie.DetailMovieActivity.Companion.MOVIE_TYPE
+import com.faprayyy.tonton.view.ui.detail.detailmovie.DetailMovieActivity.Companion.MOVIE_TYPE
+import com.faprayyy.tonton.view.ui.detail.detailmovie.DetailMovieViewModel
 import org.junit.Assert.assertEquals
 import org.junit.Assert.assertNotNull
 import org.junit.Before

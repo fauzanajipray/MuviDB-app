@@ -6,7 +6,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@color/blue900"
-    tools:context=".view.ui.detailseries.DetailSeriesActivity">
+    tools:context=".view.ui.detail.detailseries.DetailSeriesActivity">
 
     <com.google.android.material.appbar.AppBarLayout
         android:id="@+id/appbar"

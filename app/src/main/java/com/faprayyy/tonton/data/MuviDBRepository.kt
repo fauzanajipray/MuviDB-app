@@ -1,119 +1,115 @@
 package com.faprayyy.tonton.data
 
-import android.util.Log
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
-import androidx.paging.DataSource
 import androidx.paging.LivePagedListBuilder
 import androidx.paging.PagedList
 import com.faprayyy.tonton.data.local.LocalDataSource
 import com.faprayyy.tonton.data.local.entity.FavoriteEntity
-import com.faprayyy.tonton.data.remote.ApiService
-import com.faprayyy.tonton.data.remote.response.*
-import com.faprayyy.tonton.utils.EspressoIdlingResource
+import com.faprayyy.tonton.data.local.entity.MovieEntity
+import com.faprayyy.tonton.data.local.entity.SeriesEntity
+import com.faprayyy.tonton.data.remote.RemoteDataSource
+import com.faprayyy.tonton.data.remote.response.MovieDetail
+import com.faprayyy.tonton.data.remote.response.MovieModel
+import com.faprayyy.tonton.data.remote.response.SeriesDetail
+import com.faprayyy.tonton.data.remote.response.SeriesModel
+import com.faprayyy.tonton.utils.AppExecutors
 import com.faprayyy.tonton.utils.SortUtils
-import retrofit2.Call
-import retrofit2.Callback
-import retrofit2.Response
-import java.util.concurrent.ExecutorService
+import com.faprayyy.tonton.vo.Resource
+import javax.inject.Inject
 
-class MuviDBRepository private constructor(
-        private val apiService: ApiService,
+class MuviDBRepository @Inject constructor(
+        private val mRemoteDataSource: RemoteDataSource,
         private val mLocalDataSource: LocalDataSource,
-        private val mExecutor: ExecutorService
+        private val mExecutor: AppExecutors
 ): MuviDBDataSource {
 
-    companion object {
-        @Volatile
-        private var instance: MuviDBRepository? = null
-        fun getInstance(apiService: ApiService, mLocalDataSource: LocalDataSource, executorService: ExecutorService): MuviDBRepository =
-                instance
-                        ?: synchronized(this) {
-                    MuviDBRepository(apiService, mLocalDataSource, executorService).apply { instance = this }
+    override fun getMovieFromApi(): LiveData<Resource<PagedList<MovieEntity>>> {
+        return object : NetworkBoundResource<PagedList<MovieEntity>, List<MovieModel>>(mExecutor){
+            override fun loadFromDB(): LiveData<PagedList<MovieEntity>> {
+                val config = PagedList.Config.Builder()
+                    .setEnablePlaceholders(false)
+                    .setInitialLoadSizeHint(4)
+                    .setPageSize(4)
+                    .build()
+                return LivePagedListBuilder(mLocalDataSource.getAllMovie(), config).build()
+            }
+
+            override fun shouldFecth(data: PagedList<MovieEntity>?): Boolean {
+                return data == null || data.isEmpty()
+            }
+
+            override fun createCall(): LiveData<Resource<List<MovieModel>>> {
+                return mRemoteDataSource.getDiscoverMovie()
+            }
+
+            override fun saveCallResult(data: List<MovieModel>) {
+                val movieList = ArrayList<MovieEntity>()
+                for (response in data){
+                    val movie = MovieEntity(
+                        response.id,
+                        response.voteAverage,
+                        response.popularity,
+                        response.title,
+                        response.posterPath,
+                        response.originalLanguage,
+                        response.originalTitle,
+                        response.backdropPath,
+                        response.releaseDate,
+                        response.overview)
+                    movieList.add( movie )
                 }
+                mLocalDataSource.insertMovie(movieList)
+            }
+
+        }.asLiveData()
     }
 
-    override fun getDetailMovieFromApi(movieId: Int): LiveData<MovieDetail> {
-        EspressoIdlingResource.increment()
-        val movieDetail = MutableLiveData<MovieDetail>()
-        val client = apiService.getMovie(movieId)
-        client.enqueue(object : Callback<MovieDetail>{
-            override fun onResponse(call: Call<MovieDetail>, response: Response<MovieDetail>) {
-                if (response.isSuccessful) {
-                    movieDetail.postValue(response.body())
-                } else {
-                    Log.e("DetailMovieViewModel", "onFailure: ${response.message()}")
+    override fun getSeriesFromApi(): LiveData<Resource<PagedList<SeriesEntity>>> {
+        return object : NetworkBoundResource<PagedList<SeriesEntity>, List<SeriesModel>>(mExecutor){
+
+            override fun loadFromDB(): LiveData<PagedList<SeriesEntity>> {
+                val config = PagedList.Config.Builder()
+                    .setEnablePlaceholders(false)
+                    .setInitialLoadSizeHint(4)
+                    .setPageSize(4)
+                    .build()
+                return LivePagedListBuilder(mLocalDataSource.getAllSeries(), config).build()
+            }
+
+            override fun shouldFecth(data: PagedList<SeriesEntity>?): Boolean = data == null || data.isEmpty()
+
+            override fun createCall(): LiveData<Resource<List<SeriesModel>>> = mRemoteDataSource.getDiscoverSeries()
+
+            override fun saveCallResult(data: List<SeriesModel>) {
+                val listSeries = ArrayList<SeriesEntity>()
+                for (response in data){
+                    val series = SeriesEntity(
+                        response.id,
+                        response.voteAverage,
+                        response.popularity,
+                        response.title,
+                        response.posterPath,
+                        response.originalLanguage,
+                        response.originalTitle,
+                        response.backdropPath,
+                        response.release_date,
+                        response.overview
+                    )
+                    listSeries.add( series )
                 }
+                mLocalDataSource.insertSeries( listSeries )
             }
-            override fun onFailure(call: Call<MovieDetail>, t: Throwable) {
-                Log.e("DetailMovieViewModel", "onFailure: ${t.message.toString()}")
-            }
-        })
-        EspressoIdlingResource.decrement()
-        return movieDetail
+
+        }.asLiveData()
     }
 
-    override fun getDetailSeriesFromApi(seriesId: Int): LiveData<SeriesDetail> {
-        EspressoIdlingResource.increment()
-        val seriesDetail = MutableLiveData<SeriesDetail>()
-        val client = apiService.getSeries(seriesId)
-        client.enqueue(object : Callback<SeriesDetail> {
-            override fun onResponse(call: Call<SeriesDetail>, response: Response<SeriesDetail>) {
-                if (response.isSuccessful) {
-                    seriesDetail.postValue(response.body())
-                } else {
-                    Log.e("DetailSerieViewModel", "onFailure: ${response.message()}")
-                }
-            }
-            override fun onFailure(call: Call<SeriesDetail>, t: Throwable) {
-                Log.e("DetailSerieViewModel", "onFailure: ${t.message.toString()}")
-            }
-        })
-        EspressoIdlingResource.decrement()
-        return seriesDetail
+    override fun getDetailMovieFromApi(movieId: Int): LiveData<Resource<MovieDetail>> {
+        return mRemoteDataSource.getDetailMovie(movieId)
     }
 
-    override fun getMovieFromApi(): LiveData<ArrayList<MovieModel>> {
-        EspressoIdlingResource.increment()
-        val listMovie = MutableLiveData<ArrayList<MovieModel>>()
-        val client = apiService.getDiscoverMovies()
-        client.enqueue(object : Callback<DiscoverMovieResponse> {
-            override fun onResponse(call: Call<DiscoverMovieResponse>, response: Response<DiscoverMovieResponse>) {
-                if (response.isSuccessful) {
-                    listMovie.postValue(response.body()?.results)
-                } else {
-                    Log.e("MainViewModel", "onFailure: ${response.message()}")
-                }
-            }
-            override fun onFailure(call: Call<DiscoverMovieResponse>, t: Throwable) {
-                Log.e("MainViewModel", "onFailure: ${t.message.toString()}")
-            }
-        })
-        EspressoIdlingResource.decrement()
-        return listMovie
-    }
-
-    override fun getSeriesFromApi(): LiveData<ArrayList<SeriesModel>> {
-        EspressoIdlingResource.increment()
-        val listSeries = MutableLiveData<ArrayList<SeriesModel>>()
-        val client = apiService.getDiscoverSeries()
-        client.enqueue(object : Callback<DiscoverSeriesResponse> {
-            override fun onResponse(
-                    call: Call<DiscoverSeriesResponse>,
-                    response: Response<DiscoverSeriesResponse>
-            ) {
-                if (response.isSuccessful) {
-                    listSeries.postValue(response.body()?.results)
-                } else {
-                    Log.e("MainViewModel", "onFailure: ${response.message()}")
-                }
-            }
-            override fun onFailure(call: Call<DiscoverSeriesResponse>, t: Throwable) {
-                Log.e("MainViewModel", "onFailure: ${t.message.toString()}")
-            }
-        })
-        EspressoIdlingResource.decrement()
-        return listSeries
+    override fun getDetailSeriesFromApi(seriesId: Int): LiveData<Resource<SeriesDetail>> {
+        return  mRemoteDataSource.getDetailSeries(seriesId)
     }
 
     override fun getFavorites(sort: String): LiveData<PagedList<FavoriteEntity>> {
@@ -127,19 +123,19 @@ class MuviDBRepository private constructor(
     }
 
     override fun setFavorite(fav: FavoriteEntity) {
-        mExecutor.execute { mLocalDataSource.insert(fav) }
+        mExecutor.diskIO().execute { mLocalDataSource.insert(fav) }
     }
 
     override fun getFavoriteById(id: Int, type: String): LiveData<FavoriteEntity> {
         val data = MutableLiveData<FavoriteEntity>()
-        mExecutor.execute {
+        mExecutor.diskIO().execute {
             data.postValue(mLocalDataSource.getFavoriteByIdAndType(id, type))
         }
         return data
     }
 
     override fun deleteFavorite(id: Int, type: String) {
-        mExecutor.execute { mLocalDataSource.delete(id, type) }
+        mExecutor.diskIO().execute { mLocalDataSource.delete(id, type) }
     }
 
 }

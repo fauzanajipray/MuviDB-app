@@ -4,7 +4,6 @@ import androidx.recyclerview.widget.RecyclerView
 import androidx.test.core.app.ActivityScenario
 import androidx.test.espresso.Espresso.onView
 import androidx.test.espresso.IdlingRegistry
-import androidx.test.espresso.action.ViewActions
 import androidx.test.espresso.action.ViewActions.*
 import androidx.test.espresso.assertion.ViewAssertions
 import androidx.test.espresso.contrib.RecyclerViewActions
@@ -20,6 +19,7 @@ import com.faprayyy.tonton.utils.DataDummy.generateMoviesList
 import com.faprayyy.tonton.utils.DataDummy.generateSeriesList
 import com.faprayyy.tonton.utils.EspressoIdlingResource
 import com.faprayyy.tonton.utils.convertGenres
+import com.faprayyy.tonton.view.ui.main.MainActivity
 import org.junit.After
 import org.junit.Before
 import org.junit.Rule
@@ -60,7 +60,9 @@ class MainActivityTest{
 
     @Test
     fun loadDetailMovie(){
-        onView(withId(R.id.rv_movies)).perform(RecyclerViewActions.actionOnItemAtPosition<RecyclerView.ViewHolder>(0, click()))
+        onView(withId(R.id.rv_movies)).perform(RecyclerViewActions.actionOnItemAtPosition<RecyclerView.ViewHolder>(4, click()))
+        onView(withId(R.id.data_detail)).check(ViewAssertions.matches(isDisplayed()))
+
         onView(withId(R.id.movie_title)).check(ViewAssertions.matches(isDisplayed()))
         onView(withId(R.id.movie_title)).check(ViewAssertions.matches(withText(movieDetail.title)))
         onView(withId(R.id.movie_genres)).check(ViewAssertions.matches(isDisplayed()))
@@ -81,8 +83,9 @@ class MainActivityTest{
     @Test
     fun loadDetailSeries(){
         onView(withId(R.id.seriesFragment)).perform(click())
+        onView(withId(R.id.coordinator)).perform(swipeUp())
         onView(withId(R.id.rv_series)).check(ViewAssertions.matches(isDisplayed()))
-        onView(withId(R.id.rv_series)).perform(RecyclerViewActions.actionOnItemAtPosition<RecyclerView.ViewHolder>(0, click()))
+        onView(withId(R.id.rv_series)).perform(RecyclerViewActions.actionOnItemAtPosition<RecyclerView.ViewHolder>(13, click()))
         onView(withId(R.id.series_title)).check(ViewAssertions.matches(isDisplayed()))
         onView(withId(R.id.series_title)).check(ViewAssertions.matches(withText(seriesDetail.name)))
         onView(withId(R.id.series_genres)).check(ViewAssertions.matches(isDisplayed()))
@@ -134,6 +137,7 @@ class MainActivityTest{
     @Test
     fun addAndDeleteSeriesFromFavorite(){
         onView(withId(R.id.seriesFragment)).perform(click())
+        onView(withId(R.id.coordinator)).perform(swipeUp())
         onView(withId(R.id.rv_series)).check(ViewAssertions.matches(isDisplayed()))
         onView(withId(R.id.rv_series)).perform(RecyclerViewActions.actionOnItemAtPosition<RecyclerView.ViewHolder>(0, click()))
         onView(withId(R.id.fab)).check(ViewAssertions.matches(isDisplayed()))
@@ -141,6 +145,7 @@ class MainActivityTest{
         onView(withId(R.id.data_detail)).perform(swipeUp())
         onView(withId(R.id.data_detail)).perform(swipeDown())
         onView(isRoot()).perform(pressBack())
+        onView(withId(R.id.coordinator)).perform(swipeDown())
         onView(withId(R.id.rv_series)).check(ViewAssertions.matches(isDisplayed()))
         onView(withId(R.id.menu_favorite_item)).perform(click())
         onView(withId(R.id.rv_favorite)).check(ViewAssertions.matches(isDisplayed()))

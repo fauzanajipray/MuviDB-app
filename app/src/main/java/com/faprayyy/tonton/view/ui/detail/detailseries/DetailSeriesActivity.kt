@@ -1,4 +1,4 @@
-package com.faprayyy.tonton.view.ui.detailseries
+package com.faprayyy.tonton.view.ui.detail.detailseries
 
 import android.annotation.SuppressLint
 import android.content.Intent
@@ -8,24 +8,25 @@ import android.os.Bundle
 import android.util.Log
 import android.view.View
 import android.widget.Toast
+import androidx.activity.viewModels
 import androidx.core.app.ShareCompat
 import androidx.core.content.res.ResourcesCompat
-import androidx.lifecycle.ViewModelProvider
 import androidx.lifecycle.Observer
 import com.bumptech.glide.Glide
 import com.bumptech.glide.request.RequestOptions
 import com.faprayyy.tonton.R
 import com.faprayyy.tonton.data.local.entity.FavoriteEntity
+import com.faprayyy.tonton.data.local.entity.SeriesEntity
 import com.faprayyy.tonton.data.remote.Config
 import com.faprayyy.tonton.data.remote.response.SeriesDetail
-import com.faprayyy.tonton.data.remote.response.SeriesModel
 import com.faprayyy.tonton.databinding.ActivityDetailSeriesBinding
 import com.faprayyy.tonton.utils.convertGenres
-import com.faprayyy.tonton.view.ui.detailmovie.DetailMovieActivity
 import com.faprayyy.tonton.view.ui.search.SearchActivity
-import com.faprayyy.tonton.view.viewmodel.ViewModelFactory
+import com.faprayyy.tonton.vo.StatusMessage
+import dagger.hilt.android.AndroidEntryPoint
 import java.util.*
 
+@AndroidEntryPoint
 class DetailSeriesActivity : AppCompatActivity() {
 
     companion object{
@@ -35,9 +36,9 @@ class DetailSeriesActivity : AppCompatActivity() {
     }
 
     private lateinit var binding: ActivityDetailSeriesBinding
-    private lateinit var seriesData: SeriesModel
+    private lateinit var seriesData: SeriesEntity
     private lateinit var seriesDetail: SeriesDetail
-    private lateinit var viewModel: DetailSeriesViewModel
+    private val viewModel: DetailSeriesViewModel by viewModels()
     private lateinit var mFavoriteEntity: FavoriteEntity
     private lateinit var backdropImg: String
     private lateinit var imgNotFavorite : Drawable
@@ -57,15 +58,13 @@ class DetailSeriesActivity : AppCompatActivity() {
         setupToolbar(seriesDetail)
         showProgressBar(true)
         showData(false)
-        val factory = ViewModelFactory.getInstance(this)
-        viewModel =  ViewModelProvider(this, factory)[DetailSeriesViewModel::class.java]
         binding.toolbar.setNavigationOnClickListener { onBackPressed() }
 
         stateFavorite = false
         val favData = intent.getParcelableExtra<FavoriteEntity>(EXTRA_FAVORITE)
         seriesId = if (favData == null){
-            seriesData = intent.getParcelableExtra<SeriesModel>(EXTRA_SERIES) as SeriesModel
-            backdropImg = seriesData.backdropPath as String
+            seriesData = intent.getParcelableExtra<SeriesEntity>(EXTRA_SERIES) as SeriesEntity
+            backdropImg = seriesData.backdropPath
             seriesData.id
         }
         else {
@@ -74,19 +73,33 @@ class DetailSeriesActivity : AppCompatActivity() {
         }
 
         getFavFromDB(seriesId)
-        viewModel.getSeriesFromApi(seriesId)
         showProgressBar(true)
         showData(false)
-        viewModel.getSeries().observe(this, Observer{
-            showProgressBar(false)
-            if (it != null){
-                setData(it)
-                setupToolbar(it)
-                seriesDetail = it
-                showData(true)
-                setDataFav()
+
+        viewModel.getDetailSeries(seriesId).observe(this, { result ->
+            if (result!=null){
+                when(result.status){
+                    StatusMessage.LOADING -> {
+                        showProgressBar(true)
+                    }
+                    StatusMessage.SUCCESS ->{
+                        showProgressBar(false)
+                        result.data?.let {
+                            setData(it)
+                            setupToolbar(it)
+                            seriesDetail = it
+                            showData(true)
+                            setDataFav()
+                        }
+                    }
+                    StatusMessage.ERROR -> {
+                        showProgressBar(false)
+                    }
+                    else -> { }
+                }
             }
         })
+
 
         binding.fab.setOnClickListener{
             if(stateFavorite){
@@ -120,7 +133,7 @@ class DetailSeriesActivity : AppCompatActivity() {
     private fun setDataFav() {
         mFavoriteEntity = seriesDetail.let {
             FavoriteEntity(
-                    it.id as Int,
+                    it.id,
                     it.name,
                     it.posterPath,
                     it.backdropPath,
@@ -130,8 +143,8 @@ class DetailSeriesActivity : AppCompatActivity() {
     }
 
     private fun getFavFromDB(seriesId: Int) {
-        viewModel.getSeriesFromDB(seriesId, SERIES_TYPE).observe(this, Observer {
-            Log.d("CekDataFav", "$it")
+        viewModel.getSeriesFromDB(seriesId, SERIES_TYPE).observe(this, {
+
             stateFavorite = false
             if (it != null) {
                 stateFavorite = true

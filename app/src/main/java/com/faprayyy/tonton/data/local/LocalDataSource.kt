@@ -2,35 +2,37 @@ package com.faprayyy.tonton.data.local
 
 import androidx.paging.DataSource
 import androidx.sqlite.db.SupportSQLiteQuery
-import com.faprayyy.tonton.data.local.db.FavoriteDao
+import com.faprayyy.tonton.data.local.db.MuviDao
 import com.faprayyy.tonton.data.local.entity.FavoriteEntity
+import com.faprayyy.tonton.data.local.entity.MovieEntity
+import com.faprayyy.tonton.data.local.entity.SeriesEntity
+import javax.inject.Inject
 
-class LocalDataSource private constructor(private val mFavoriteDao: FavoriteDao) {
+class LocalDataSource @Inject constructor(private val mMuviDao: MuviDao) {
 
-    companion object {
-        private var INSTANCE: LocalDataSource? = null
+    fun getAllMovie(): DataSource.Factory<Int, MovieEntity> = mMuviDao.getMovie()
 
-        fun getInstance(mFavoriteDao: FavoriteDao): LocalDataSource =
-                INSTANCE ?: LocalDataSource(mFavoriteDao).apply {
-                    INSTANCE = this
-                }
+    fun insertMovie(movie : List<MovieEntity>) = mMuviDao.insertMovie(movie)
 
-    }
+    fun getAllSeries(): DataSource.Factory<Int, SeriesEntity> = mMuviDao.getSeries()
+
+    fun insertSeries(series : List<SeriesEntity>) = mMuviDao.insertSeries(series)
 
     fun getAllFavorite(query: SupportSQLiteQuery): DataSource.Factory<Int, FavoriteEntity> {
-        return mFavoriteDao.readAllData(query)
+        return mMuviDao.readAllData(query)
     }
 
     fun getFavoriteByIdAndType(id : Int, type: String): FavoriteEntity {
-        return mFavoriteDao.readDataByIdAndType(id, type)
+        return mMuviDao.readDataByIdAndType(id, type)
     }
 
     fun insert(fav: FavoriteEntity) {
-         mFavoriteDao.addFavorite(fav)
+         mMuviDao.addFavorite(fav)
     }
 
     fun delete(id: Int, type: String) {
-         mFavoriteDao.deleteFavorite(id, type)
+         mMuviDao.deleteFavorite(id, type)
     }
+
 
 }

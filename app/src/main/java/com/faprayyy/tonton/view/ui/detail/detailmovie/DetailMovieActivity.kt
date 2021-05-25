@@ -1,4 +1,4 @@
-package com.faprayyy.tonton.view.ui.detailmovie
+package com.faprayyy.tonton.view.ui.detail.detailmovie
 
 import android.annotation.SuppressLint
 import android.content.Intent
@@ -7,24 +7,25 @@ import android.os.Bundle
 import android.util.Log
 import android.view.View
 import android.widget.Toast
+import androidx.activity.viewModels
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.app.ShareCompat
 import androidx.core.content.res.ResourcesCompat
-import androidx.lifecycle.ViewModelProvider
-import androidx.lifecycle.Observer
 import com.bumptech.glide.Glide
 import com.bumptech.glide.request.RequestOptions
 import com.faprayyy.tonton.R
 import com.faprayyy.tonton.data.local.entity.FavoriteEntity
+import com.faprayyy.tonton.data.local.entity.MovieEntity
 import com.faprayyy.tonton.data.remote.Config
-import com.faprayyy.tonton.data.remote.response.MovieModel
 import com.faprayyy.tonton.data.remote.response.MovieDetail
 import com.faprayyy.tonton.databinding.ActivityDetailMovieBinding
 import com.faprayyy.tonton.utils.convertGenres
 import com.faprayyy.tonton.view.ui.search.SearchActivity
-import com.faprayyy.tonton.view.viewmodel.ViewModelFactory
+import com.faprayyy.tonton.vo.StatusMessage
+import dagger.hilt.android.AndroidEntryPoint
 import java.util.*
 
+@AndroidEntryPoint
 class DetailMovieActivity : AppCompatActivity() {
 
     companion object{
@@ -34,10 +35,10 @@ class DetailMovieActivity : AppCompatActivity() {
     }
 
     private lateinit var binding: ActivityDetailMovieBinding
-    private lateinit var movieData: MovieModel
+    private lateinit var movieData: MovieEntity
     private lateinit var movieDetail: MovieDetail
     private lateinit var movieFavorite: FavoriteEntity
-    private lateinit var viewModel: DetailMovieViewModel
+    private val viewModel: DetailMovieViewModel by viewModels()
     private lateinit var backdropImg: String
     private lateinit var imgNotFavorite : Drawable
     private lateinit var imgFavorite : Drawable
@@ -56,15 +57,13 @@ class DetailMovieActivity : AppCompatActivity() {
         setupToolbar(movieDetail)
         showProgressBar(true)
         showData(false)
-        val factory = ViewModelFactory.getInstance(this)
-        viewModel =  ViewModelProvider(this, factory)[DetailMovieViewModel::class.java]
         binding.toolbar.setNavigationOnClickListener { onBackPressed() }
 
         stateFavorite = false
         val favData = intent.getParcelableExtra<FavoriteEntity>(EXTRA_FAVORITE)
         movieId = if (favData == null){
-            movieData = intent.getParcelableExtra<MovieModel>(EXTRA_MOVIE) as MovieModel
-            backdropImg = movieData.backdropPath as String
+            movieData = intent.getParcelableExtra<MovieEntity>(EXTRA_MOVIE) as MovieEntity
+            backdropImg = movieData.backdropPath
             movieData.id
         }
         else {
@@ -73,17 +72,29 @@ class DetailMovieActivity : AppCompatActivity() {
         }
 
         getFavFromDB(movieId)
-        viewModel.getMovieFromApi(movieId)
         showProgressBar(true)
         showData(false)
-        viewModel.getMovie().observe(this, Observer {
-            showProgressBar(false)
-            if (it != null){
-                setData(it)
-                setupToolbar(it)
-                movieDetail = it
-                showData(true)
-                setDataFav()
+        viewModel.getDetailMovie(movieId).observe(this, { result ->
+            if (result!=null){
+                when(result.status){
+                    StatusMessage.LOADING -> {
+                        showProgressBar(true)
+                    }
+                    StatusMessage.SUCCESS ->{
+                        showProgressBar(false)
+                        result.data?.let {
+                            setData(it)
+                            setupToolbar(it)
+                            movieDetail = it
+                            showData(true)
+                            setDataFav()
+                        }
+                    }
+                    StatusMessage.ERROR -> {
+                        showProgressBar(false)
+                    }
+                    else -> { }
+                }
             }
         })
 
@@ -138,9 +149,7 @@ class DetailMovieActivity : AppCompatActivity() {
     }
 
     private fun getFavFromDB(movieId: Int) {
-        Log.d("CekData", "Cek fav from DB")
-        viewModel.getMovieFromDB(movieId, MOVIE_TYPE).observe(this, Observer {
-            Log.d("CekDataFav", "$it")
+        viewModel.getMovieFromDB(movieId, MOVIE_TYPE).observe(this, {
             stateFavorite = false
             if (it != null) {
                 stateFavorite = true
@@ -214,11 +223,8 @@ class DetailMovieActivity : AppCompatActivity() {
 
     private fun showProgressBar(state : Boolean){
         with(binding.progressBar){
-            visibility = if (state){
-                View.VISIBLE
-            } else {
-                View.GONE
-            }
+            visibility = if (state) View.VISIBLE
+             else View.GONE
         }
     }
 

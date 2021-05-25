@@ -13,9 +13,9 @@ import com.faprayyy.tonton.R
 import com.faprayyy.tonton.data.local.entity.FavoriteEntity
 import com.faprayyy.tonton.data.remote.Config
 import com.faprayyy.tonton.databinding.ItemFavoriteBinding
-import com.faprayyy.tonton.view.ui.detailmovie.DetailMovieActivity
-import com.faprayyy.tonton.view.ui.detailmovie.DetailMovieActivity.Companion.MOVIE_TYPE
-import com.faprayyy.tonton.view.ui.detailseries.DetailSeriesActivity
+import com.faprayyy.tonton.view.ui.detail.detailmovie.DetailMovieActivity
+import com.faprayyy.tonton.view.ui.detail.detailmovie.DetailMovieActivity.Companion.MOVIE_TYPE
+import com.faprayyy.tonton.view.ui.detail.detailseries.DetailSeriesActivity
 
 class FavoriteAdapter(private val activity: Activity) : PagedListAdapter<FavoriteEntity, FavoriteAdapter.FavoriteViewHolder>(DIFF_CALLBACK) {
 
@@ -62,7 +62,6 @@ class FavoriteAdapter(private val activity: Activity) : PagedListAdapter<Favorit
             ): Boolean {
                 return oldItem == newItem
             }
-
         }
     }
 

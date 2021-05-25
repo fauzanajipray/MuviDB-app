@@ -6,7 +6,7 @@ import android.os.Bundle
 import android.os.Handler
 import android.os.Looper
 import androidx.appcompat.app.AppCompatDelegate
-import com.faprayyy.tonton.MainActivity
+import com.faprayyy.tonton.view.ui.main.MainActivity
 import com.faprayyy.tonton.databinding.ActivitySplashBinding
 
 class SplashActivity : AppCompatActivity() {

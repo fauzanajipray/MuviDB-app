@@ -4,6 +4,7 @@ import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.util.Log
 import android.view.View
+import androidx.activity.viewModels
 import androidx.appcompat.widget.Toolbar
 import androidx.lifecycle.Observer
 import androidx.lifecycle.ViewModelProvider
@@ -14,21 +15,19 @@ import com.faprayyy.tonton.data.local.entity.FavoriteEntity
 import com.faprayyy.tonton.databinding.ActivityFavoriteBinding
 import com.faprayyy.tonton.utils.SortUtils
 import com.faprayyy.tonton.view.adapter.FavoriteAdapter
-import com.faprayyy.tonton.view.viewmodel.ViewModelFactory
+import dagger.hilt.android.AndroidEntryPoint
 
+@AndroidEntryPoint
 class FavoriteActivity : AppCompatActivity() {
 
     private lateinit var binding : ActivityFavoriteBinding
-    private lateinit var viewModel: FavoriteViewModel
+    private val viewModel: FavoriteViewModel by viewModels()
     private lateinit var mFavoriteAdapter: FavoriteAdapter
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         binding = ActivityFavoriteBinding.inflate(layoutInflater)
         setContentView(binding.root)
-
-        val factory = ViewModelFactory.getInstance(this)
-        viewModel =  ViewModelProvider(this, factory)[FavoriteViewModel::class.java]
         binding.toolbar.setNavigationOnClickListener { onBackPressed() }
         viewModel.getFavoriteListFromDB(SortUtils.NEWEST).observe(this , favObserver)
 

@@ -1,28 +1,30 @@
-package com.faprayyy.tonton.view.ui.movie
+package com.faprayyy.tonton.view.ui.main.movie
 
 import android.content.Intent
 import android.os.Bundle
+import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.Fragment
-import androidx.lifecycle.Observer
-import androidx.lifecycle.ViewModelProvider
+import androidx.fragment.app.viewModels
 import com.faprayyy.tonton.R
-import com.faprayyy.tonton.data.remote.response.MovieModel
+import com.faprayyy.tonton.data.local.entity.MovieEntity
 import com.faprayyy.tonton.databinding.FragmentMovieBinding
 import com.faprayyy.tonton.view.adapter.MovieAdapter
-import com.faprayyy.tonton.view.ui.detailmovie.DetailMovieActivity
+import com.faprayyy.tonton.view.ui.detail.detailmovie.DetailMovieActivity
 import com.faprayyy.tonton.view.ui.favorite.FavoriteActivity
+import com.faprayyy.tonton.view.ui.main.MainViewModel
 import com.faprayyy.tonton.view.ui.search.SearchActivity
-import com.faprayyy.tonton.view.viewmodel.ViewModelFactory
-import com.loopj.android.http.AsyncHttpClient.log
+import com.faprayyy.tonton.vo.StatusMessage
+import dagger.hilt.android.AndroidEntryPoint
 
+@AndroidEntryPoint
 class MoviesFragment : Fragment() {
 
     private var _binding: FragmentMovieBinding? = null
     private val binding get() = _binding as FragmentMovieBinding
-    private lateinit var moviesViewModel: MoviesViewModel
+    private val viewModel: MainViewModel by viewModels()
     private lateinit var mAdapter: MovieAdapter
 
     override fun onCreateView(
@@ -30,49 +32,46 @@ class MoviesFragment : Fragment() {
             container: ViewGroup?,
             savedInstanceState: Bundle?
     ): View {
-        val factory = ViewModelFactory.getInstance(requireActivity())
-        moviesViewModel = ViewModelProvider(this, factory)[MoviesViewModel::class.java]
-
         _binding = FragmentMovieBinding.inflate(inflater, container, false)
-
         return binding.root
     }
 
     override fun onActivityCreated(savedInstanceState: Bundle?) {
         super.onActivityCreated(savedInstanceState)
-        mAdapter = MovieAdapter()
-        mAdapter.notifyDataSetChanged()
-        binding.rvMovies.apply {
-            adapter = mAdapter
-            setHasFixedSize(true)
-        }
-        binding.progressBar.visibility = View.VISIBLE
-        moviesViewModel.getMoviesListFromApi()
-        showLoading(true)
+
         setupToolbar()
-        moviesViewModel.getMoviesList().observe(viewLifecycleOwner, Observer {
-            showLoading(false)
-            if (it != null){
-                mAdapter.setData(it)
+        setupRecyclerview()
+        viewModel.getMovieList().observe(viewLifecycleOwner, { result ->
+            if (result!=null){
+                when(result.status){
+                    StatusMessage.LOADING -> setupProgressBar(true)
+                    StatusMessage.SUCCESS ->{
+                        setupProgressBar(false)
+                        mAdapter.submitList( result.data )
+                    }
+                    StatusMessage.ERROR -> {
+                        setupProgressBar(false)
+                    }
+                    else -> { }
+                }
             }
         })
+    }
 
-        mAdapter.setOnItemClickCallback(object : MovieAdapter.OnItemClickCallback{
-            override fun onItemClicked(data: MovieModel) {
+    private fun setupRecyclerview(){
+        mAdapter = MovieAdapter(object : MovieAdapter.OnItemClickCallback{
+            override fun onItemClicked(data: MovieEntity) {
                 val intent = Intent(context, DetailMovieActivity::class.java)
                 intent.putExtra(DetailMovieActivity.EXTRA_MOVIE, data)
                 startActivity(intent)
             }
         })
-    }
-
-    private fun showLoading(state: Boolean) {
-        val mProgressBar = binding.progressBar
-        if (state){
-            mProgressBar.visibility = View.VISIBLE
-        } else {
-            mProgressBar.visibility = View.INVISIBLE
+        with(binding.rvMovies){
+            setHasFixedSize(true)
+            adapter = mAdapter
         }
+        binding.progressBar.visibility = View.GONE
+
     }
 
     private fun setupToolbar() {
@@ -90,6 +89,13 @@ class MoviesFragment : Fragment() {
                 }
                 true
             }
+        }
+    }
+
+    private fun setupProgressBar(status: Boolean){
+        with(binding.progressBar){
+            visibility = if (status) View.VISIBLE
+            else View.GONE
         }
     }
 }

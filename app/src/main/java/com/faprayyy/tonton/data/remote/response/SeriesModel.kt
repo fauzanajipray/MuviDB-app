@@ -2,30 +2,28 @@ package com.faprayyy.tonton.data.remote.response
 
 import android.os.Parcelable
 import com.google.gson.annotations.SerializedName
-import kotlinx.android.parcel.Parcelize
+import kotlinx.parcelize.Parcelize
 
 @Parcelize
 data class SeriesModel (
         @SerializedName("id")
         var id: Int = -1,
-        @SerializedName("vote_count")
-        var voteCount: Int? = 0,
         @SerializedName("vote_average")
-        var voteAverage: Double? = 0.0,
+        var voteAverage: Double = 0.0,
         @SerializedName("popularity")
-        var popularity: Double? = 0.0,
+        var popularity: Double = 0.0,
         @SerializedName("name")
-        var name: String? = "",
+        var title: String,
         @SerializedName("poster_path")
-        var posterPath: String? = "",
+        var posterPath: String,
         @SerializedName("original_language")
-        var originalLanguage: String? = "",
+        var originalLanguage: String,
         @SerializedName("original_name")
-        var originalName: String? = "",
+        var originalTitle: String,
         @SerializedName("backdrop_path")
-        var backdropPath: String? = "",
+        var backdropPath: String,
         @SerializedName("first_air_date")
-        var firstAirDate: String? = "",
+        var release_date: String,
         @SerializedName("overview")
-        var overview: String? = ""
+        var overview: String
 ) : Parcelable
