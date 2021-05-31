@@ -17,6 +17,7 @@ import org.junit.Assert.assertNotNull
 import org.junit.Rule
 import org.junit.Test
 import org.mockito.Mockito.*
+import java.util.concurrent.Executor
 import java.util.concurrent.Executors
 
 class MuviDBRepositoryTest{
@@ -26,7 +27,8 @@ class MuviDBRepositoryTest{
 
     private val remote = mock(RemoteDataSource::class.java)
     private val local = mock(LocalDataSource::class.java)
-    private val appExecutors = mock(AppExecutors::class.java)
+    private val executor = Executor{ it.run() }
+    private val appExecutors = AppExecutors(executor, executor)
     private val repository = MuviDBRepository(remote,local,appExecutors)
 
     private val stringSort = SortUtils.NEWEST
@@ -95,7 +97,7 @@ class MuviDBRepositoryTest{
 
     @Test
     fun `set favorite should return success`(){
-        `when`(appExecutors.diskIO()).thenReturn(Executors.newSingleThreadExecutor())
+
         repository.setFavorite(dummyFavEntity)
         verify(local, times(1)).insertFavorite(dummyFavEntity)
 
@@ -105,7 +107,6 @@ class MuviDBRepositoryTest{
     fun `delete favorite should return success`(){
         val id = dummyFavEntity.id
         val type = dummyFavEntity.type
-        `when`(appExecutors.diskIO()).thenReturn(Executors.newSingleThreadExecutor())
         repository.deleteFavorite(id, type)
 
         verify(local, times(1)).deleteFavorite(id, type)
@@ -118,8 +119,6 @@ class MuviDBRepositoryTest{
         favoriteFactory.value = dummyFavEntity
         val id = dummyFavEntity.id
         val type = dummyFavEntity.type
-
-        `when`(appExecutors.diskIO()).thenReturn(Executors.newSingleThreadExecutor())
 
         `when`(local.getFavoriteByIdAndType(id, type)).thenReturn(dummyFavEntity)
         repository.getFavoriteById(id, type)

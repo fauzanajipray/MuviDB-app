@@ -9,15 +9,6 @@ import androidx.test.espresso.assertion.ViewAssertions
 import androidx.test.espresso.contrib.RecyclerViewActions
 import androidx.test.espresso.matcher.ViewMatchers.*
 import androidx.test.ext.junit.rules.ActivityScenarioRule
-import com.faprayyy.tonton.data.remote.response.MovieDetail
-import com.faprayyy.tonton.data.remote.response.MovieModel
-import com.faprayyy.tonton.data.remote.response.SeriesDetail
-import com.faprayyy.tonton.data.remote.response.SeriesModel
-import com.faprayyy.tonton.utils.Converter.convertGenres
-import com.faprayyy.tonton.utils.DataDummy.generateDetailMovie
-import com.faprayyy.tonton.utils.DataDummy.generateDetailSeries
-import com.faprayyy.tonton.utils.DataDummy.generateMoviesList
-import com.faprayyy.tonton.utils.DataDummy.generateSeriesList
 import com.faprayyy.tonton.utils.EspressoIdlingResource
 import com.faprayyy.tonton.view.ui.main.MainActivity
 import org.junit.After
@@ -28,24 +19,16 @@ import org.junit.Test
 
 class MainActivityTest{
 
-    private lateinit var listMovie: ArrayList<MovieModel>
-    private lateinit var listSeries: ArrayList<SeriesModel>
-    private lateinit var movieDetail: MovieDetail
-    private lateinit var seriesDetail: SeriesDetail
-
     @get:Rule
     var activityRule = ActivityScenarioRule(MainActivity::class.java)
 
     @Before
     fun setup(){
-        listMovie = generateMoviesList()
-        listSeries = generateSeriesList()
-        seriesDetail = generateDetailSeries()
-        movieDetail = generateDetailMovie()
-
         ActivityScenario.launch(MainActivity::class.java)
         IdlingRegistry.getInstance().register(EspressoIdlingResource.idlingResource)
     }
+
+
 
     @After
     fun tearDown() {
@@ -55,29 +38,22 @@ class MainActivityTest{
     @Test
     fun loadMovie(){
         onView(withId(R.id.rv_movies)).check(ViewAssertions.matches(isDisplayed()))
-        onView(withId(R.id.rv_movies)).perform(RecyclerViewActions.scrollToPosition<RecyclerView.ViewHolder>(listMovie.size))
+        onView(withId(R.id.rv_movies)).perform(RecyclerViewActions.scrollToPosition<RecyclerView.ViewHolder>(20))
     }
 
     @Test
     fun loadDetailMovie(){
-        onView(withId(R.id.rv_movies)).perform(RecyclerViewActions.actionOnItemAtPosition<RecyclerView.ViewHolder>(4, click()))
-        onView(withId(R.id.data_detail)).check(ViewAssertions.matches(isDisplayed()))
 
+        onView(withId(R.id.rv_movies)).perform(RecyclerViewActions.actionOnItemAtPosition<RecyclerView.ViewHolder>(0, click()))
+        onView(withId(R.id.data_detail)).check(ViewAssertions.matches(isDisplayed()))
         onView(withId(R.id.movie_title)).check(ViewAssertions.matches(isDisplayed()))
-        onView(withId(R.id.movie_title)).check(ViewAssertions.matches(withText(movieDetail.title)))
         onView(withId(R.id.movie_genres)).check(ViewAssertions.matches(isDisplayed()))
-        onView(withId(R.id.movie_genres)).check(ViewAssertions.matches(withText(convertGenres(movieDetail.genres))))
         onView(withId(R.id.movie_release)).check(ViewAssertions.matches(isDisplayed()))
-        onView(withId(R.id.movie_release)).check(ViewAssertions.matches(withText(movieDetail.releaseDate)))
         onView(withId(R.id.movie_overview)).check(ViewAssertions.matches(isDisplayed()))
-        onView(withId(R.id.movie_overview)).check(ViewAssertions.matches(withText(movieDetail.overview)))
         onView(withId(R.id.movie_tagline)).check(ViewAssertions.matches(isDisplayed()))
-        onView(withId(R.id.movie_tagline)).check(ViewAssertions.matches(withText(movieDetail.tagline)))
         onView(withId(R.id.movie_lang)).check(ViewAssertions.matches(isDisplayed()))
-        onView(withId(R.id.movie_lang)).check(ViewAssertions.matches(withText(movieDetail.originalLanguage?.toUpperCase())))
         onView(withId(R.id.movie_rating)).check(ViewAssertions.matches(isDisplayed()))
         onView(withId(R.id.movie_vote_count)).check(ViewAssertions.matches(isDisplayed()))
-        onView(withId(R.id.movie_vote_count)).check(ViewAssertions.matches(withText("(${ movieDetail.voteCount } voters)")))
     }
 
     @Test
@@ -87,20 +63,13 @@ class MainActivityTest{
         onView(withId(R.id.rv_series)).check(ViewAssertions.matches(isDisplayed()))
         onView(withId(R.id.rv_series)).perform(RecyclerViewActions.actionOnItemAtPosition<RecyclerView.ViewHolder>(13, click()))
         onView(withId(R.id.series_title)).check(ViewAssertions.matches(isDisplayed()))
-        onView(withId(R.id.series_title)).check(ViewAssertions.matches(withText(seriesDetail.name)))
         onView(withId(R.id.series_genres)).check(ViewAssertions.matches(isDisplayed()))
-        onView(withId(R.id.series_genres)).check(ViewAssertions.matches(withText(convertGenres(seriesDetail.genres))))
         onView(withId(R.id.series_release)).check(ViewAssertions.matches(isDisplayed()))
-        onView(withId(R.id.series_release)).check(ViewAssertions.matches(withText(seriesDetail.firstAirDate)))
         onView(withId(R.id.series_overview)).check(ViewAssertions.matches(isDisplayed()))
-        onView(withId(R.id.series_overview)).check(ViewAssertions.matches(withText(seriesDetail.overview)))
         onView(withId(R.id.series_tagline)).check(ViewAssertions.matches(isDisplayed()))
-        onView(withId(R.id.series_tagline)).check(ViewAssertions.matches(withText(seriesDetail.tagline)))
         onView(withId(R.id.series_lang)).check(ViewAssertions.matches(isDisplayed()))
-        onView(withId(R.id.series_lang)).check(ViewAssertions.matches(withText(seriesDetail.originalLanguage?.toUpperCase())))
         onView(withId(R.id.series_rating)).check(ViewAssertions.matches(isDisplayed()))
         onView(withId(R.id.series_vote_count)).check(ViewAssertions.matches(isDisplayed()))
-        onView(withId(R.id.series_vote_count)).check(ViewAssertions.matches(withText("(${ seriesDetail.voteCount } voters)")))
         onView(withId(R.id.data_detail)).perform(swipeUp())
         onView(withId(R.id.data_detail)).perform(swipeDown())
 
@@ -110,7 +79,6 @@ class MainActivityTest{
     fun loadSeries(){
         onView(withId(R.id.seriesFragment)).perform(click())
         onView(withId(R.id.rv_series)).check(ViewAssertions.matches(isDisplayed()))
-        onView(withId(R.id.rv_series)).perform(RecyclerViewActions.scrollToPosition<RecyclerView.ViewHolder>(listSeries.size))
     }
 
     @Test
