@@ -6,12 +6,12 @@
     app:startDestination="@id/moviesFragment">
     <fragment
         android:id="@+id/moviesFragment"
-        android:name="com.faprayyy.tonton.view.ui.main.movie.MoviesFragment"
+        android:name="com.faprayyy.themuvidb.view.ui.main.movie.MoviesFragment"
         android:label="fragment_movie"
         tools:layout="@layout/fragment_movie" />
     <fragment
         android:id="@+id/seriesFragment"
-        android:name="com.faprayyy.tonton.view.ui.main.series.SeriesFragment"
+        android:name="com.faprayyy.themuvidb.view.ui.main.series.SeriesFragment"
         android:label="fragment_series"
         tools:layout="@layout/fragment_series" />
 </navigation>

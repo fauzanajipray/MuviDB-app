@@ -1,28 +1,28 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
-    package="com.faprayyy.tonton">
+    package="com.faprayyy.themuvidb">
     <uses-permission android:name="android.permission.INTERNET" />
 
     <application
-        android:name=".BaseApplication"
+        android:name="com.faprayyy.themuvidb.BaseApplication"
         android:allowBackup="true"
         android:icon="@mipmap/ic_launcher"
         android:label="@string/app_name"
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
-        android:theme="@style/Theme.Tonton">
-        <activity android:name=".view.ui.favorite.FavoriteActivity" />
-        <activity android:name=".view.ui.detail.detailseries.DetailSeriesActivity" />
-        <activity android:name=".view.ui.splash.SplashActivity">
+        android:theme="@style/Theme.Themuvidb">
+        <activity android:name="com.faprayyy.themuvidb.view.ui.favorite.FavoriteActivity" />
+        <activity android:name="com.faprayyy.themuvidb.view.ui.detail.detailseries.DetailSeriesActivity" />
+        <activity android:name="com.faprayyy.themuvidb.view.ui.splash.SplashActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".view.ui.detail.detailmovie.DetailMovieActivity" />
+        <activity android:name="com.faprayyy.themuvidb.view.ui.detail.detailmovie.DetailMovieActivity" />
         <activity
-            android:name=".view.ui.main.MainActivity"
+            android:name="com.faprayyy.themuvidb.view.ui.main.MainActivity"
             android:screenOrientation="portrait" />
     </application>
 
