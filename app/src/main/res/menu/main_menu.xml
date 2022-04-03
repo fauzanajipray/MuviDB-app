@@ -7,10 +7,4 @@
         android:icon="@drawable/ic_baseline_favorite_24"
         android:title="@string/favorite_movie"
         app:showAsAction="always" />
-    <item
-        android:id="@+id/menu_search_item"
-        android:icon="@drawable/ic_baseline_search_24"
-        android:title="@string/search"
-        app:showAsAction="ifRoom" />
-
 </menu>

@@ -1,2 +1,2 @@
 include ':app'
-rootProject.name = "Tonton"
+rootProject.name = "MuviDB"
